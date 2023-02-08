@@ -11,6 +11,10 @@
 		96ADA7552991BA0600648228 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA7542991BA0600648228 /* ContentView.swift */; };
 		96ADA7572991BA0A00648228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ADA7562991BA0A00648228 /* Assets.xcassets */; };
 		96ADA75A2991BA0A00648228 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ADA7592991BA0A00648228 /* Preview Assets.xcassets */; };
+		96ADA770299329A800648228 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA76F299329A800648228 /* ContactsView.swift */; };
+		96ADA774299329E500648228 /* ActiveCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA773299329E500648228 /* ActiveCallView.swift */; };
+		96ADA77629932C2200648228 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA77529932C2100648228 /* PhoneView.swift */; };
+		96ADA77829932C3E00648228 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA77729932C3E00648228 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		96ADA7542991BA0600648228 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		96ADA7562991BA0A00648228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96ADA7592991BA0A00648228 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96ADA76F299329A800648228 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		96ADA773299329E500648228 /* ActiveCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCallView.swift; sourceTree = "<group>"; };
+		96ADA77529932C2100648228 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
+		96ADA77729932C3E00648228 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 			children = (
 				96ADA7522991BA0600648228 /* TextTalkApp.swift */,
 				96ADA7542991BA0600648228 /* ContentView.swift */,
+				96ADA77529932C2100648228 /* PhoneView.swift */,
+				96ADA77729932C3E00648228 /* SettingsView.swift */,
+				96ADA76F299329A800648228 /* ContactsView.swift */,
+				96ADA773299329E500648228 /* ActiveCallView.swift */,
 				96ADA7562991BA0A00648228 /* Assets.xcassets */,
 				96ADA7582991BA0A00648228 /* Preview Content */,
 			);
@@ -137,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96ADA770299329A800648228 /* ContactsView.swift in Sources */,
+				96ADA77629932C2200648228 /* PhoneView.swift in Sources */,
 				96ADA7552991BA0600648228 /* ContentView.swift in Sources */,
+				96ADA77829932C3E00648228 /* SettingsView.swift in Sources */,
+				96ADA774299329E500648228 /* ActiveCallView.swift in Sources */,
 				96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
