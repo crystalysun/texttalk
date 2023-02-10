@@ -1,7 +1,7 @@
 import AVFoundation
 
-func TTS(text: String, accent: String, language: String, speed: Float, gen: String){
-    let utterance = AVSpeechUtterance(text)
+func TTS(text: String, accent: String, speed: Float, gen: String){
+    let utterance = AVSpeechUtterance(string: text)
 
     
     utterance.voice = AVSpeechSynthesisVoice(language: accent)
@@ -17,11 +17,15 @@ func TTS(text: String, accent: String, language: String, speed: Float, gen: Stri
             utterance.voice = AVSpeechSynthesisVoice(language: "en-IE")
         case "South African":
             utterance.voice = AVSpeechSynthesisVoice(language: "en-ZA")
+        default:
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
     }
 
     utterance.rate = speed
-    utterance.gender = gen
+    utterance.voice = AVSpeechSynthesisVoice(gender: gen)
     let synthesizer = AVSpeechSyntheziser()
     
     synthesizer.speech(utterance)
 }
+
+TTS(text: "Hi good morning", accent: "American", speed: 1.0, gen: "female")
