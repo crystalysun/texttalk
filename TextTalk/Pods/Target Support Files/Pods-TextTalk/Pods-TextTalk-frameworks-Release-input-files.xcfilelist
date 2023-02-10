@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-TextTalk/Pods-TextTalk-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SIPKeyboardManager/SIPKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework
+${BUILT_PRODUCTS_DIR}/WAL/WAL.framework
+${PODS_ROOT}/WebRTC/WebRTC.framework
