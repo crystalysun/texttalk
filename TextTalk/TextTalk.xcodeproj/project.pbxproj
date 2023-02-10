@@ -45,7 +45,6 @@
 		96ADA7462991BA0600648228 = {
 			isa = PBXGroup;
 			children = (
-				7CE431BD2996AE3B00AC8B05 /* SpeechRecognizer.swift */,
 				96ADA7512991BA0600648228 /* TextTalk */,
 				96ADA7502991BA0600648228 /* Products */,
 			);
@@ -62,6 +61,7 @@
 		96ADA7512991BA0600648228 /* TextTalk */ = {
 			isa = PBXGroup;
 			children = (
+				7CE431BD2996AE3B00AC8B05 /* SpeechRecognizer.swift */,
 				96ADA7522991BA0600648228 /* TextTalkApp.swift */,
 				96ADA7542991BA0600648228 /* ContentView.swift */,
 				96ADA77529932C2100648228 /* PhoneView.swift */,
