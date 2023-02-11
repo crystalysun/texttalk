@@ -1,6 +1,0 @@
-framework module Pods_TextTalk {
-  umbrella header "Pods-TextTalk-umbrella.h"
-
-  export *
-  module * { export * }
-}
