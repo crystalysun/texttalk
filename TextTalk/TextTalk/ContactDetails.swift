@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct ContactDetails: View {
+    var contact: Contact
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            contact.image
+                .resizable()
+                .frame(width: 100, height: 100)
+            Text("\(contact.firstName) \(contact.lastName)")
+                .font(.title)
+            ForEach(contact.numbers, id:\.self) {
+                number in
+                Text("\(number.type): \(number.number)")
+            }
+        }
     }
 }
 
 struct ContactDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ContactDetails()
+        ContactDetails(contact: contacts[1])
     }
 }

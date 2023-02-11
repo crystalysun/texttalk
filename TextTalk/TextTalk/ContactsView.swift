@@ -9,7 +9,16 @@ import SwiftUI
 
 struct ContactsView: View {
     var body: some View {
-        Text("Insert Contacts Here")
+        NavigationView {
+            List(contacts) { contact in
+                NavigationLink {
+                    ContactDetails(contact: contact)
+                } label: {
+                    ContactRow(contact: contact)
+                }
+            }
+            .navigationTitle("Contacts")
+        }
     }
 }
 
