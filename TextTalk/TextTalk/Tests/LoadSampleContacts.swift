@@ -6,3 +6,6 @@
 //
 
 import Foundation
+
+// Use load function from MessageData.swift
+var contacts: [Contact] = load("sampleContacts.json")
