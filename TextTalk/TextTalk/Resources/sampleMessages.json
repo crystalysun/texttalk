@@ -1,0 +1,23 @@
+[
+   {
+      "id":1,
+      "sender":"Me",
+      "content":"Hi there!",
+      "timeSent":"2018-12-10T13:45:00.000Z",
+      "imageName":"user-f"
+   },
+   {
+      "id":2,
+      "sender":"Friend",
+      "content":"Hey, how are you doing?",
+      "timeSent":"2018-12-10T13:46:00.000Z",
+      "imageName":"user-m"
+   },
+   {
+      "id":3,
+      "sender":"Me",
+      "content":"I am doing great.",
+      "timeSent":"2018-12-10T13:47:00.000Z",
+      "imageName":"user-f"
+   }
+]
