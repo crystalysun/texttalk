@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7CE431BE2996AE3B00AC8B05 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE431BD2996AE3B00AC8B05 /* SpeechRecognizer.swift */; };
+		7CE431C02998200F00AC8B05 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE431BF2998200E00AC8B05 /* History.swift */; };
+		7CE431C2299820BB00AC8B05 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE431C1299820BB00AC8B05 /* HistoryView.swift */; };
+		7CE431C42998211600AC8B05 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE431C32998211600AC8B05 /* MeetingView.swift */; };
+		7CE431C62998217400AC8B05 /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE431C52998217400AC8B05 /* MeetingTimerView.swift */; };
+		7CE431C82998219200AC8B05 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE431C72998219200AC8B05 /* Theme.swift */; };
+		7CE431CA299821E000AC8B05 /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE431C9299821E000AC8B05 /* Call.swift */; };
 		96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA7522991BA0600648228 /* TextTalkApp.swift */; };
 		96ADA7552991BA0600648228 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA7542991BA0600648228 /* ContentView.swift */; };
 		96ADA7572991BA0A00648228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ADA7562991BA0A00648228 /* Assets.xcassets */; };
@@ -20,6 +26,12 @@
 
 /* Begin PBXFileReference section */
 		7CE431BD2996AE3B00AC8B05 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		7CE431BF2998200E00AC8B05 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		7CE431C1299820BB00AC8B05 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		7CE431C32998211600AC8B05 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
+		7CE431C52998217400AC8B05 /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
+		7CE431C72998219200AC8B05 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		7CE431C9299821E000AC8B05 /* Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
 		96ADA74F2991BA0600648228 /* TextTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96ADA7522991BA0600648228 /* TextTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTalkApp.swift; sourceTree = "<group>"; };
 		96ADA7542991BA0600648228 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,13 +73,19 @@
 		96ADA7512991BA0600648228 /* TextTalk */ = {
 			isa = PBXGroup;
 			children = (
-				7CE431BD2996AE3B00AC8B05 /* SpeechRecognizer.swift */,
 				96ADA7522991BA0600648228 /* TextTalkApp.swift */,
 				96ADA7542991BA0600648228 /* ContentView.swift */,
 				96ADA77529932C2100648228 /* PhoneView.swift */,
 				96ADA77729932C3E00648228 /* SettingsView.swift */,
 				96ADA76F299329A800648228 /* ContactsView.swift */,
 				96ADA773299329E500648228 /* ActiveCallView.swift */,
+				7CE431BD2996AE3B00AC8B05 /* SpeechRecognizer.swift */,
+				7CE431C9299821E000AC8B05 /* Call.swift */,
+				7CE431BF2998200E00AC8B05 /* History.swift */,
+				7CE431C1299820BB00AC8B05 /* HistoryView.swift */,
+				7CE431C32998211600AC8B05 /* MeetingView.swift */,
+				7CE431C52998217400AC8B05 /* MeetingTimerView.swift */,
+				7CE431C72998219200AC8B05 /* Theme.swift */,
 				96ADA7562991BA0A00648228 /* Assets.xcassets */,
 				96ADA7582991BA0A00648228 /* Preview Content */,
 			);
@@ -154,10 +172,16 @@
 			files = (
 				7CE431BE2996AE3B00AC8B05 /* SpeechRecognizer.swift in Sources */,
 				96ADA770299329A800648228 /* ContactsView.swift in Sources */,
+				7CE431C42998211600AC8B05 /* MeetingView.swift in Sources */,
+				7CE431C02998200F00AC8B05 /* History.swift in Sources */,
+				7CE431CA299821E000AC8B05 /* Call.swift in Sources */,
 				96ADA77629932C2200648228 /* PhoneView.swift in Sources */,
 				96ADA7552991BA0600648228 /* ContentView.swift in Sources */,
+				7CE431C62998217400AC8B05 /* MeetingTimerView.swift in Sources */,
 				96ADA77829932C3E00648228 /* SettingsView.swift in Sources */,
 				96ADA774299329E500648228 /* ActiveCallView.swift in Sources */,
+				7CE431C82998219200AC8B05 /* Theme.swift in Sources */,
+				7CE431C2299820BB00AC8B05 /* HistoryView.swift in Sources */,
 				96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,7 +239,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -269,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,23 +308,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
+				DEVELOPMENT_TEAM = 8J43XYNZVH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your call in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495.TextTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgon.TextTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,23 +343,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
+				DEVELOPMENT_TEAM = 8J43XYNZVH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your call in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495.TextTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgon.TextTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
