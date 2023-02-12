@@ -1,0 +1,12 @@
+platform :ios, '10.0'
+
+target 'TextTalk' do
+  use_frameworks!
+
+  # Pods for TextTalk
+#  pod 'WAL', :path => '../../lib/WAL'
+  pod 'WAL'
+  pod 'WebRTC'
+  pod 'SIPKeyboardManager'
+
+end
