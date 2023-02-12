@@ -113,18 +113,9 @@
 				96AEF5292998646D00596470 /* CallKit */,
 				96AEF5302998646E00596470 /* Resources */,
 				96AEF5242998646C00596470 /* Tests */,
-				96AEF5A92998646F00596470 /* ContactDetails.swift */,
-				96AEF5282998646D00596470 /* ContactRow.swift */,
+				96AEF60829986C5400596470 /* Views */,
 				0CDEF3212996B39400649279 /* Config.swift */,
 				96ADA7522991BA0600648228 /* TextTalkApp.swift */,
-				96ADA7542991BA0600648228 /* ContentView.swift */,
-				96ADA77529932C2100648228 /* PhoneView.swift */,
-				96ADA77729932C3E00648228 /* SettingsView.swift */,
-				96ADA76F299329A800648228 /* ContactsView.swift */,
-				96AEF52D2998646D00596470 /* CallInput.swift */,
-				96AEF5AC2998647000596470 /* MessageList.swift */,
-				96AEF5AA2998646F00596470 /* MessageBubble.swift */,
-				96ADA773299329E500648228 /* ActiveCallView.swift */,
 				96ADA7562991BA0A00648228 /* Assets.xcassets */,
 				96ADA7582991BA0A00648228 /* Preview Content */,
 			);
@@ -177,6 +168,23 @@
 				96AEF5B22998647100596470 /* Contact.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		96AEF60829986C5400596470 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96AEF5A92998646F00596470 /* ContactDetails.swift */,
+				96AEF5282998646D00596470 /* ContactRow.swift */,
+				96ADA7542991BA0600648228 /* ContentView.swift */,
+				96ADA77529932C2100648228 /* PhoneView.swift */,
+				96ADA77729932C3E00648228 /* SettingsView.swift */,
+				96ADA76F299329A800648228 /* ContactsView.swift */,
+				96AEF52D2998646D00596470 /* CallInput.swift */,
+				96AEF5AC2998647000596470 /* MessageList.swift */,
+				96AEF5AA2998646F00596470 /* MessageBubble.swift */,
+				96ADA773299329E500648228 /* ActiveCallView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AD8CFA27DC2D0C43C31ECEEC /* Frameworks */ = {
