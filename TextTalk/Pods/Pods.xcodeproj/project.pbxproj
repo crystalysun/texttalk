@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = WebRTC;
+			productName = WebRTC;
 		};
 /* End PBXAggregateTarget section */
 
@@ -115,7 +116,7 @@
 		0D32A13B044FF4660711DD54FFF969D5 /* SIPKeyboardManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SIPKeyboardManager-dummy.m"; sourceTree = "<group>"; };
 		0D519F007F8AD0B0016BFD795AADB405 /* WSCompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WSCompression.swift; path = Sources/Compression/WSCompression.swift; sourceTree = "<group>"; };
 		0EA96E748EA671393BC061B700E118F4 /* SIPKeyboardManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SIPKeyboardManager-umbrella.h"; sourceTree = "<group>"; };
-		100B05A711F607A305B4083C8F226B8B /* Pods-TextTalk */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TextTalk"; path = Pods_TextTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		100B05A711F607A305B4083C8F226B8B /* Pods_TextTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		141FDD42D2A8AE362C9E9F2012EBD92A /* NativeEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeEngine.swift; path = Sources/Engine/NativeEngine.swift; sourceTree = "<group>"; };
 		1498E00B1A1DD2FF14BE31946794AA19 /* RTCPeerConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCPeerConnection.h; path = WebRTC.framework/Headers/RTCPeerConnection.h; sourceTree = "<group>"; };
 		15DB8E2F46D7D7E069A529A7C277F29A /* WebRTCConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebRTCConnection.swift; path = WAL/WebRTCConnection.swift; sourceTree = "<group>"; };
@@ -136,7 +137,7 @@
 		3E625A9D7F97F03820B5D449BB484FF5 /* RTCSSLAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCSSLAdapter.h; path = WebRTC.framework/Headers/RTCSSLAdapter.h; sourceTree = "<group>"; };
 		3F122C1D83F08AD35644E42F7C993EF8 /* Transport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transport.swift; path = Sources/Transport/Transport.swift; sourceTree = "<group>"; };
 		3F932F2172CBA1EF6944643166FBA151 /* WAL-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WAL-prefix.pch"; sourceTree = "<group>"; };
-		3FB78DDEF5507719D85BAEE489F2EF26 /* WAL */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WAL; path = WAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FB78DDEF5507719D85BAEE489F2EF26 /* WAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40FF72EDCB329D6DB53A173FA4647219 /* FoundationHTTPHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FoundationHTTPHandler.swift; path = Sources/Framer/FoundationHTTPHandler.swift; sourceTree = "<group>"; };
 		43B05AF6229650CF73778C1E833BE03F /* SIPKeyboardManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SIPKeyboardManager.debug.xcconfig; sourceTree = "<group>"; };
 		452F0163E62108D7D6BE5BFEF829DEF2 /* Pods-TextTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextTalk.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,7 +159,7 @@
 		65FEFD372F6EF1E999AAC2C46ED22ABC /* WAL-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WAL-Info.plist"; sourceTree = "<group>"; };
 		67903D5BE2A62C95CA8E7A6D42DC9DE7 /* SIPKeyboardManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SIPKeyboardManager.m; path = SIPKeyboardManager/Classes/SIPKeyboardManager.m; sourceTree = "<group>"; };
 		6996AE5A1C3B8CE7CBB696D971D15FB0 /* RTCIceCandidate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCIceCandidate.h; path = WebRTC.framework/Headers/RTCIceCandidate.h; sourceTree = "<group>"; };
-		69E5B0B1F15092100BA3D901CE9CE6A6 /* SIPKeyboardManager */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SIPKeyboardManager; path = SIPKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69E5B0B1F15092100BA3D901CE9CE6A6 /* SIPKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SIPKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD16562A1878FBD8FC07EAAD8CB0548 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
 		6E207B7BFA0C3C9E32BA353D6705C7E6 /* WAL-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WAL-umbrella.h"; sourceTree = "<group>"; };
 		6E7949D27B7682F3EBB53FF5F5CC8FB1 /* WAL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WAL.release.xcconfig; sourceTree = "<group>"; };
@@ -170,7 +171,7 @@
 		7D1F8F1BFE699C2697F1FE5F8E3B16CC /* Framer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Framer.swift; path = Sources/Framer/Framer.swift; sourceTree = "<group>"; };
 		820C462B262905BF7EACE9CF710FED55 /* SIPKeyboardManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SIPKeyboardManager-Info.plist"; sourceTree = "<group>"; };
 		88A74C2B458F1033B435FFB8E2881ABE /* RTCRtpCodecParameters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCRtpCodecParameters.h; path = WebRTC.framework/Headers/RTCRtpCodecParameters.h; sourceTree = "<group>"; };
-		891B2270823847ED23F2ECFC28F935EC /* Starscream */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB13C2E4826D2D9DCF78D105A7B85F1 /* RTCDispatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCDispatcher.h; path = WebRTC.framework/Headers/RTCDispatcher.h; sourceTree = "<group>"; };
 		91B1C1762A0E57DA96A4218AF0CB71F1 /* RTCVideoCodecH264.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCVideoCodecH264.h; path = WebRTC.framework/Headers/RTCVideoCodecH264.h; sourceTree = "<group>"; };
 		92A374BC6319470B20B100764E9D2CE4 /* RTCAudioSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCAudioSource.h; path = WebRTC.framework/Headers/RTCAudioSource.h; sourceTree = "<group>"; };
@@ -181,7 +182,7 @@
 		9A5BE4F2FB975B36B2691CA63F0E105E /* RTCIceServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCIceServer.h; path = WebRTC.framework/Headers/RTCIceServer.h; sourceTree = "<group>"; };
 		9BBF515F0E1529700FE16C98A7717BD5 /* RTCEAGLVideoView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCEAGLVideoView.h; path = WebRTC.framework/Headers/RTCEAGLVideoView.h; sourceTree = "<group>"; };
 		9CD31D515DF4385F6746CD2A166A4335 /* RTCVideoFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCVideoFrame.h; path = WebRTC.framework/Headers/RTCVideoFrame.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DBBF34C4F9ECA93E7CF391AAD5DD789 /* Pods-TextTalk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TextTalk-umbrella.h"; sourceTree = "<group>"; };
 		9F29FE0060FF9A4537CC74346A790DC3 /* Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Sources/Compression/Compression.swift; sourceTree = "<group>"; };
 		9F3D3489437A30EBEAD95C3F7D5780CB /* RTCAudioSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RTCAudioSession.h; path = WebRTC.framework/Headers/RTCAudioSession.h; sourceTree = "<group>"; };
@@ -345,7 +346,6 @@
 				D1BEF6A7A967D43E231CFA7C6C7DD514 /* WSEngine.swift */,
 				F74A1002A8B3205F817CCE856B403A3B /* Support Files */,
 			);
-			name = Starscream;
 			path = Starscream;
 			sourceTree = "<group>";
 		};
@@ -362,7 +362,6 @@
 				D56F052563C1CFEEC7102D3510CDA218 /* WebRTCConnection+Config+TurnServer.swift */,
 				97556FDCDC1A1327E46185D986A114D2 /* Support Files */,
 			);
-			name = WAL;
 			path = WAL;
 			sourceTree = "<group>";
 		};
@@ -387,10 +386,10 @@
 		9668623B0A478CD1BB68D5A169572EA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				100B05A711F607A305B4083C8F226B8B /* Pods-TextTalk */,
-				69E5B0B1F15092100BA3D901CE9CE6A6 /* SIPKeyboardManager */,
-				891B2270823847ED23F2ECFC28F935EC /* Starscream */,
-				3FB78DDEF5507719D85BAEE489F2EF26 /* WAL */,
+				100B05A711F607A305B4083C8F226B8B /* Pods_TextTalk.framework */,
+				69E5B0B1F15092100BA3D901CE9CE6A6 /* SIPKeyboardManager.framework */,
+				891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */,
+				3FB78DDEF5507719D85BAEE489F2EF26 /* WAL.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -417,7 +416,6 @@
 				67903D5BE2A62C95CA8E7A6D42DC9DE7 /* SIPKeyboardManager.m */,
 				3302C2EF49C7F58B8C7435BA0F6CC867 /* Support Files */,
 			);
-			name = SIPKeyboardManager;
 			path = SIPKeyboardManager;
 			sourceTree = "<group>";
 		};
@@ -488,7 +486,6 @@
 				872945D52E52E8A0198324B029074760 /* Frameworks */,
 				7DEF7CE7C90A99BB0C78E48A6A0F9C40 /* Support Files */,
 			);
-			name = WebRTC;
 			path = WebRTC;
 			sourceTree = "<group>";
 		};
@@ -582,7 +579,7 @@
 			);
 			name = WAL;
 			productName = WAL;
-			productReference = 3FB78DDEF5507719D85BAEE489F2EF26 /* WAL */;
+			productReference = 3FB78DDEF5507719D85BAEE489F2EF26 /* WAL.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7EEA570B0B72431D568D78895AFC92D8 /* Pods-TextTalk */ = {
@@ -604,7 +601,7 @@
 			);
 			name = "Pods-TextTalk";
 			productName = Pods_TextTalk;
-			productReference = 100B05A711F607A305B4083C8F226B8B /* Pods-TextTalk */;
+			productReference = 100B05A711F607A305B4083C8F226B8B /* Pods_TextTalk.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9B78EE4AF6AE03E79D88886319853FF7 /* Starscream */ = {
@@ -622,7 +619,7 @@
 			);
 			name = Starscream;
 			productName = Starscream;
-			productReference = 891B2270823847ED23F2ECFC28F935EC /* Starscream */;
+			productReference = 891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FF719F669ECA7749F18C2A54D888D416 /* SIPKeyboardManager */ = {
@@ -640,7 +637,7 @@
 			);
 			name = SIPKeyboardManager;
 			productName = SIPKeyboardManager;
-			productReference = 69E5B0B1F15092100BA3D901CE9CE6A6 /* SIPKeyboardManager */;
+			productReference = 69E5B0B1F15092100BA3D901CE9CE6A6 /* SIPKeyboardManager.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -649,8 +646,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -815,7 +812,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -841,7 +838,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/WAL/WAL-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/WAL/WAL-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -877,7 +874,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SIPKeyboardManager/SIPKeyboardManager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SIPKeyboardManager/SIPKeyboardManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -973,7 +970,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Starscream/Starscream-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -998,7 +995,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1024,7 +1021,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Starscream/Starscream-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1126,7 +1123,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TextTalk/Pods-TextTalk-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1163,7 +1160,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/WAL/WAL-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/WAL/WAL-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1198,7 +1195,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SIPKeyboardManager/SIPKeyboardManager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SIPKeyboardManager/SIPKeyboardManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1234,7 +1231,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TextTalk/Pods-TextTalk-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

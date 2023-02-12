@@ -22,10 +22,10 @@ func TTS(text: String, accent: String, speed: Float, gen: String){
     }
 
     utterance.rate = speed
-    utterance.voice = AVSpeechSynthesisVoice(gender: gen)
-    let synthesizer = AVSpeechSyntheziser()
+    // utterance.voice = AVSpeechSynthesisVoice(gender: gen)
+    // let synthesizer = AVSpeechSyntheziser()
     
-    synthesizer.speech(utterance)
+    // synthesizer.speech(utterance)
 }
 
 TTS(text: "Hi good morning", accent: "American", speed: 1.0, gen: "female")
