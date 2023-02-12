@@ -10,6 +10,12 @@
 		0CDEF3192996B2CC00649279 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0CDEF3182996B2CC00649279 /* Podfile */; };
 		0CDEF3222996B39400649279 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDEF3212996B39400649279 /* Config.swift */; };
 		4F51A9E98FFA936151CB71B7 /* Pods_TextTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4265D83F51229F729CC73004 /* Pods_TextTalk.framework */; };
+		7C133889299993A700F9D060 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C133888299993A700F9D060 /* History.swift */; };
+		7C13388B2999944300F9D060 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13388A2999944300F9D060 /* HistoryView.swift */; };
+		7C13388D2999945E00F9D060 /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13388C2999945E00F9D060 /* MeetingTimerView.swift */; };
+		7C13388F2999947000F9D060 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13388E2999947000F9D060 /* MeetingView.swift */; };
+		7C1338912999948C00F9D060 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1338902999948C00F9D060 /* SpeechRecognizer.swift */; };
+		7C133893299994C400F9D060 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C133892299994C400F9D060 /* Theme.swift */; };
 		96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA7522991BA0600648228 /* TextTalkApp.swift */; };
 		96ADA7552991BA0600648228 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA7542991BA0600648228 /* ContentView.swift */; };
 		96ADA7572991BA0A00648228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ADA7562991BA0A00648228 /* Assets.xcassets */; };
@@ -44,6 +50,12 @@
 		326D59B3930DF831334736A1 /* Pods-TextTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextTalk.release.xcconfig"; path = "Target Support Files/Pods-TextTalk/Pods-TextTalk.release.xcconfig"; sourceTree = "<group>"; };
 		4265D83F51229F729CC73004 /* Pods_TextTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45ECD222A313604FE1311C07 /* Pods-TextTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextTalk.debug.xcconfig"; path = "Target Support Files/Pods-TextTalk/Pods-TextTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		7C133888299993A700F9D060 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		7C13388A2999944300F9D060 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		7C13388C2999945E00F9D060 /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
+		7C13388E2999947000F9D060 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
+		7C1338902999948C00F9D060 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		7C133892299994C400F9D060 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		96ADA74F2991BA0600648228 /* TextTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96ADA7522991BA0600648228 /* TextTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTalkApp.swift; sourceTree = "<group>"; };
 		96ADA7542991BA0600648228 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -161,11 +173,14 @@
 		96AEF5AD2998647100596470 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7C1338902999948C00F9D060 /* SpeechRecognizer.swift */,
 				96AEF5AE2998647100596470 /* Item.swift */,
 				96AEF5AF2998647100596470 /* Message.swift */,
 				96AEF5B02998647100596470 /* FetchContacts.swift */,
+				7C133888299993A700F9D060 /* History.swift */,
 				96AEF5B12998647100596470 /* Response.swift */,
 				96AEF5B22998647100596470 /* Contact.swift */,
+				7C133892299994C400F9D060 /* Theme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +198,9 @@
 				96AEF5AC2998647000596470 /* MessageList.swift */,
 				96AEF5AA2998646F00596470 /* MessageBubble.swift */,
 				96ADA773299329E500648228 /* ActiveCallView.swift */,
+				7C13388E2999947000F9D060 /* MeetingView.swift */,
+				7C13388A2999944300F9D060 /* HistoryView.swift */,
+				7C13388C2999945E00F9D060 /* MeetingTimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,9 +341,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				96ADA770299329A800648228 /* ContactsView.swift in Sources */,
+				7C13388B2999944300F9D060 /* HistoryView.swift in Sources */,
 				96AEF6062998647200596470 /* Response.swift in Sources */,
 				96ADA77629932C2200648228 /* PhoneView.swift in Sources */,
 				96AEF6022998647200596470 /* MessageList.swift in Sources */,
+				7C1338912999948C00F9D060 /* SpeechRecognizer.swift in Sources */,
 				96AEF5BB2998647200596470 /* CallInput.swift in Sources */,
 				96AEF5BA2998647200596470 /* Call.swift in Sources */,
 				96ADA7552991BA0600648228 /* ContentView.swift in Sources */,
@@ -333,8 +353,12 @@
 				96ADA77829932C3E00648228 /* SettingsView.swift in Sources */,
 				96AEF5B42998647100596470 /* LoadSampleContacts.swift in Sources */,
 				96ADA774299329E500648228 /* ActiveCallView.swift in Sources */,
+				7C133893299994C400F9D060 /* Theme.swift in Sources */,
+				7C13388F2999947000F9D060 /* MeetingView.swift in Sources */,
+				7C13388D2999945E00F9D060 /* MeetingTimerView.swift in Sources */,
 				96AEF6072998647200596470 /* Contact.swift in Sources */,
 				96AEF5B52998647200596470 /* MessageData.swift in Sources */,
+				7C133889299993A700F9D060 /* History.swift in Sources */,
 				96AEF6042998647200596470 /* Message.swift in Sources */,
 				96AEF6002998647200596470 /* MessageBubble.swift in Sources */,
 				0CDEF3222996B39400649279 /* Config.swift in Sources */,
