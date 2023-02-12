@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CDEF3192996B2CC00649279 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0CDEF3182996B2CC00649279 /* Podfile */; };
+		0CDEF3222996B39400649279 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDEF3212996B39400649279 /* Config.swift */; };
+		4F51A9E98FFA936151CB71B7 /* Pods_TextTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4265D83F51229F729CC73004 /* Pods_TextTalk.framework */; };
 		96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA7522991BA0600648228 /* TextTalkApp.swift */; };
 		96ADA7552991BA0600648228 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA7542991BA0600648228 /* ContentView.swift */; };
 		96ADA7572991BA0A00648228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ADA7562991BA0A00648228 /* Assets.xcassets */; };
@@ -15,9 +18,32 @@
 		96ADA774299329E500648228 /* ActiveCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA773299329E500648228 /* ActiveCallView.swift */; };
 		96ADA77629932C2200648228 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA77529932C2100648228 /* PhoneView.swift */; };
 		96ADA77829932C3E00648228 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA77729932C3E00648228 /* SettingsView.swift */; };
+		96AEF5B42998647100596470 /* LoadSampleContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5252998646C00596470 /* LoadSampleContacts.swift */; };
+		96AEF5B52998647200596470 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5262998646C00596470 /* MessageData.swift */; };
+		96AEF5B72998647200596470 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5282998646D00596470 /* ContactRow.swift */; };
+		96AEF5B82998647200596470 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF52A2998646D00596470 /* SoundManager.swift */; };
+		96AEF5B92998647200596470 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF52B2998646D00596470 /* CallManager.swift */; };
+		96AEF5BA2998647200596470 /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF52C2998646D00596470 /* Call.swift */; };
+		96AEF5BB2998647200596470 /* CallInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF52D2998646D00596470 /* CallInput.swift */; };
+		96AEF5BD2998647200596470 /* sampleContacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 96AEF5312998646E00596470 /* sampleContacts.json */; };
+		96AEF5BE2998647200596470 /* sampleMessages.json in Resources */ = {isa = PBXBuildFile; fileRef = 96AEF5322998646E00596470 /* sampleMessages.json */; };
+		96AEF5FF2998647200596470 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5A92998646F00596470 /* ContactDetails.swift */; };
+		96AEF6002998647200596470 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5AA2998646F00596470 /* MessageBubble.swift */; };
+		96AEF6012998647200596470 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 96AEF5AB2998646F00596470 /* Podfile.lock */; };
+		96AEF6022998647200596470 /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5AC2998647000596470 /* MessageList.swift */; };
+		96AEF6032998647200596470 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5AE2998647100596470 /* Item.swift */; };
+		96AEF6042998647200596470 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5AF2998647100596470 /* Message.swift */; };
+		96AEF6052998647200596470 /* FetchContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B02998647100596470 /* FetchContacts.swift */; };
+		96AEF6062998647200596470 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B12998647100596470 /* Response.swift */; };
+		96AEF6072998647200596470 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B22998647100596470 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CDEF3182996B2CC00649279 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0CDEF3212996B39400649279 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		326D59B3930DF831334736A1 /* Pods-TextTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextTalk.release.xcconfig"; path = "Target Support Files/Pods-TextTalk/Pods-TextTalk.release.xcconfig"; sourceTree = "<group>"; };
+		4265D83F51229F729CC73004 /* Pods_TextTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45ECD222A313604FE1311C07 /* Pods-TextTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextTalk.debug.xcconfig"; path = "Target Support Files/Pods-TextTalk/Pods-TextTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		96ADA74F2991BA0600648228 /* TextTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96ADA7522991BA0600648228 /* TextTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTalkApp.swift; sourceTree = "<group>"; };
 		96ADA7542991BA0600648228 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +53,24 @@
 		96ADA773299329E500648228 /* ActiveCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCallView.swift; sourceTree = "<group>"; };
 		96ADA77529932C2100648228 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		96ADA77729932C3E00648228 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		96AEF5252998646C00596470 /* LoadSampleContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSampleContacts.swift; sourceTree = "<group>"; };
+		96AEF5262998646C00596470 /* MessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
+		96AEF5282998646D00596470 /* ContactRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
+		96AEF52A2998646D00596470 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		96AEF52B2998646D00596470 /* CallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
+		96AEF52C2998646D00596470 /* Call.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
+		96AEF52D2998646D00596470 /* CallInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallInput.swift; sourceTree = "<group>"; };
+		96AEF5312998646E00596470 /* sampleContacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleContacts.json; sourceTree = "<group>"; };
+		96AEF5322998646E00596470 /* sampleMessages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleMessages.json; sourceTree = "<group>"; };
+		96AEF5A92998646F00596470 /* ContactDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
+		96AEF5AA2998646F00596470 /* MessageBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		96AEF5AB2998646F00596470 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		96AEF5AC2998647000596470 /* MessageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
+		96AEF5AE2998647100596470 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		96AEF5AF2998647100596470 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		96AEF5B02998647100596470 /* FetchContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContacts.swift; sourceTree = "<group>"; };
+		96AEF5B12998647100596470 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		96AEF5B22998647100596470 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F51A9E98FFA936151CB71B7 /* Pods_TextTalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,7 +89,10 @@
 			isa = PBXGroup;
 			children = (
 				96ADA7512991BA0600648228 /* TextTalk */,
-				96ADA7502991BA0600648228 /* Products */,
+				96AEF5AB2998646F00596470 /* Podfile.lock */,
+				0CDEF3182996B2CC00649279 /* Podfile */,
+				DB080873ACAF7BD8C67151E6 /* Pods */,
+				AD8CFA27DC2D0C43C31ECEEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,17 +102,20 @@
 				96ADA74F2991BA0600648228 /* TextTalk.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		96ADA7512991BA0600648228 /* TextTalk */ = {
 			isa = PBXGroup;
 			children = (
+				96AEF5AD2998647100596470 /* Model */,
+				96ADA7502991BA0600648228 /* Products */,
+				96AEF5292998646D00596470 /* CallKit */,
+				96AEF5302998646E00596470 /* Resources */,
+				96AEF5242998646C00596470 /* Tests */,
+				96AEF60829986C5400596470 /* Views */,
+				0CDEF3212996B39400649279 /* Config.swift */,
 				96ADA7522991BA0600648228 /* TextTalkApp.swift */,
-				96ADA7542991BA0600648228 /* ContentView.swift */,
-				96ADA77529932C2100648228 /* PhoneView.swift */,
-				96ADA77729932C3E00648228 /* SettingsView.swift */,
-				96ADA76F299329A800648228 /* ContactsView.swift */,
-				96ADA773299329E500648228 /* ActiveCallView.swift */,
 				96ADA7562991BA0A00648228 /* Assets.xcassets */,
 				96ADA7582991BA0A00648228 /* Preview Content */,
 			);
@@ -79,6 +130,80 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		96AEF5242998646C00596470 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				96AEF5252998646C00596470 /* LoadSampleContacts.swift */,
+				96AEF5262998646C00596470 /* MessageData.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		96AEF5292998646D00596470 /* CallKit */ = {
+			isa = PBXGroup;
+			children = (
+				96AEF52A2998646D00596470 /* SoundManager.swift */,
+				96AEF52B2998646D00596470 /* CallManager.swift */,
+				96AEF52C2998646D00596470 /* Call.swift */,
+			);
+			path = CallKit;
+			sourceTree = "<group>";
+		};
+		96AEF5302998646E00596470 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				96AEF5312998646E00596470 /* sampleContacts.json */,
+				96AEF5322998646E00596470 /* sampleMessages.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		96AEF5AD2998647100596470 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96AEF5AE2998647100596470 /* Item.swift */,
+				96AEF5AF2998647100596470 /* Message.swift */,
+				96AEF5B02998647100596470 /* FetchContacts.swift */,
+				96AEF5B12998647100596470 /* Response.swift */,
+				96AEF5B22998647100596470 /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96AEF60829986C5400596470 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96AEF5A92998646F00596470 /* ContactDetails.swift */,
+				96AEF5282998646D00596470 /* ContactRow.swift */,
+				96ADA7542991BA0600648228 /* ContentView.swift */,
+				96ADA77529932C2100648228 /* PhoneView.swift */,
+				96ADA77729932C3E00648228 /* SettingsView.swift */,
+				96ADA76F299329A800648228 /* ContactsView.swift */,
+				96AEF52D2998646D00596470 /* CallInput.swift */,
+				96AEF5AC2998647000596470 /* MessageList.swift */,
+				96AEF5AA2998646F00596470 /* MessageBubble.swift */,
+				96ADA773299329E500648228 /* ActiveCallView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AD8CFA27DC2D0C43C31ECEEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4265D83F51229F729CC73004 /* Pods_TextTalk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB080873ACAF7BD8C67151E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45ECD222A313604FE1311C07 /* Pods-TextTalk.debug.xcconfig */,
+				326D59B3930DF831334736A1 /* Pods-TextTalk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96ADA75D2991BA0A00648228 /* Build configuration list for PBXNativeTarget "TextTalk" */;
 			buildPhases = (
+				467F8CFB40F6E748A1682655 /* [CP] Check Pods Manifest.lock */,
 				96ADA74B2991BA0600648228 /* Sources */,
 				96ADA74C2991BA0600648228 /* Frameworks */,
 				96ADA74D2991BA0600648228 /* Resources */,
+				2708020F189B707285D233CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +264,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96AEF5BE2998647200596470 /* sampleMessages.json in Resources */,
+				96AEF5BD2998647200596470 /* sampleContacts.json in Resources */,
+				96AEF6012998647200596470 /* Podfile.lock in Resources */,
+				0CDEF3192996B2CC00649279 /* Podfile in Resources */,
 				96ADA75A2991BA0A00648228 /* Preview Assets.xcassets in Resources */,
 				96ADA7572991BA0A00648228 /* Assets.xcassets in Resources */,
 			);
@@ -144,17 +275,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2708020F189B707285D233CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TextTalk/Pods-TextTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TextTalk/Pods-TextTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TextTalk/Pods-TextTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		467F8CFB40F6E748A1682655 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TextTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		96ADA74B2991BA0600648228 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				96ADA770299329A800648228 /* ContactsView.swift in Sources */,
+				96AEF6062998647200596470 /* Response.swift in Sources */,
 				96ADA77629932C2200648228 /* PhoneView.swift in Sources */,
+				96AEF6022998647200596470 /* MessageList.swift in Sources */,
+				96AEF5BB2998647200596470 /* CallInput.swift in Sources */,
+				96AEF5BA2998647200596470 /* Call.swift in Sources */,
 				96ADA7552991BA0600648228 /* ContentView.swift in Sources */,
+				96AEF5FF2998647200596470 /* ContactDetails.swift in Sources */,
 				96ADA77829932C3E00648228 /* SettingsView.swift in Sources */,
+				96AEF5B42998647100596470 /* LoadSampleContacts.swift in Sources */,
 				96ADA774299329E500648228 /* ActiveCallView.swift in Sources */,
+				96AEF6072998647200596470 /* Contact.swift in Sources */,
+				96AEF5B52998647200596470 /* MessageData.swift in Sources */,
+				96AEF6042998647200596470 /* Message.swift in Sources */,
+				96AEF6002998647200596470 /* MessageBubble.swift in Sources */,
+				0CDEF3222996B39400649279 /* Config.swift in Sources */,
+				96AEF6052998647200596470 /* FetchContacts.swift in Sources */,
 				96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */,
+				96AEF5B92998647200596470 /* CallManager.swift in Sources */,
+				96AEF5B72998647200596470 /* ContactRow.swift in Sources */,
+				96AEF5B82998647200596470 /* SoundManager.swift in Sources */,
+				96AEF6032998647200596470 /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,13 +466,19 @@
 		};
 		96ADA75E2991BA0A00648228 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45ECD222A313604FE1311C07 /* Pods-TextTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
+				DEVELOPMENT_TEAM = 42NA62Z94G;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TextTalk/Pods/WebRTC",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -305,13 +500,19 @@
 		};
 		96ADA75F2991BA0A00648228 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 326D59B3930DF831334736A1 /* Pods-TextTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
+				DEVELOPMENT_TEAM = 42NA62Z94G;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TextTalk/Pods/WebRTC",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
