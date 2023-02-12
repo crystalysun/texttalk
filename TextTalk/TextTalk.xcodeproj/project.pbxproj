@@ -18,7 +18,6 @@
 		96ADA774299329E500648228 /* ActiveCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA773299329E500648228 /* ActiveCallView.swift */; };
 		96ADA77629932C2200648228 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA77529932C2100648228 /* PhoneView.swift */; };
 		96ADA77829932C3E00648228 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA77729932C3E00648228 /* SettingsView.swift */; };
-<<<<<<< HEAD
 		96ADA7862997016D00648228 /* sampleMessages.json in Resources */ = {isa = PBXBuildFile; fileRef = 96ADA7852997016D00648228 /* sampleMessages.json */; };
 		96ADA788299701FE00648228 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA787299701FD00648228 /* Message.swift */; };
 		96ADA78B2997040300648228 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA78A2997040300648228 /* MessageData.swift */; };
@@ -31,7 +30,6 @@
 		96AEF51E2997F89A00596470 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF51D2997F89A00596470 /* Contact.swift */; };
 		96AEF5202997FF0300596470 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF51F2997FF0300596470 /* ContactDetails.swift */; };
 		96AEF52229981EF100596470 /* CallInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF52129981EF100596470 /* CallInput.swift */; };
-=======
 		96AEF5B42998647100596470 /* LoadSampleContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5252998646C00596470 /* LoadSampleContacts.swift */; };
 		96AEF5B52998647200596470 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5262998646C00596470 /* MessageData.swift */; };
 		96AEF5B72998647200596470 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5282998646D00596470 /* ContactRow.swift */; };
@@ -50,7 +48,7 @@
 		96AEF6052998647200596470 /* FetchContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B02998647100596470 /* FetchContacts.swift */; };
 		96AEF6062998647200596470 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B12998647100596470 /* Response.swift */; };
 		96AEF6072998647200596470 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B22998647100596470 /* Contact.swift */; };
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +66,6 @@
 		96ADA773299329E500648228 /* ActiveCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCallView.swift; sourceTree = "<group>"; };
 		96ADA77529932C2100648228 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		96ADA77729932C3E00648228 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		96ADA7852997016D00648228 /* sampleMessages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleMessages.json; sourceTree = "<group>"; };
 		96ADA787299701FD00648228 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		96ADA78A2997040300648228 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
@@ -81,7 +78,6 @@
 		96AEF51D2997F89A00596470 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		96AEF51F2997FF0300596470 /* ContactDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
 		96AEF52129981EF100596470 /* CallInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallInput.swift; sourceTree = "<group>"; };
-=======
 		96AEF5252998646C00596470 /* LoadSampleContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSampleContacts.swift; sourceTree = "<group>"; };
 		96AEF5262998646C00596470 /* MessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
 		96AEF5282998646D00596470 /* ContactRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
@@ -100,7 +96,6 @@
 		96AEF5B02998647100596470 /* FetchContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContacts.swift; sourceTree = "<group>"; };
 		96AEF5B12998647100596470 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		96AEF5B22998647100596470 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +141,6 @@
 				96AEF60829986C5400596470 /* Views */,
 				0CDEF3212996B39400649279 /* Config.swift */,
 				96ADA7522991BA0600648228 /* TextTalkApp.swift */,
-<<<<<<< HEAD
 				96ADA7542991BA0600648228 /* ContentView.swift */,
 				96ADA77529932C2100648228 /* PhoneView.swift */,
 				96ADA77729932C3E00648228 /* SettingsView.swift */,
@@ -158,8 +152,6 @@
 				96AEF5182997F7EB00596470 /* ContactRow.swift */,
 				96AEF51F2997FF0300596470 /* ContactDetails.swift */,
 				96ADA7892997020300648228 /* Model */,
-=======
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
 				96ADA7562991BA0A00648228 /* Assets.xcassets */,
 				96ADA784299700BC00648228 /* Resources */,
 				96AEF51C2997F82A00596470 /* Tests */,
@@ -176,13 +168,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		96ADA784299700BC00648228 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				96AEF5122997F74300596470 /* sampleContacts.json */,
-				96ADA7852997016D00648228 /* sampleMessages.json */,
-=======
 		96AEF5242998646C00596470 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,19 +192,10 @@
 			children = (
 				96AEF5312998646E00596470 /* sampleContacts.json */,
 				96AEF5322998646E00596470 /* sampleMessages.json */,
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		96ADA7892997020300648228 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				96ADA787299701FD00648228 /* Message.swift */,
-				96AEF51D2997F89A00596470 /* Contact.swift */,
-				96AEF5162997F7A900596470 /* FetchContacts.swift */,
-=======
 		96AEF5AD2998647100596470 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,12 +204,10 @@
 				96AEF5B02998647100596470 /* FetchContacts.swift */,
 				96AEF5B12998647100596470 /* Response.swift */,
 				96AEF5B22998647100596470 /* Contact.swift */,
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		96AEF51C2997F82A00596470 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +215,6 @@
 				96AEF51A2997F82400596470 /* LoadSampleContacts.swift */,
 			);
 			path = Tests;
-=======
 		96AEF60829986C5400596470 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,7 +247,6 @@
 				326D59B3930DF831334736A1 /* Pods-TextTalk.release.xcconfig */,
 			);
 			path = Pods;
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,14 +309,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				96AEF5132997F74300596470 /* sampleContacts.json in Resources */,
-=======
 				96AEF5BE2998647200596470 /* sampleMessages.json in Resources */,
 				96AEF5BD2998647200596470 /* sampleContacts.json in Resources */,
 				96AEF6012998647200596470 /* Podfile.lock in Resources */,
 				0CDEF3192996B2CC00649279 /* Podfile in Resources */,
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
 				96ADA75A2991BA0A00648228 /* Preview Assets.xcassets in Resources */,
 				96ADA7862997016D00648228 /* sampleMessages.json in Resources */,
 				96ADA7572991BA0A00648228 /* Assets.xcassets in Resources */,
@@ -401,17 +369,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				96ADA770299329A800648228 /* ContactsView.swift in Sources */,
-<<<<<<< HEAD
 				96AEF5202997FF0300596470 /* ContactDetails.swift in Sources */,
-=======
 				96AEF6062998647200596470 /* Response.swift in Sources */,
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
 				96ADA77629932C2200648228 /* PhoneView.swift in Sources */,
 				96AEF6022998647200596470 /* MessageList.swift in Sources */,
 				96AEF5BB2998647200596470 /* CallInput.swift in Sources */,
 				96AEF5BA2998647200596470 /* Call.swift in Sources */,
 				96ADA7552991BA0600648228 /* ContentView.swift in Sources */,
-<<<<<<< HEAD
 				96ADA78B2997040300648228 /* MessageData.swift in Sources */,
 				96AEF51B2997F82400596470 /* LoadSampleContacts.swift in Sources */,
 				96AEF52229981EF100596470 /* CallInput.swift in Sources */,
@@ -419,9 +383,7 @@
 				96AEF51E2997F89A00596470 /* Contact.swift in Sources */,
 				96AEF5172997F7A900596470 /* FetchContacts.swift in Sources */,
 				96ADA78F29970B7D00648228 /* MessageList.swift in Sources */,
-=======
 				96AEF5FF2998647200596470 /* ContactDetails.swift in Sources */,
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
 				96ADA77829932C3E00648228 /* SettingsView.swift in Sources */,
 				96AEF5B42998647100596470 /* LoadSampleContacts.swift in Sources */,
 				96ADA774299329E500648228 /* ActiveCallView.swift in Sources */,
@@ -432,15 +394,12 @@
 				0CDEF3222996B39400649279 /* Config.swift in Sources */,
 				96AEF6052998647200596470 /* FetchContacts.swift in Sources */,
 				96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */,
-<<<<<<< HEAD
 				96ADA788299701FE00648228 /* Message.swift in Sources */,
 				96AEF5192997F7EB00596470 /* ContactRow.swift in Sources */,
-=======
 				96AEF5B92998647200596470 /* CallManager.swift in Sources */,
 				96AEF5B72998647200596470 /* ContactRow.swift in Sources */,
 				96AEF5B82998647200596470 /* SoundManager.swift in Sources */,
 				96AEF6032998647200596470 /* Item.swift in Sources */,
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,26 +529,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = W7774CPZM3;
-=======
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = W7774CPZM3;
-=======
 				DEVELOPMENT_TEAM = 42NA62Z94G;
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
->>>>>>> 3eee986f22ad1e8b9df1e6d92fbe7ca2e8092517
+
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TextTalk/Pods/WebRTC",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-<<<<<<< HEAD
 				INFOPLIST_KEY_NSContactsUsageDescription = "Uploading your contacts allows you to directly call your contacts from the TextTalk App.";
-=======
-				INFOPLIST_KEY_NSContactsUsageDescription = "Uploading contacts allows you to directly call your contacts via the TextTalk app.";
->>>>>>> 3eee986f22ad1e8b9df1e6d92fbe7ca2e8092517
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -617,26 +566,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = W7774CPZM3;
-=======
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = W7774CPZM3;
-=======
 				DEVELOPMENT_TEAM = 42NA62Z94G;
->>>>>>> 7e96543b46be311e898e60429202afb88871d3d9
->>>>>>> 3eee986f22ad1e8b9df1e6d92fbe7ca2e8092517
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TextTalk/Pods/WebRTC",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-<<<<<<< HEAD
 				INFOPLIST_KEY_NSContactsUsageDescription = "Uploading your contacts allows you to directly call your contacts from the TextTalk App.";
-=======
-				INFOPLIST_KEY_NSContactsUsageDescription = "Uploading contacts allows you to directly call your contacts via the TextTalk app.";
->>>>>>> 3eee986f22ad1e8b9df1e6d92fbe7ca2e8092517
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
