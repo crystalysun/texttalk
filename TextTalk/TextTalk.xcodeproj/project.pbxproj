@@ -18,18 +18,6 @@
 		96ADA774299329E500648228 /* ActiveCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA773299329E500648228 /* ActiveCallView.swift */; };
 		96ADA77629932C2200648228 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA77529932C2100648228 /* PhoneView.swift */; };
 		96ADA77829932C3E00648228 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA77729932C3E00648228 /* SettingsView.swift */; };
-		96ADA7862997016D00648228 /* sampleMessages.json in Resources */ = {isa = PBXBuildFile; fileRef = 96ADA7852997016D00648228 /* sampleMessages.json */; };
-		96ADA788299701FE00648228 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA787299701FD00648228 /* Message.swift */; };
-		96ADA78B2997040300648228 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA78A2997040300648228 /* MessageData.swift */; };
-		96ADA78D2997045000648228 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA78C2997045000648228 /* MessageBubble.swift */; };
-		96ADA78F29970B7D00648228 /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA78E29970B7D00648228 /* MessageList.swift */; };
-		96AEF5132997F74300596470 /* sampleContacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 96AEF5122997F74300596470 /* sampleContacts.json */; };
-		96AEF5172997F7A900596470 /* FetchContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5162997F7A900596470 /* FetchContacts.swift */; };
-		96AEF5192997F7EB00596470 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5182997F7EB00596470 /* ContactRow.swift */; };
-		96AEF51B2997F82400596470 /* LoadSampleContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF51A2997F82400596470 /* LoadSampleContacts.swift */; };
-		96AEF51E2997F89A00596470 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF51D2997F89A00596470 /* Contact.swift */; };
-		96AEF5202997FF0300596470 /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF51F2997FF0300596470 /* ContactDetails.swift */; };
-		96AEF52229981EF100596470 /* CallInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF52129981EF100596470 /* CallInput.swift */; };
 		96AEF5B42998647100596470 /* LoadSampleContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5252998646C00596470 /* LoadSampleContacts.swift */; };
 		96AEF5B52998647200596470 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5262998646C00596470 /* MessageData.swift */; };
 		96AEF5B72998647200596470 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5282998646D00596470 /* ContactRow.swift */; };
@@ -48,7 +36,6 @@
 		96AEF6052998647200596470 /* FetchContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B02998647100596470 /* FetchContacts.swift */; };
 		96AEF6062998647200596470 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B12998647100596470 /* Response.swift */; };
 		96AEF6072998647200596470 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B22998647100596470 /* Contact.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,18 +53,6 @@
 		96ADA773299329E500648228 /* ActiveCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCallView.swift; sourceTree = "<group>"; };
 		96ADA77529932C2100648228 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		96ADA77729932C3E00648228 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		96ADA7852997016D00648228 /* sampleMessages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleMessages.json; sourceTree = "<group>"; };
-		96ADA787299701FD00648228 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		96ADA78A2997040300648228 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
-		96ADA78C2997045000648228 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
-		96ADA78E29970B7D00648228 /* MessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
-		96AEF5122997F74300596470 /* sampleContacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleContacts.json; sourceTree = "<group>"; };
-		96AEF5162997F7A900596470 /* FetchContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchContacts.swift; sourceTree = "<group>"; };
-		96AEF5182997F7EB00596470 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
-		96AEF51A2997F82400596470 /* LoadSampleContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSampleContacts.swift; sourceTree = "<group>"; };
-		96AEF51D2997F89A00596470 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		96AEF51F2997FF0300596470 /* ContactDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
-		96AEF52129981EF100596470 /* CallInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallInput.swift; sourceTree = "<group>"; };
 		96AEF5252998646C00596470 /* LoadSampleContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSampleContacts.swift; sourceTree = "<group>"; };
 		96AEF5262998646C00596470 /* MessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
 		96AEF5282998646D00596470 /* ContactRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
@@ -141,20 +116,7 @@
 				96AEF60829986C5400596470 /* Views */,
 				0CDEF3212996B39400649279 /* Config.swift */,
 				96ADA7522991BA0600648228 /* TextTalkApp.swift */,
-				96ADA7542991BA0600648228 /* ContentView.swift */,
-				96ADA77529932C2100648228 /* PhoneView.swift */,
-				96ADA77729932C3E00648228 /* SettingsView.swift */,
-				96ADA773299329E500648228 /* ActiveCallView.swift */,
-				96AEF52129981EF100596470 /* CallInput.swift */,
-				96ADA78C2997045000648228 /* MessageBubble.swift */,
-				96ADA78E29970B7D00648228 /* MessageList.swift */,
-				96ADA76F299329A800648228 /* ContactsView.swift */,
-				96AEF5182997F7EB00596470 /* ContactRow.swift */,
-				96AEF51F2997FF0300596470 /* ContactDetails.swift */,
-				96ADA7892997020300648228 /* Model */,
 				96ADA7562991BA0A00648228 /* Assets.xcassets */,
-				96ADA784299700BC00648228 /* Resources */,
-				96AEF51C2997F82A00596470 /* Tests */,
 				96ADA7582991BA0A00648228 /* Preview Content */,
 			);
 			path = TextTalk;
@@ -208,13 +170,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		96AEF51C2997F82A00596470 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				96ADA78A2997040300648228 /* MessageData.swift */,
-				96AEF51A2997F82400596470 /* LoadSampleContacts.swift */,
-			);
-			path = Tests;
 		96AEF60829986C5400596470 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +269,6 @@
 				96AEF6012998647200596470 /* Podfile.lock in Resources */,
 				0CDEF3192996B2CC00649279 /* Podfile in Resources */,
 				96ADA75A2991BA0A00648228 /* Preview Assets.xcassets in Resources */,
-				96ADA7862997016D00648228 /* sampleMessages.json in Resources */,
 				96ADA7572991BA0A00648228 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,20 +323,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				96ADA770299329A800648228 /* ContactsView.swift in Sources */,
-				96AEF5202997FF0300596470 /* ContactDetails.swift in Sources */,
 				96AEF6062998647200596470 /* Response.swift in Sources */,
 				96ADA77629932C2200648228 /* PhoneView.swift in Sources */,
 				96AEF6022998647200596470 /* MessageList.swift in Sources */,
 				96AEF5BB2998647200596470 /* CallInput.swift in Sources */,
 				96AEF5BA2998647200596470 /* Call.swift in Sources */,
 				96ADA7552991BA0600648228 /* ContentView.swift in Sources */,
-				96ADA78B2997040300648228 /* MessageData.swift in Sources */,
-				96AEF51B2997F82400596470 /* LoadSampleContacts.swift in Sources */,
-				96AEF52229981EF100596470 /* CallInput.swift in Sources */,
-				96ADA78D2997045000648228 /* MessageBubble.swift in Sources */,
-				96AEF51E2997F89A00596470 /* Contact.swift in Sources */,
-				96AEF5172997F7A900596470 /* FetchContacts.swift in Sources */,
-				96ADA78F29970B7D00648228 /* MessageList.swift in Sources */,
 				96AEF5FF2998647200596470 /* ContactDetails.swift in Sources */,
 				96ADA77829932C3E00648228 /* SettingsView.swift in Sources */,
 				96AEF5B42998647100596470 /* LoadSampleContacts.swift in Sources */,
@@ -394,8 +340,6 @@
 				0CDEF3222996B39400649279 /* Config.swift in Sources */,
 				96AEF6052998647200596470 /* FetchContacts.swift in Sources */,
 				96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */,
-				96ADA788299701FE00648228 /* Message.swift in Sources */,
-				96AEF5192997F7EB00596470 /* ContactRow.swift in Sources */,
 				96AEF5B92998647200596470 /* CallManager.swift in Sources */,
 				96AEF5B72998647200596470 /* ContactRow.swift in Sources */,
 				96AEF5B82998647200596470 /* SoundManager.swift in Sources */,
@@ -530,8 +474,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
 				DEVELOPMENT_TEAM = W7774CPZM3;
-				DEVELOPMENT_TEAM = 42NA62Z94G;
-
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,7 +491,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.crysun.TextTalkApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495.TextTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -567,7 +509,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
 				DEVELOPMENT_TEAM = W7774CPZM3;
-				DEVELOPMENT_TEAM = 42NA62Z94G;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,7 +526,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.crysun.TextTalkApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495.TextTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
