@@ -164,7 +164,7 @@ extension CallManager {
             return
         }
         currentCall = call
-        let cxhandle = CXHandle(type: .generic, value: call.handle)
+        let cxhandle = CXHandle(type: .phoneNumber, value: call.handle)
         let startCallAction = CXStartCallAction(call: call.id, handle: cxhandle)
         startCallAction.isVideo = true
         let transaction = CXTransaction(action: startCallAction)

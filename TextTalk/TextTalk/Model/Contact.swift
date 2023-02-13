@@ -9,18 +9,26 @@ import Foundation
 import SwiftUI
 
 struct Number: Hashable, Codable {
-    let type: String
-    let number: String
+    var type: String
+    var number: String
 }
 
-struct Contact: Hashable, Codable, Identifiable {
+class Contact: Identifiable/* Hashable, Codable*/ {
     var id: Int
     var firstName: String
     var lastName: String
     var numbers: [Number] = []
     
     private var imageName: String
-    var image: Image {
-        Image(imageName)
+    var image: Image
+    
+    init(id: Int, firstName: String, lastName: String, numbers: [Number], imageName: String) {
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.numbers = numbers
+        self.imageName = imageName
+        self.image = Image(imageName)
     }
+
 }
