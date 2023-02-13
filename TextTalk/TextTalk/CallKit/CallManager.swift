@@ -76,7 +76,7 @@ class CallManager: NSObject, CXProviderDelegate {
         currentCall = call
         let callUpdate = CXCallUpdate()
         callUpdate.remoteHandle = CXHandle(type: .generic, value: call.handle)
-        callUpdate.hasVideo = true
+        callUpdate.hasVideo = false
 
         provider.reportNewIncomingCall(
             with: call.id,
@@ -172,7 +172,7 @@ extension CallManager {
         currentCall = call
         let cxhandle = CXHandle(type: .phoneNumber, value: call.handle)
         let startCallAction = CXStartCallAction(call: call.id, handle: cxhandle)
-        startCallAction.isVideo = true
+        startCallAction.isVideo = false
         let transaction = CXTransaction(action: startCallAction)
         requestTransaction(transaction, completion: { error in
             if let error = error {
