@@ -25,14 +25,21 @@ struct ContactDetails: View {
                     Button("Tap for call") {
                         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
                             print("initiating call")
-                            CallManager.shared.initiate(call: Call(handle: "\(number.number)", partnerId: "\(contact.firstName)"))
+                            CallManager.shared.initiate(call: Call(
+                                handle: "\(number.number)", callMembers: [""],
+                                lengthInMinutes: 0,
+                                theme: Theme.bubblegum))
                             
                         })
                     }
                     Button("Recieve Call") {
                         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
                             print("receiving call")
-                            CallManager.shared.reportIncomingCall(Call(handle: "\(number.number)", partnerId: "\(contact.firstName)"))
+                            CallManager.shared.reportIncomingCall(Call(
+                                handle: "\(number.number)",
+                                callMembers: [""],
+                                lengthInMinutes: 0,
+                                theme: Theme.bubblegum))
                         })
                     }
                 }
