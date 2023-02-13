@@ -78,7 +78,7 @@ class CallManager: NSObject, CXProviderDelegate {
         callUpdate.hasVideo = true
 
         provider.reportNewIncomingCall(
-            with: call.uuid,
+            with: call.id,
             update: callUpdate,
             completion: { _ in })
     }
@@ -164,8 +164,8 @@ extension CallManager {
             return
         }
         currentCall = call
-        let cxhandle = CXHandle(type: .generic, value: call.handle)
-        let startCallAction = CXStartCallAction(call: call.uuid, handle: cxhandle)
+        let cxhandle = CXHandle(type: .phoneNumber, value: call.handle)
+        let startCallAction = CXStartCallAction(call: call.id, handle: cxhandle)
         startCallAction.isVideo = true
         let transaction = CXTransaction(action: startCallAction)
         requestTransaction(transaction, completion: { error in
@@ -181,7 +181,7 @@ extension CallManager {
             return
         }
 
-        let endCallAction = CXEndCallAction(call: currentCall.uuid)
+        let endCallAction = CXEndCallAction(call: currentCall.id)
         let transaction = CXTransaction(action: endCallAction)
         requestTransaction(transaction) { error in
             if let error = error {
@@ -251,6 +251,6 @@ extension CallManager: WebRTCConnectionDelegate {
     }
 
     func didReceiveIncomingCall(_ sender: WebRTCConnection, from userId: String) {
-       reportIncomingCall(Call(handle: "Incoming Whale call", partnerId: userId))
+        reportIncomingCall(Call(handle: "Incoming Whale call", callMembers: [""], lengthInMinutes: 0, theme: Theme.bubblegum))
     }
 }

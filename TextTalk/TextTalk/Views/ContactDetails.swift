@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WAL
 
 struct ContactDetails: View {
     var contact: Contact
@@ -19,7 +20,29 @@ struct ContactDetails: View {
                 .font(.title)
             ForEach(contact.numbers, id:\.self) {
                 number in
-                Text("\(number.type): \(number.number)")
+                HStack {
+                    Text("\(number.type): \(number.number)")
+                    Button("Tap for call") {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+                            print("initiating call")
+                            CallManager.shared.initiate(call: Call(
+                                handle: "\(number.number)", callMembers: [""],
+                                lengthInMinutes: 0,
+                                theme: Theme.bubblegum))
+                            
+                        })
+                    }
+                    Button("Recieve Call") {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+                            print("receiving call")
+                            CallManager.shared.reportIncomingCall(Call(
+                                handle: "\(number.number)",
+                                callMembers: [""],
+                                lengthInMinutes: 0,
+                                theme: Theme.bubblegum))
+                        })
+                    }
+                }
             }
         }
     }

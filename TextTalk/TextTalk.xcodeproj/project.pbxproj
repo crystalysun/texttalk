@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CBE3BAF2999947B00AC4D9F /* docker-compose.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0CBE3BAE2999947B00AC4D9F /* docker-compose.yml */; };
 		0CDEF3192996B2CC00649279 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0CDEF3182996B2CC00649279 /* Podfile */; };
 		0CDEF3222996B39400649279 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDEF3212996B39400649279 /* Config.swift */; };
 		4F51A9E98FFA936151CB71B7 /* Pods_TextTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4265D83F51229F729CC73004 /* Pods_TextTalk.framework */; };
@@ -45,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CBE3BAD29997C7300AC4D9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0CBE3BAE2999947B00AC4D9F /* docker-compose.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "docker-compose.yml"; sourceTree = "<group>"; };
+		0CBE3BB02999AF3600AC4D9F /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0CDEF3182996B2CC00649279 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0CDEF3212996B39400649279 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		326D59B3930DF831334736A1 /* Pods-TextTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextTalk.release.xcconfig"; path = "Target Support Files/Pods-TextTalk/Pods-TextTalk.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 		96ADA7462991BA0600648228 = {
 			isa = PBXGroup;
 			children = (
+				0CBE3BAE2999947B00AC4D9F /* docker-compose.yml */,
 				96ADA7512991BA0600648228 /* TextTalk */,
 				96AEF5AB2998646F00596470 /* Podfile.lock */,
 				0CDEF3182996B2CC00649279 /* Podfile */,
@@ -120,6 +125,7 @@
 		96ADA7512991BA0600648228 /* TextTalk */ = {
 			isa = PBXGroup;
 			children = (
+				0CBE3BAD29997C7300AC4D9F /* Info.plist */,
 				96AEF5AD2998647100596470 /* Model */,
 				96ADA7502991BA0600648228 /* Products */,
 				96AEF5292998646D00596470 /* CallKit */,
@@ -157,6 +163,7 @@
 				96AEF52A2998646D00596470 /* SoundManager.swift */,
 				96AEF52B2998646D00596470 /* CallManager.swift */,
 				96AEF52C2998646D00596470 /* Call.swift */,
+				0CBE3BB02999AF3600AC4D9F /* README.md */,
 			);
 			path = CallKit;
 			sourceTree = "<group>";
@@ -282,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CBE3BAF2999947B00AC4D9F /* docker-compose.yml in Resources */,
 				96AEF5BE2998647200596470 /* sampleMessages.json in Resources */,
 				96AEF5BD2998647200596470 /* sampleContacts.json in Resources */,
 				96AEF6012998647200596470 /* Podfile.lock in Resources */,
@@ -504,7 +512,8 @@
 					"$(PROJECT_DIR)/TextTalk/Pods/WebRTC",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = TextTalk/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "for purposes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -538,7 +547,8 @@
 					"$(PROJECT_DIR)/TextTalk/Pods/WebRTC",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = TextTalk/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "for purposes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
