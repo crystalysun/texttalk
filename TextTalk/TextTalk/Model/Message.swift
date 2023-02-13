@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 struct Message: Hashable, Codable, Identifiable {
     var id: Int
     var sender: String
@@ -18,4 +19,14 @@ struct Message: Hashable, Codable, Identifiable {
     var image: Image {
         Image(imageName)
     }
+    
+    init(id: Int, /*sender: String,*/ content: String /*, timeSent: String, imageName: String*/){
+        self.id = id
+        self.sender = "Claudia"
+        self.content = content
+        self.timeSent = "12:53"
+        self.imageName = "user-f"
+        
+    }
 }
+

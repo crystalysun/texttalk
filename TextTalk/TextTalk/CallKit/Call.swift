@@ -19,9 +19,10 @@ struct Call: Identifiable, Codable {
     var theme: Theme
     var history: [History] = []
     
-    init(id: UUID = UUID(), title: String, callMembers: [String], lengthInMinutes: Int, theme: Theme) {
+    init(id: UUID = UUID(), partnerID: String, handle: String, callMembers: [String], lengthInMinutes: Int, theme: Theme) {
         self.id = id
-        self.title = title
+        self.partnerId = partnerID
+        self.handle = handle
         self.callMembers = callMembers.map { Callee(name: $0) }
         self.lengthInMinutes = lengthInMinutes
         self.theme = theme
@@ -42,18 +43,19 @@ extension Call {
     }
     
     struct Data {
-        var title: String = ""
+        var handle: String = ""
+        var partnerId: String = ""
         var callMembers: [Callee] = []
         var lengthInMinutes: Double = 5
         var theme: Theme = .seafoam
     }
     
     var data: Data {
-        Data(title: title, callMembers: callMembers, lengthInMinutes: Double(lengthInMinutes), theme: theme)
+        Data(handle: handle, callMembers: callMembers, lengthInMinutes: Double(lengthInMinutes), theme: theme)
     }
     
     mutating func update(from data: Data) {
-        title = data.title
+        handle = data.handle
         callMembers = data.callMembers
         lengthInMinutes = Int(data.lengthInMinutes)
         theme = data.theme
@@ -61,7 +63,8 @@ extension Call {
     
     init(data: Data) {
         id = UUID()
-        title = data.title
+        partnerId = data.partnerId
+        handle = data.handle
         callMembers = data.callMembers
         lengthInMinutes = Int(data.lengthInMinutes)
         theme = data.theme
@@ -71,8 +74,8 @@ extension Call {
 extension Call {
     static let sampleData: [Call] =
     [
-        Call(title: "Design", callMembers: ["Cathy", "Daisy", "Simon", "Jonathan"], lengthInMinutes: 10, theme: .yellow),
-        Call(title: "App Dev", callMembers: ["Katie", "Gray", "Euna", "Luis", "Darla"], lengthInMinutes: 5, theme: .orange),
-        Call(title: "Web Dev", callMembers: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"], lengthInMinutes: 5, theme: .poppy)
+        Call(partnerID: "Aileen", handle: "Design", callMembers: ["Cathy", "Daisy", "Simon", "Jonathan"], lengthInMinutes: 10, theme: .yellow),
+        Call(partnerID: "Aileen", handle: "App Dev", callMembers: ["Katie", "Gray", "Euna", "Luis", "Darla"], lengthInMinutes: 5, theme: .orange),
+        Call(partnerID: "Aileen", handle: "App Dev", callMembers: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"], lengthInMinutes: 5, theme: .poppy)
     ]
 }
