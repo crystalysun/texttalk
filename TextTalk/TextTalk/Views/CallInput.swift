@@ -27,6 +27,7 @@ func not(_ value: Binding<Bool>) -> Binding<Bool> {
 }
 
 struct CallInput: View {
+    @StateObject var recognizer = SpeechRecognizer()
     @State private var isTts: Bool = false
     @State private var isRecording = false
     @State var input: String = ""
@@ -53,23 +54,24 @@ struct CallInput: View {
                     }
                 }
                 else {
-                    let recognizer = SpeechRecognizer()
-
-                    Button("Start") {
-                        print("Starting")
-                        isRecording = true
-                        recognizer.transcribe()
-                        
+                    if isRecording == false {
+                        Button("Start") {
+                            print("Starting")
+                            isRecording = true
+                            recognizer.transcribe()
+                            
+                        }
                     }
-                    
-                    Button("Stop") {
-                        print("Stopping")
-                        recognizer.stopTranscribing()
-                        isRecording = false
-                        print(recognizer.transcript)
-                        messages.append(Message(id: idCount, content: recognizer.transcript))
-                        idCount = idCount + 1
-                        recognizer.reset()
+                    else {
+                        Button("Stop") {
+                            print("Stopping")
+                            recognizer.stopTranscribing()
+                            isRecording = false
+                            print(recognizer.transcript)
+                            messages.append(Message(id: idCount, content: recognizer.transcript))
+                            idCount = idCount + 1
+                            recognizer.reset()
+                        }
                     }
                 }
             }
