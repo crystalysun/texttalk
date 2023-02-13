@@ -195,12 +195,12 @@
 		96AEF60829986C5400596470 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				96ADA76F299329A800648228 /* ContactsView.swift */,
 				96AEF5A92998646F00596470 /* ContactDetails.swift */,
 				96AEF5282998646D00596470 /* ContactRow.swift */,
 				96ADA7542991BA0600648228 /* ContentView.swift */,
 				96ADA77529932C2100648228 /* PhoneView.swift */,
 				96ADA77729932C3E00648228 /* SettingsView.swift */,
-				96ADA76F299329A800648228 /* ContactsView.swift */,
 				96AEF52D2998646D00596470 /* CallInput.swift */,
 				96AEF5AC2998647000596470 /* MessageList.swift */,
 				96AEF5AA2998646F00596470 /* MessageBubble.swift */,
@@ -505,7 +505,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = 42NA62Z94G;
+				DEVELOPMENT_TEAM = W7774CPZM3;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -514,6 +514,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TextTalk/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "for purposes";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Uploading your contacts allows you to directly call your contacts from the TextTalk App.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -540,7 +542,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = 42NA62Z94G;
+				DEVELOPMENT_TEAM = W7774CPZM3;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,6 +551,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TextTalk/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "for purposes";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Uploading your contacts allows you to directly call your contacts from the TextTalk App.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
