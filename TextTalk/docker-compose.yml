@@ -1,0 +1,7 @@
+version: '3'
+services:
+  spreed:
+    image: "spreed/webrtc"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
