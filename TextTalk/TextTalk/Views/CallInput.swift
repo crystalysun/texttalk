@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AVFoundation
+import Speech
 
 struct TtsSttButton: View {
     @Binding var isTts: Bool
@@ -25,15 +27,57 @@ func not(_ value: Binding<Bool>) -> Binding<Bool> {
 }
 
 struct CallInput: View {
+    var recognizer = SpeechRecognizer()
     @State private var isTts: Bool = false
-
+    @State private var isRecording = false
+    @State var input: String = ""
+    @State var idCount = 2
+    
+    
     var body: some View {
         VStack {
             Text(isTts ? "Text to Speech" : "Speech to Text")
             
             HStack {
+                if isTts {
+                    Button("Send"){
+                        print("Sent!")
+                        messages.append(Message(id: idCount, content: input))
+                        idCount = idCount + 1
+                        print(messages)
+                        
+                        let utterance = AVSpeechUtterance(string: input)
+                        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+
+                        let synth = AVSpeechSynthesizer()
+                        synth.speak(utterance)
+                    }
+                }
+                else {
+                    Button("Start") {
+                        print("Starting")
+                        isRecording = true
+                        recognizer.transcribe()
+                        
+                    }
+                    
+                    Button("Stop") {
+                        print("Stopping")
+                        recognizer.stopTranscribing()
+                        isRecording = false
+                        print(recognizer.transcript)
+                        recognizer.reset()
+                    }
+                }
+            }
+        }
+        VStack {
+//            Text(isTts ? "Text to Speech" : "Speech to Text")
+            
+            HStack {
                 Toggle(isOn: $isTts) {
                     Label("TTS", systemImage: "flag.fill")
+                    
                 }
                 .toggleStyle(.button)
                 
@@ -42,8 +86,15 @@ struct CallInput: View {
                 }
                 .toggleStyle(.button)
             }
+            if isTts{
+                TextField("message", text: $input)
+            }
+            
         }
-    }
+        
+        
+        
+            }
 }
 
 struct CallInput_Previews: PreviewProvider {
