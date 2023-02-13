@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+<<<<<<< HEAD
 struct TtsSttButton: View {
     @Binding var isTts: Bool
 
@@ -43,6 +44,11 @@ struct CallInput: View {
                 .toggleStyle(.button)
             }
         }
+=======
+struct CallInput: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+>>>>>>> fbb5205 (Contacts display with sample contacts, messages display with sample messages, toggle STT TTS setting)
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+<<<<<<< HEAD
 import SwiftUI
 
 struct Number: Hashable, Codable {
@@ -24,3 +25,5 @@ struct Contact: Hashable, Codable, Identifiable {
         Image(imageName)
     }
 }
+=======
+>>>>>>> fbb5205 (Contacts display with sample contacts, messages display with sample messages, toggle STT TTS setting)
