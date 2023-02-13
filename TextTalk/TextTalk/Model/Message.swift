@@ -7,6 +7,9 @@
 
 import Foundation
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ab999ff (Add local files)
 import SwiftUI
 
 struct Message: Hashable, Codable, Identifiable {
@@ -20,5 +23,8 @@ struct Message: Hashable, Codable, Identifiable {
         Image(imageName)
     }
 }
+<<<<<<< HEAD
 =======
 >>>>>>> fbb5205 (Contacts display with sample contacts, messages display with sample messages, toggle STT TTS setting)
+=======
+>>>>>>> ab999ff (Add local files)
