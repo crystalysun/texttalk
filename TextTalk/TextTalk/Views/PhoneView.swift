@@ -7,9 +7,22 @@
 
 import SwiftUI
 
+
+
 struct PhoneView: View {
+    @State private var inputNumber = ""
     var body: some View {
-        Text("Phone UI")
+        if activeCall {
+            Text("Phone UI")
+            Button("End Call") {
+                // endCall()
+            }
+        }
+        else {
+            TextField("Some Number", text: $inputNumber)
+                  .keyboardType(.numberPad)
+            
+        }
     }
 }
 
