@@ -10,6 +10,8 @@
 
 import Foundation
 
+var activeCall = false
+
 struct Call: Identifiable, Codable {
     let id: UUID
     let partnerId: String
