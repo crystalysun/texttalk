@@ -24,6 +24,7 @@ protocol CallManagerDelegate: AnyObject {
 class CallManager: NSObject, CXProviderDelegate {
     static let CallManagerCallStartedNotification = Notification.Name("CallManagerCallStartedNotification")
     static var shared = CallManager()
+    var isActiveCall = IsActiveCall()
 
     fileprivate let provider: CXProvider
     fileprivate let callController: CXCallController
@@ -99,6 +100,7 @@ class CallManager: NSObject, CXProviderDelegate {
 
         SoundManager.configureAudioSession()
         currentConnection?.connect(toUserId: call.partnerId)
+        isActiveCall.isActive = true
         action.fulfill()
     }
 
@@ -112,6 +114,7 @@ class CallManager: NSObject, CXProviderDelegate {
         postCallStartedNotification()
         SoundManager.configureAudioSession()
         currentConnection?.answerIncomingCall(userId: currentCall.partnerId)
+        isActiveCall.isActive = true
         action.fulfill()
     }
 
@@ -124,6 +127,7 @@ class CallManager: NSObject, CXProviderDelegate {
         }
         reset()
         self.delegate?.callDidEnd(self)
+        isActiveCall.isActive = false
         action.fulfill()
     }
 
@@ -163,6 +167,8 @@ extension CallManager {
             assertionFailure("There should be no active call for initiation")
             return
         }
+        isActiveCall.isActive = true
+        
         currentCall = call
         let cxhandle = CXHandle(type: .phoneNumber, value: call.handle)
         let startCallAction = CXStartCallAction(call: call.id, handle: cxhandle)
@@ -180,7 +186,9 @@ extension CallManager {
         guard let currentCall = currentCall else {
             return
         }
-
+        isActiveCall.isActive = false
+        print("is active call now")
+        print(isActiveCall)
         let endCallAction = CXEndCallAction(call: currentCall.id)
         let transaction = CXTransaction(action: endCallAction)
         requestTransaction(transaction) { error in

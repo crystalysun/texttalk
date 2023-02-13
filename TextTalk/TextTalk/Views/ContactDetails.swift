@@ -35,7 +35,8 @@ struct ContactDetails: View {
                     Button("Recieve Call") {
                         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
                             print("receiving call")
-                            CallManager.shared.reportIncomingCall(Call(
+                            let callManager = CallManager.shared
+                            callManager.reportIncomingCall(Call(
                                 handle: "\(number.number)",
                                 callMembers: [""],
                                 lengthInMinutes: 0,
