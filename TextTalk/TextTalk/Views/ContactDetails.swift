@@ -25,7 +25,7 @@ struct ContactDetails: View {
                     Button("Tap for call") {
                         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
                             print("initiating call")
-                            CallManager.shared.initiate(call: Call(
+                            CallManager.shared.initiate(call: Call(partnerID: "Aileen",
                                 handle: "\(number.number)", callMembers: [""],
                                 lengthInMinutes: 0,
                                 theme: Theme.bubblegum))
@@ -36,6 +36,7 @@ struct ContactDetails: View {
                         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
                             print("receiving call")
                             CallManager.shared.reportIncomingCall(Call(
+                                partnerID: "Aileen",
                                 handle: "\(number.number)",
                                 callMembers: [""],
                                 lengthInMinutes: 0,
