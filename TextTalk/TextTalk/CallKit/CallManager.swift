@@ -45,7 +45,7 @@ class CallManager: NSObject, CXProviderDelegate {
         let providerConfiguration = CXProviderConfiguration()
         providerConfiguration.supportsVideo = true
         providerConfiguration.maximumCallsPerCallGroup = 1
-        providerConfiguration.supportedHandleTypes = [.generic]
+        providerConfiguration.supportedHandleTypes = [.phoneNumber]
 
         return providerConfiguration
     }()
@@ -60,7 +60,7 @@ class CallManager: NSObject, CXProviderDelegate {
 
     func setupWebRTCConnection() {
         currentConnection = WebRTCConnection(with: Config.WebRTC.config, delegate: self)
-        currentConnection?.join(roomName: "Whale")
+        currentConnection?.join(roomName: "TextTalk")
     }
 
     fileprivate func reset() {
