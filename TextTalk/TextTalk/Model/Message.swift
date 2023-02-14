@@ -31,10 +31,7 @@ struct Message: Hashable, Codable, Identifiable {
 }
 
 class Messages: ObservableObject  {
-    @Published var data: [Message] = [
-        Message(id: 0, content: "I want to die"),
-        Message(id: 1, content: "noooo commit a murder instead")
-    ]
+    @Published var data: [Message] = []
     
     func append(id: Int, content: String) {
         self.data.append(Message(id: id, content: content))
