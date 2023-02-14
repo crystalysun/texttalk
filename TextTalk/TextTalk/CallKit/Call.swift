@@ -10,6 +10,10 @@
 
 import Foundation
 
+class IsActiveCall: ObservableObject {
+  @Published var isActive = false
+}
+
 struct Call: Identifiable, Codable {
     let id: UUID
     let partnerId: String

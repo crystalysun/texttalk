@@ -9,10 +9,25 @@ import SwiftUI
 
 
 struct PhoneView: View {
+    @StateObject private var isActiveCall = CallManager.shared.isActiveCall
+    @State private var inputNumber = ""
     var body: some View {
         NavigationView{
             Home()
         }
+    }
+}
+
+
+
+struct OvalTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .padding(10)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.orange, Color.orange]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .cornerRadius(20)
+            .shadow(color: .gray, radius: 10)
+
     }
 }
 

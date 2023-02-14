@@ -99,6 +99,8 @@ public class WebRTCConnection: NSObject {
 
     public func connect(toUserId userId: String) {
         partnerId = userId
+        print("connecting to ")
+        print(userId)
         createDataChannel()
         peerConnection?.offer(
         for: mandatorySdpConstraints) { sessionDescription, error in
@@ -109,7 +111,6 @@ public class WebRTCConnection: NSObject {
             guard let sessionDescription = sessionDescription else {
                 fatalError("Session Description empty")
             }
-
             self.peerConnection?.setLocalDescription(
                 sessionDescription,
                 completionHandler: { (error) in
