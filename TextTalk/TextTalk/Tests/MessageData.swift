@@ -7,6 +7,8 @@
 
 import Foundation
 
+// var messages: load("sampleMessages.json")
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 

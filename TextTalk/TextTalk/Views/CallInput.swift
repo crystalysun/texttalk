@@ -27,14 +27,25 @@ func not(_ value: Binding<Bool>) -> Binding<Bool> {
 }
 
 struct CallInput: View {
+    @ObservedObject var messages = Messages()
     @StateObject var recognizer = SpeechRecognizer()
     @State private var isTts: Bool = false
     @State private var isRecording = false
     @State var input: String = ""
     @State var idCount = 2
-    
+    @State private var callActive: Bool = true
     
     var body: some View {
+        if !callActive {
+            Text("Call not active. No messages to display.")
+        }
+        
+        ScrollView {
+            ForEach(self.messages.data, id: \.self) { message in
+                MessageBubble(message: message)
+            }
+        }
+        
         VStack {
             Text(isTts ? "Text to Speech" : "Speech to Text")
             
@@ -42,9 +53,9 @@ struct CallInput: View {
                 if isTts {
                     Button("Send"){
                         print("Sent!")
-                        messages.append(Message(id: idCount, content: input))
+                        messages.append(id: idCount, content: input)
                         idCount = idCount + 1
-                        print(messages)
+                        print(messages.data)
                         
                         let utterance = AVSpeechUtterance(string: input)
                         utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
@@ -68,7 +79,7 @@ struct CallInput: View {
                             recognizer.stopTranscribing()
                             isRecording = false
                             print(recognizer.transcript)
-                            messages.append(Message(id: idCount, content: recognizer.transcript))
+                            messages.append(id: idCount, content: recognizer.transcript)
                             idCount = idCount + 1
                             recognizer.reset()
                         }
@@ -99,7 +110,7 @@ struct CallInput: View {
         
         
         
-            }
+    }
 }
 
 struct CallInput_Previews: PreviewProvider {
