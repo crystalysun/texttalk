@@ -23,9 +23,9 @@ struct Call: Identifiable, Codable {
     var theme: Theme
     var history: [History] = []
     
-    init(id: UUID = UUID(), handle: String, callMembers: [String], lengthInMinutes: Int, theme: Theme) {
+    init(id: UUID = UUID(), partnerID: String, handle: String, callMembers: [String], lengthInMinutes: Int, theme: Theme) {
         self.id = id
-        self.partnerId = handle
+        self.partnerId = partnerID
         self.handle = handle
         self.callMembers = callMembers.map { Callee(name: $0) }
         self.lengthInMinutes = lengthInMinutes
@@ -48,6 +48,7 @@ extension Call {
     
     struct Data {
         var handle: String = ""
+        var partnerId: String = ""
         var callMembers: [Callee] = []
         var lengthInMinutes: Double = 5
         var theme: Theme = .seafoam
@@ -66,7 +67,7 @@ extension Call {
     
     init(data: Data) {
         id = UUID()
-        partnerId = data.handle
+        partnerId = data.partnerId
         handle = data.handle
         callMembers = data.callMembers
         lengthInMinutes = Int(data.lengthInMinutes)
@@ -77,8 +78,8 @@ extension Call {
 extension Call {
     static let sampleData: [Call] =
     [
-        Call(handle: "Design", callMembers: ["Cathy", "Daisy", "Simon", "Jonathan"], lengthInMinutes: 10, theme: .yellow),
-        Call(handle: "App Dev", callMembers: ["Katie", "Gray", "Euna", "Luis", "Darla"], lengthInMinutes: 5, theme: .orange),
-        Call(handle: "Web Dev", callMembers: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"], lengthInMinutes: 5, theme: .poppy)
+        Call(partnerID: "Aileen", handle: "Design", callMembers: ["Cathy", "Daisy", "Simon", "Jonathan"], lengthInMinutes: 10, theme: .yellow),
+        Call(partnerID: "Aileen", handle: "App Dev", callMembers: ["Katie", "Gray", "Euna", "Luis", "Darla"], lengthInMinutes: 5, theme: .orange),
+        Call(partnerID: "Aileen", handle: "App Dev", callMembers: ["Chella", "Chris", "Christina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"], lengthInMinutes: 5, theme: .poppy)
     ]
 }
