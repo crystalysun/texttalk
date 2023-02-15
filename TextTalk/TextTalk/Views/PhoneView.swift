@@ -9,10 +9,25 @@ import SwiftUI
 
 
 struct PhoneView: View {
+    @StateObject private var isActiveCall = CallManager.shared.isActiveCall
+    @State private var inputNumber = ""
     var body: some View {
         NavigationView{
             Home()
         }
+    }
+}
+
+
+
+struct OvalTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .padding(10)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.pink, Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .cornerRadius(20)
+            .shadow(color: .gray, radius: 10)
+
     }
 }
 
@@ -21,6 +36,7 @@ struct PhoneView_Previews: PreviewProvider {
         PhoneView()
     }
 }
+
 struct Home : View {
     @State var unLocked = false
        
@@ -31,25 +47,73 @@ struct Home : View {
                // Lockscreen...
                
                if unLocked{
-                   
-                   Text("App Unlocked")
-                       .font(.title2)
-                       .fontWeight(.heavy)
+                   VStack {
+                       Text("App Unlocked")
+                           .font(.title2)
+                           .fontWeight(.heavy)
+                       DialPad()
+                   }
                }
                else{
-                   
                    LockScreen(unLocked: $unLocked)
                }
            }
            //.preferredColorScheme(unLocked ? .light : .dark)
        }
 }
+
+struct DialPad : View {
+    @StateObject private var isActiveCall = CallManager.shared.isActiveCall
+    @State private var inputNumber = ""
+    
+    var body: some View {
+        VStack {
+            if isActiveCall.isActive {
+                Button(action: {
+                    CallManager.shared.end()
+                }) {
+                    Image(systemName: "phone.down")
+                }
+            }
+            else {
+                let numInputTF = TextField(
+                 "Enter number...",
+                 text: $inputNumber,
+                 onCommit: {
+                     print(inputNumber)
+                 })
+                    .keyboardType(.phonePad)
+                
+                VStack(alignment: .leading) {
+                    Text("Enter number...").font(.title2)
+                    HStack {
+                        numInputTF
+                        Button(action: {
+                            CallManager.shared.initiate(call: Call(
+                                partnerID: "Unknown",
+                                handle: inputNumber,
+                                callMembers: [""],
+                             lengthInMinutes: 0,
+                             theme: Theme.bubblegum))
+                        }) {
+                            Image(systemName: "phone.arrow.up.right")
+                        }
+                    }
+                    .textFieldStyle(OvalTextFieldStyle())
+                }.padding()
+                
+            }
+        }
+    }
+}
+
+
 struct LockScreen : View {
     
     @State var password = ""
     // you can change it when user clicks reset password....
     // AppStorage => UserDefaults....
-    @AppStorage("lock_Password") var key = "5654"
+    @AppStorage("lock_Password") var key = "1111"
     @Binding var unLocked : Bool
     @State var wrongPassword = false
     let height = UIScreen.main.bounds.width
@@ -95,7 +159,7 @@ struct LockScreen : View {
                 .frame(width: 95, height: 95)
                 .padding(.top,20)
             
-            Text("Dial Number")
+            Text("Enter Passcode")
                 .font(.title2)
                 .fontWeight(.heavy)
                 .padding(.top,20)
