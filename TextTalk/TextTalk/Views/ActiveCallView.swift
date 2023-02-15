@@ -7,19 +7,12 @@
 
 import SwiftUI
 
+
 struct ActiveCallView: View {
-    @State private var callActive: Bool = true
-    
     var body: some View {
         VStack {
             Text("Active Call Page")
                 .font(.title)
-            if callActive {
-                MessageList()
-            }
-            else {
-                Text("Call not active. No messages to display.")
-            }
             CallInput()
         }
     }

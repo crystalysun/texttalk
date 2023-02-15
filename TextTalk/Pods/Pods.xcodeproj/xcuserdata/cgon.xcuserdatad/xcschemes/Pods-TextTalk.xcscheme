@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1420"
+   LastUpgradeVersion = "1300"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "96ADA74E2991BA0600648228"
-               BuildableName = "TextTalk.app"
-               BlueprintName = "TextTalk"
-               ReferencedContainer = "container:TextTalk.xcodeproj">
+               BlueprintIdentifier = "7EEA570B0B72431D568D78895AFC92D8"
+               BuildableName = "Pods_TextTalk.framework"
+               BlueprintName = "Pods-TextTalk"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,22 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "96ADA74E2991BA0600648228"
-            BuildableName = "TextTalk.app"
-            BlueprintName = "TextTalk"
-            ReferencedContainer = "container:TextTalk.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = ""
-            isEnabled = "NO">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -63,16 +47,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "96ADA74E2991BA0600648228"
-            BuildableName = "TextTalk.app"
-            BlueprintName = "TextTalk"
-            ReferencedContainer = "container:TextTalk.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
