@@ -79,7 +79,7 @@ struct FetchContacts: View {
                     }
                 }
             NavigationView {
-                List(contacts) { contact in
+                List(contacts.sorted(by: { $0.lastName < $1.lastName })) { contact in
                     NavigationLink {
                         ContactDetails(contact: contact)
                     } label: {
