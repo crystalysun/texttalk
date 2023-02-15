@@ -259,6 +259,6 @@ extension CallManager: WebRTCConnectionDelegate {
     }
 
     func didReceiveIncomingCall(_ sender: WebRTCConnection, from userId: String) {
-        reportIncomingCall(Call(partnerID: userId, handle: "Incoming Whale call", callMembers: [], lengthInMinutes: 10, theme: .yellow))
+        reportIncomingCall(Call(partnerID: userId, handle: "Incoming Texttalk call", callMembers: [], lengthInMinutes: 10, theme: .yellow))
     }
 }
