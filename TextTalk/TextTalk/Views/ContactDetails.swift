@@ -37,7 +37,7 @@ struct ContactDetails: View {
                             print("receiving call")
                             CallManager.shared.reportIncomingCall(Call(
                                 partnerID: "\(contact.firstName)",
-                                handle: "\(number.number)",
+                                handle: "\(contact.firstName)",
                                 callMembers: [""],
                                 lengthInMinutes: 0,
                                 theme: Theme.bubblegum))
