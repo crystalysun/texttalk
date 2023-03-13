@@ -2,6 +2,10 @@
  https://developer.apple.com/tutorials/app-dev-training/transcribing-speech-to-text
  */
 
+//TODO - add different language support:
+//let locale = Locale(identifier: “nl_NL”)
+//SFSpeechRecognizer(locale: locale)
+
 import AVFoundation
 import Foundation
 import Speech
@@ -67,7 +71,7 @@ class SpeechRecognizer: ObservableObject {
         The resulting transcription is continuously written to the published `transcript` property.
      */
     func transcribe() {
-        DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async { [weak self] in
+        DispatchQueue(label: "Speech Recognizer Queue", qos: .default).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
                 self?.speakError(RecognizerError.recognizerIsUnavailable)
                 return
@@ -106,7 +110,7 @@ class SpeechRecognizer: ObservableObject {
         request.shouldReportPartialResults = true
         
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        try audioSession.setCategory(.record, mode: .spokenAudio/*.measurement*/, options: .duckOthers)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         let inputNode = audioEngine.inputNode
         

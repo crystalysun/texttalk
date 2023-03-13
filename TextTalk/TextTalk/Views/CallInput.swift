@@ -51,6 +51,8 @@ struct CallInput: View {
             
             HStack {
                 if isTts {
+                    TextField("message", text: $input)
+                    
                     Button("Send"){
                         print("Sent!")
                         messages.append(id: idCount, content: input)
@@ -62,26 +64,26 @@ struct CallInput: View {
 
                         let synth = AVSpeechSynthesizer()
                         synth.speak(utterance)
+                        input = ""
                     }
                 }
                 else {
                     if isRecording == false {
                         Button("Start") {
                             print("Starting")
-                            isRecording = true
+                            recognizer.reset()
                             recognizer.transcribe()
-                            
+                            isRecording = true
                         }
                     }
                     else {
                         Button("Stop") {
                             print("Stopping")
                             recognizer.stopTranscribing()
-                            isRecording = false
                             print(recognizer.transcript)
                             messages.append(id: idCount, content: recognizer.transcript)
                             idCount = idCount + 1
-                            recognizer.reset()
+                            isRecording = false
                         }
                     }
                 }
@@ -103,7 +105,7 @@ struct CallInput: View {
                 .toggleStyle(.button)
             }
             if isTts{
-                TextField("message", text: $input)
+                
             }
             
         }
