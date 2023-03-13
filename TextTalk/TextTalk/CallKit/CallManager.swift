@@ -10,6 +10,7 @@ import Foundation
 import CallKit
 import WAL
 import WebRTC
+import PushKit
 
 
 protocol CallManagerDelegate: AnyObject {
@@ -22,9 +23,11 @@ protocol CallManagerDelegate: AnyObject {
 }
 
 class CallManager: NSObject, CXProviderDelegate {
+    
     static let CallManagerCallStartedNotification = Notification.Name("CallManagerCallStartedNotification")
     static var shared = CallManager()
     var isActiveCall = IsActiveCall()
+    let pushRegistry = PKPushRegistry(queue: .main)
 
     fileprivate let provider: CXProvider
     fileprivate let callController: CXCallController
@@ -56,6 +59,8 @@ class CallManager: NSObject, CXProviderDelegate {
         super.init()
         provider.setDelegate(self, queue: nil)
         setupWebRTCConnection()
+        pushRegistry.delegate = self
+        pushRegistry.desiredPushTypes = [.voIP]
     }
 
     func setupWebRTCConnection() {
@@ -172,7 +177,7 @@ extension CallManager {
         currentCall = call
         let cxhandle = CXHandle(type: .phoneNumber, value: call.handle)
         let startCallAction = CXStartCallAction(call: call.id, handle: cxhandle)
-        startCallAction.isVideo = false
+        startCallAction.isVideo = true
         let transaction = CXTransaction(action: startCallAction)
         requestTransaction(transaction, completion: { error in
             if let error = error {
@@ -261,4 +266,48 @@ extension CallManager: WebRTCConnectionDelegate {
     func didReceiveIncomingCall(_ sender: WebRTCConnection, from userId: String) {
         reportIncomingCall(Call(partnerID: userId, handle: "Incoming Texttalk call", callMembers: [], lengthInMinutes: 10, theme: .yellow))
     }
+}
+
+// MARK: - PKPushRegistryDelegate
+extension CallManager: PKPushRegistryDelegate {
+
+    func pushRegistry(_ registry: PKPushRegistry, didUpdate credentials: PKPushCredentials, for type: PKPushType) {
+        /*
+         Store push credentials on the server for the active user.
+         For sample app purposes, do nothing, because everything is done locally.
+         */
+    }
+
+    func pushRegistry(_ registry: PKPushRegistry,
+                      didReceiveIncomingPushWith payload: PKPushPayload,
+                      for type: PKPushType, completion: @escaping () -> Void) {
+        defer {
+            completion()
+        }
+
+        guard type == .voIP,
+            let uuidString = payload.dictionaryPayload["UUID"] as? String,
+            let handle = payload.dictionaryPayload["handle"] as? String,
+            let hasVideo = payload.dictionaryPayload["hasVideo"] as? Bool,
+            let uuid = UUID(uuidString: uuidString)
+            else {
+                return
+        }
+
+        displayIncomingCall(uuid: uuid, handle: handle, hasVideo: hasVideo)
+    }
+
+    // MARK: - PKPushRegistryDelegate Helper
+
+    /// Display the incoming call to the user.
+    func displayIncomingCall(uuid: UUID, handle: String, hasVideo: Bool = false, completion: ((Error?) -> Void)? = nil) {
+        reportIncomingCall(Call(
+            id: uuid,
+            partnerID: "",
+            handle: handle,
+            callMembers: [],
+            lengthInMinutes: 0,
+            theme: Theme.yellow))
+    }
+
 }
