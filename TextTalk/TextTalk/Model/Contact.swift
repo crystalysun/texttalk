@@ -13,7 +13,7 @@ struct Number: Hashable, Codable {
     var number: String
 }
 
-class Contact: Identifiable/* Hashable, Codable*/ {
+class Contact: Identifiable, Comparable {
     var id: Int
     var firstName: String
     var lastName: String
@@ -31,4 +31,24 @@ class Contact: Identifiable/* Hashable, Codable*/ {
         self.image = Image(imageName)
     }
 
+    static func == (lhs: Contact, rhs: Contact) -> Bool {
+        return false
+    }
+    
+    static func < (lhs: Contact, rhs: Contact) -> Bool {
+        if (lhs.lastName < rhs.lastName) {
+            return true
+        }
+        else if (lhs.lastName > rhs.lastName) {
+            return false
+        }
+        else if (lhs.firstName < rhs.firstName) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 }
+
+

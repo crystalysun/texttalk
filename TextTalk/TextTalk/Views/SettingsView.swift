@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let settings: [Phrase] = [Phrase(id: 1, content: "Account"), Phrase(id: 2, content: "Saved Phrases"), Phrase(id: 3, content: "Notifications"), Phrase(id: 4, content: "Privacy"), Phrase(id: 5, content: "Help Center"), Phrase(id: 6, content: "General"), Phrase(id: 7, content: "About Us")]
+
 struct SettingsView: View {
     var body: some View {
         Settings()
@@ -60,19 +62,15 @@ struct Settings : View {
                 
             }.frame(height: 175)
             
-            VStack(spacing:15) {
-                btnView(image: "circle", name: "Account")
-                
-                btnView(image: "circle", name: "Notifications")
-                
-                btnView(image: "circle", name: "Privacy")
-                
-                btnView(image: "circle", name: "Help Center")
-                
-                btnView(image: "circle", name: "General")
-                
-                btnView(image: "circle", name: "About Us")
-            }.padding()
+            NavigationView {
+                List(settings) { setting in
+                    NavigationLink {
+                        SettingsDetails(pageName: setting.content)
+                    } label: {
+                        btnView(image: "circle", name: setting.content)
+                    }
+                }
+            }
             
             Spacer()
         }
@@ -86,8 +84,7 @@ struct btnView : View {
     var body : some View {
         
         Button(action: {
-            
-        }) {
+        })  {
             HStack(spacing:15){
                 Image(image).renderingMode(.original).resizable().frame(width:40, height:40)
                 
@@ -95,7 +92,7 @@ struct btnView : View {
                 
                 Spacer(minLength: 15)
                 
-                Image(systemName: "chevron.right")
+//                Image(systemName: "chevron.right")
             }.padding()
                 .foregroundColor(Color.black.opacity(0.5))
         }
