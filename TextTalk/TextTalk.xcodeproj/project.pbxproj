@@ -367,7 +367,6 @@
 				7CF0BF082999C3A2003A8969 /* TextToSpeech.swift in Sources */,
 				96ADA77629932C2200648228 /* PhoneView.swift in Sources */,
 				0CB2B70129BE925D0050E5A5 /* AddItemViewController.swift in Sources */,
-				96AEF6022998647200596470 /* MessageList.swift in Sources */,
 				7C1338912999948C00F9D060 /* SpeechRecognizer.swift in Sources */,
 				96AEF5BB2998647200596470 /* CallInput.swift in Sources */,
 				96AEF5BA2998647200596470 /* Call.swift in Sources */,
