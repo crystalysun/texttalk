@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CB2B70129BE925D0050E5A5 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB2B70029BE925D0050E5A5 /* AddItemViewController.swift */; };
+		0CB2B70329BE92BF0050E5A5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB2B70229BE92BF0050E5A5 /* ItemViewController.swift */; };
 		0CBE3BAF2999947B00AC4D9F /* docker-compose.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0CBE3BAE2999947B00AC4D9F /* docker-compose.yml */; };
 		0CDEF3192996B2CC00649279 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0CDEF3182996B2CC00649279 /* Podfile */; };
 		0CDEF3222996B39400649279 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDEF3212996B39400649279 /* Config.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CB2B70029BE925D0050E5A5 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		0CB2B70229BE92BF0050E5A5 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		0CBE3BAD29997C7300AC4D9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0CBE3BAE2999947B00AC4D9F /* docker-compose.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "docker-compose.yml"; sourceTree = "<group>"; };
 		0CBE3BB02999AF3600AC4D9F /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				7C13388E2999947000F9D060 /* MeetingView.swift */,
 				7C13388A2999944300F9D060 /* HistoryView.swift */,
 				7C13388C2999945E00F9D060 /* MeetingTimerView.swift */,
+				0CB2B70029BE925D0050E5A5 /* AddItemViewController.swift */,
+				0CB2B70229BE92BF0050E5A5 /* ItemViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,10 +361,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				96ADA770299329A800648228 /* ContactsView.swift in Sources */,
+				0CB2B70329BE92BF0050E5A5 /* ItemViewController.swift in Sources */,
 				7C13388B2999944300F9D060 /* HistoryView.swift in Sources */,
 				96AEF6062998647200596470 /* Response.swift in Sources */,
 				7CF0BF082999C3A2003A8969 /* TextToSpeech.swift in Sources */,
 				96ADA77629932C2200648228 /* PhoneView.swift in Sources */,
+				0CB2B70129BE925D0050E5A5 /* AddItemViewController.swift in Sources */,
 				7C1338912999948C00F9D060 /* SpeechRecognizer.swift in Sources */,
 				96AEF5BB2998647200596470 /* CallInput.swift in Sources */,
 				96AEF5BA2998647200596470 /* Call.swift in Sources */,
@@ -514,7 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = 42NA62Z94G;
+				DEVELOPMENT_TEAM = 58Y5U9XQSV;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -522,7 +530,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TextTalk/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "for purposes";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used for video calling functionality";
 				INFOPLIST_KEY_NSContactsUsageDescription = "Uploading your contacts allows you to directly call your contacts from the TextTalk App.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
@@ -536,7 +544,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495.TextTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495TT.TextTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -555,7 +563,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = 8J43XYNZVH;
+				DEVELOPMENT_TEAM = 58Y5U9XQSV;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,7 +571,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TextTalk/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "for purposes";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used for video calling functionality";
 				INFOPLIST_KEY_NSContactsUsageDescription = "Uploading your contacts allows you to directly call your contacts from the TextTalk App.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
@@ -577,7 +585,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495.TextTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495TT.TextTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
