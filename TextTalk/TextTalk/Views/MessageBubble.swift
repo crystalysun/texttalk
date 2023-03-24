@@ -17,6 +17,7 @@ struct MessageBubble: View {
                     .resizable()
                     .frame(width: 50, height: 50)
                 Text(message.content)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 Spacer()
             }
