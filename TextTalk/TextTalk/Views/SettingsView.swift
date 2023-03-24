@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let settings: [Phrase] = [Phrase(id: 1, content: "Account"), Phrase(id: 2, content: "Saved Phrases"), Phrase(id: 3, content: "Notifications"), Phrase(id: 4, content: "Privacy"), Phrase(id: 5, content: "Help Center"), Phrase(id: 6, content: "General"), Phrase(id: 7, content: "About Us")]
+let settings: [Phrase] = [Phrase(id: 1, content: "Account"), Phrase(id: 2, content: "Saved Phrases"), Phrase(id: 3, content: "Notifications"), Phrase(id: 4, content: "Privacy"), Phrase(id: 5, content: "Help Center"), Phrase(id: 6, content: "General"), Phrase(id: 7, content: "About Us"), Phrase(id: 8, content: "Voices")]
 
 struct SettingsView: View {
     var body: some View {

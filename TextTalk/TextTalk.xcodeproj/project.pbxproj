@@ -20,6 +20,8 @@
 		7CF0BF082999C3A2003A8969 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0BF072999C3A2003A8969 /* TextToSpeech.swift */; };
 		9687D32C29C1707F00B55A52 /* SettingsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687D32B29C1707F00B55A52 /* SettingsDetails.swift */; };
 		9687D32E29C1741A00B55A52 /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687D32D29C1741A00B55A52 /* Phrase.swift */; };
+		9687D33029CCF6B300B55A52 /* VoiceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687D32F29CCF6B300B55A52 /* VoiceSettingsView.swift */; };
+		9687D33229CCFBE600B55A52 /* SavedPhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687D33129CCFBE600B55A52 /* SavedPhrasesView.swift */; };
 		96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA7522991BA0600648228 /* TextTalkApp.swift */; };
 		96ADA7552991BA0600648228 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADA7542991BA0600648228 /* ContentView.swift */; };
 		96ADA7572991BA0A00648228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96ADA7562991BA0A00648228 /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		7CF0BF072999C3A2003A8969 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		9687D32B29C1707F00B55A52 /* SettingsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetails.swift; sourceTree = "<group>"; };
 		9687D32D29C1741A00B55A52 /* Phrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrase.swift; sourceTree = "<group>"; };
+		9687D32F29CCF6B300B55A52 /* VoiceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSettingsView.swift; sourceTree = "<group>"; };
+		9687D33129CCFBE600B55A52 /* SavedPhrasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPhrasesView.swift; sourceTree = "<group>"; };
 		96ADA74F2991BA0600648228 /* TextTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96ADA7522991BA0600648228 /* TextTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTalkApp.swift; sourceTree = "<group>"; };
 		96ADA7542991BA0600648228 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				96ADA77529932C2100648228 /* PhoneView.swift */,
 				96ADA77729932C3E00648228 /* SettingsView.swift */,
 				9687D32B29C1707F00B55A52 /* SettingsDetails.swift */,
+				9687D33129CCFBE600B55A52 /* SavedPhrasesView.swift */,
+				9687D32F29CCF6B300B55A52 /* VoiceSettingsView.swift */,
 				96AEF52D2998646D00596470 /* CallInput.swift */,
 				96AEF5AA2998646F00596470 /* MessageBubble.swift */,
 				96ADA773299329E500648228 /* ActiveCallView.swift */,
@@ -264,8 +270,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					96ADA74E2991BA0600648228 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -375,11 +383,13 @@
 				96AEF5B52998647200596470 /* MessageData.swift in Sources */,
 				7C133889299993A700F9D060 /* History.swift in Sources */,
 				96AEF6042998647200596470 /* Message.swift in Sources */,
+				9687D33229CCFBE600B55A52 /* SavedPhrasesView.swift in Sources */,
 				96AEF6002998647200596470 /* MessageBubble.swift in Sources */,
 				0CDEF3222996B39400649279 /* Config.swift in Sources */,
 				96AEF6052998647200596470 /* FetchContacts.swift in Sources */,
 				96ADA7532991BA0600648228 /* TextTalkApp.swift in Sources */,
 				96AEF5B92998647200596470 /* CallManager.swift in Sources */,
+				9687D33029CCF6B300B55A52 /* VoiceSettingsView.swift in Sources */,
 				96AEF5B72998647200596470 /* ContactRow.swift in Sources */,
 				96AEF5B82998647200596470 /* SoundManager.swift in Sources */,
 				96AEF6032998647200596470 /* Item.swift in Sources */,
@@ -514,7 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = 42NA62Z94G;
+				DEVELOPMENT_TEAM = W7774CPZM3;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -536,7 +546,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495.TextTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crysuntt.TextTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -555,7 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TextTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = 8J43XYNZVH;
+				DEVELOPMENT_TEAM = W7774CPZM3;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -577,7 +587,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.EECS495.TextTalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crysuntt.TextTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
