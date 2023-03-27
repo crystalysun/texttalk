@@ -31,8 +31,9 @@ struct CallInput: View {
     @StateObject var recognizer = SpeechRecognizer()
     @State private var isTts: Bool = false
     @State private var isRecording = false
+    @State private var tempSTTid = -1
     @State var input: String = ""
-    @State var idCount = 2
+    @State var idCount = 0
     @State private var callActive: Bool = true
     
     var body: some View {
@@ -64,6 +65,7 @@ struct CallInput: View {
 
                         let synth = AVSpeechSynthesizer()
                         synth.speak(utterance)
+                        // NEW:
                         input = ""
                     }
                 }
@@ -71,19 +73,31 @@ struct CallInput: View {
                     if isRecording == false {
                         Button("Start") {
                             print("Starting")
+                            //CLAUDIA:
+                            tempSTTid = idCount
+                            messages.append(id: idCount, content: "...")
                             recognizer.reset()
                             recognizer.transcribe()
                             isRecording = true
+                            
                         }
                     }
                     else {
                         Button("Stop") {
                             print("Stopping")
-                            recognizer.stopTranscribing()
-                            print(recognizer.transcript)
-                            messages.append(id: idCount, content: recognizer.transcript)
-                            idCount = idCount + 1
-                            isRecording = false
+                            //CLAUDIA:
+                            let seconds = 0.0
+                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                // Put your code which should be executed with a delay here
+                            
+                                recognizer.stopTranscribing()
+                                print(recognizer.transcript)
+                                messages.data[tempSTTid].content = recognizer.transcript
+    //                            messages.append(id: idCount, content: recognizer.transcript)
+                                idCount = idCount + 1
+                                isRecording = false
+                            }
+                            
                         }
                     }
                 }

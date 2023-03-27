@@ -35,6 +35,8 @@ class SpeechRecognizer: ObservableObject {
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
     private let recognizer: SFSpeechRecognizer?
+    private var timer : Timer?
+    
     
     /**
      Initializes a new speech recognizer. If this is the first time you've used the class, it
@@ -71,7 +73,7 @@ class SpeechRecognizer: ObservableObject {
         The resulting transcription is continuously written to the published `transcript` property.
      */
     func transcribe() {
-        DispatchQueue(label: "Speech Recognizer Queue", qos: .default).async { [weak self] in
+        DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
                 self?.speakError(RecognizerError.recognizerIsUnavailable)
                 return
@@ -82,6 +84,15 @@ class SpeechRecognizer: ObservableObject {
                 self.audioEngine = audioEngine
                 self.request = request
                 self.task = recognizer.recognitionTask(with: request, resultHandler: self.recognitionHandler(result:error:))
+//                                                       { (result, error) in
+//                        self.timer?.invalidate()
+//                        self.timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { _ in
+//                            self.timer = nil
+//                            print("hey")
+//                        }
+//
+//                })
+                
             } catch {
                 self.reset()
                 self.speakError(error)
@@ -104,13 +115,16 @@ class SpeechRecognizer: ObservableObject {
     }
     
     private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
+        // create audioEngine
         let audioEngine = AVAudioEngine()
         
+        // create request
         let request = SFSpeechAudioBufferRecognitionRequest()
         request.shouldReportPartialResults = true
         
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .spokenAudio/*.measurement*/, options: .duckOthers)
+        // NEW: adjusted settings
+        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         let inputNode = audioEngine.inputNode
         
@@ -161,6 +175,7 @@ extension SFSpeechRecognizer {
             }
         }
     }
+    
 }
 
 extension AVAudioSession {
@@ -172,3 +187,6 @@ extension AVAudioSession {
         }
     }
 }
+
+
+
