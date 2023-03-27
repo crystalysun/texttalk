@@ -27,13 +27,13 @@ struct MessageBubble: View {
     }
 }
 
-struct MessageBubble_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            MessageBubble(message: messages[0])
-            MessageBubble(message: messages[1])
-        }
-        .previewLayout(.fixed(width: 300, height: 120))
-        MessageBubble()
-    }
-}
+//struct MessageBubble_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            MessageBubble(message: messages[0])
+//            MessageBubble(message: messages[1])
+//        }
+//        .previewLayout(.fixed(width: 300, height: 120))
+//        MessageBubble()
+//    }
+//}
