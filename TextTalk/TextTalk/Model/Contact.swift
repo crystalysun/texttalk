@@ -22,13 +22,17 @@ class Contact: Identifiable, Comparable {
     private var imageName: String
     var image: Image
     
-    init(id: Int, firstName: String, lastName: String, numbers: [Number], imageName: String) {
+    init(id: Int, firstName: String, lastName: String, numbers: [Number]) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
         self.numbers = numbers
-        self.imageName = imageName
-        self.image = Image(imageName)
+        self.imageName = ""
+        self.image = Image("user-f")
+    }
+    
+    func setImage(imageData: Image) {
+        self.image = imageData
     }
 
     static func == (lhs: Contact, rhs: Contact) -> Bool {

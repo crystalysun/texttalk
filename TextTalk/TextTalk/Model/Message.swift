@@ -20,11 +20,11 @@ struct Message: Hashable, Codable, Identifiable {
         Image(imageName)
     }
     
-    init(id: Int, /*sender: String,*/ content: String /*, timeSent: String, imageName: String*/){
+    init(id: Int, /*sender: String,*/ content: String , timeSent: String/*, imageName: String*/){
         self.id = id
         self.sender = "Claudia"
         self.content = content
-        self.timeSent = "12:53"
+        self.timeSent = timeSent
         self.imageName = "user-f"
         
     }
@@ -34,7 +34,23 @@ class Messages: ObservableObject  {
     @Published var data: [Message] = []
     
     func append(id: Int, content: String) {
-        self.data.append(Message(id: id, content: content))
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        var timeSent = ""
+
+        if (hour == 0) {
+            timeSent += "12:" + String(minutes) + " AM"
+        }
+        else if (hour < 13) {
+            timeSent += String(hour) + ":" + String(minutes) + " AM"
+        }
+        else {
+            var newHour = hour - 12
+            timeSent += String(newHour) + ":" + String(minutes) + " PM"
+        }
+        self.data.append(Message(id: id, content: content, timeSent: timeSent))
     }
 }
 

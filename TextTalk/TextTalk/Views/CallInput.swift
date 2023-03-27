@@ -49,8 +49,6 @@ struct CallInput: View {
         if messages.data.count != 0 {
             Button("Replay last message") {
                 print("Sent!")
-    //            messages.append(id: idCount, content: messages.data)
-    //            idCount = idCount + 1
                 print(messages.data)
                 
                 let tempMsg = messages.data.last
@@ -86,8 +84,6 @@ struct CallInput: View {
                             .foregroundColor(.white)
                             .controlSize(.large)
                             .padding(10)
-
-//                            .frame(width: 150, height: 40)
                             .background(.blue)
 
                         }
@@ -135,8 +131,6 @@ struct CallInput: View {
             }
         }
         VStack {
-//            Text(isTts ? "Text to Speech" : "Speech to Text")
-            
             HStack {
                 Toggle(isOn: $isTts) {
                     Label("TTS", systemImage: "flag.fill")
@@ -149,13 +143,7 @@ struct CallInput: View {
                 }
                 .toggleStyle(.button)
             }
-            if isTts{
-                
-            }
-            
         }
-        
-        
         
     }
 }
