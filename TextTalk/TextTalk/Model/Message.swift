@@ -37,3 +37,4 @@ class Messages: ObservableObject  {
         self.data.append(Message(id: id, content: content))
     }
 }
+

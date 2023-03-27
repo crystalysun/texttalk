@@ -12,8 +12,8 @@ struct ContactsView: View {
     var body: some View {
         FetchContacts()
     }
-}
 
+}
 
 struct ContactsView_Previews: PreviewProvider {
     static var previews: some View {
