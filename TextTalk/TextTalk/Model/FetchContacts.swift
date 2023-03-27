@@ -15,7 +15,7 @@ func setNoContact() {
     numbers1.type = "Mobile"
     numbers1.number = "111-111-1111"
 
-    let contact1 = Contact(id: 0, firstName: "No contacts to display", lastName: "", numbers: [numbers1], imageName: "user-f")
+    let contact1 = Contact(id: 0, firstName: "No contacts to display", lastName: "", numbers: [numbers1])
     contacts.append(contact1)
     print(contacts[0].firstName)
 }
@@ -39,7 +39,15 @@ func setContacts(tempContacts: [CNContact]) {
             tempNumArray.append(tempNum)
 
         }
-        let tempContact: Contact = Contact(id: idNum, firstName: contact.givenName, lastName: contact.familyName, numbers: tempNumArray, imageName: "user-f")
+        
+        let tempContact: Contact = Contact(id: idNum, firstName: contact.givenName, lastName: contact.familyName, numbers: tempNumArray)
+        
+        if contact.imageDataAvailable {
+            // there is an image for this contact
+            guard let image = UIImage(data: contact.imageData!) else { return }
+            tempContact.setImage(imageData: Image(uiImage: image))
+        }
+        
         contacts.append(tempContact)
         idNum += 1
     }
@@ -69,7 +77,7 @@ struct FetchContacts: View {
                         var tempContacts: [CNContact] = []
                         do {
                             tempContacts = try await fetchAllContacts()
-                            errorMessage = "yay"
+                            errorMessage = "Contacts retrieved"
                             setContacts(tempContacts: tempContacts)
                         }
                         catch {
@@ -79,7 +87,8 @@ struct FetchContacts: View {
                     }
                 }
             NavigationView {
-                List(contacts.sorted(by: { $0.lastName < $1.lastName })) { contact in
+                List(contacts.sorted(by: { $0 <
+                    $1 })) { contact in
                     NavigationLink {
                         ContactDetails(contact: contact)
                     } label: {
@@ -106,7 +115,9 @@ struct FetchContacts: View {
         let store = CNContactStore()
         
         // Specify which data keys to fetch
-        let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        let keys = [CNContactGivenNameKey, CNContactFamilyNameKey,
+                    CNContactPhoneNumbersKey, CNContactImageDataKey,
+                    CNContactImageDataAvailableKey] as [CNKeyDescriptor]
         
         // Create fetch request
         let fetchRequest = CNContactFetchRequest(keysToFetch: keys)

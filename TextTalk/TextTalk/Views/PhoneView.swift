@@ -24,8 +24,8 @@ struct OvalTextFieldStyle: TextFieldStyle {
     func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
             .padding(10)
-            .background(LinearGradient(gradient: Gradient(colors: [Color.pink, Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing))
             .cornerRadius(20)
+            .border(Color.blue, width: 2)
             .shadow(color: .gray, radius: 10)
 
     }
@@ -38,24 +38,26 @@ struct PhoneView_Previews: PreviewProvider {
 }
 
 struct Home : View {
-    @State var unLocked = false
+    @State var presentUnlockedNotif = true
        
        var body: some View{
            
            ZStack{
-               
-               // Lockscreen...
-               
-               if unLocked{
-                   VStack {
-                       Text("App Unlocked")
+               VStack {
+                   if presentUnlockedNotif {
+                       Text("App Unlocked!")
                            .font(.title2)
                            .fontWeight(.heavy)
-                       DialPad()
+                           .onAppear() {
+                               Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
+                                   withAnimation(.easeInOut(duration: 2)) {
+                                       self.presentUnlockedNotif.toggle()
+                                   }
+                               }
+                           }
                    }
-               }
-               else{
-                   LockScreen(unLocked: $unLocked)
+                   
+                   DialPad()
                }
            }
            //.preferredColorScheme(unLocked ? .light : .dark)
@@ -83,6 +85,7 @@ struct DialPad : View {
                      print(inputNumber)
                  })
                     .keyboardType(.phonePad)
+                    .textFieldStyle(OvalTextFieldStyle())
                 
                 VStack(alignment: .leading) {
                     Text("Enter number...").font(.title2)
@@ -99,7 +102,6 @@ struct DialPad : View {
                             Image(systemName: "phone.arrow.up.right")
                         }
                     }
-                    .textFieldStyle(OvalTextFieldStyle())
                 }.padding()
                 
             }
@@ -163,6 +165,11 @@ struct LockScreen : View {
                 .font(.title2)
                 .fontWeight(.heavy)
                 .padding(.top,20)
+            
+            Text(password)
+                .font(.system(size: 20, weight: .heavy, design: .serif))
+                .padding(.top, 20)
+                .padding(.bottom, 20)
     
             // for smaller size iphones...
             .padding(.top,height < 750 ? 20 : 30)
@@ -230,6 +237,7 @@ struct PasswordButton : View {
             .padding()
 
         })
+        .buttonStyle(PasswordButtonStyle())
     }
     
     func setPassword(){
@@ -274,5 +282,29 @@ struct PasswordButton : View {
                 }
             }
         }
+    }
+}
+
+struct PasswordButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(15)
+            .background(
+                RoundedRectangle(
+                    cornerRadius: 20,
+                    style: .continuous
+                )
+                .fill(
+                    configuration.isPressed ? Color.gray : Color.white
+                )
+            )
+            .overlay {
+
+                RoundedRectangle(
+                    cornerRadius: 20,
+                    style: .continuous
+                )
+                .stroke(.gray, lineWidth: 2)
+            }
     }
 }
