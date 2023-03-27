@@ -86,7 +86,7 @@ struct CallInput: View {
                         Button("Stop") {
                             print("Stopping")
                             //CLAUDIA:
-                            let seconds = 0.0
+                            let seconds = 0.5
                             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                                 // Put your code which should be executed with a delay here
                             

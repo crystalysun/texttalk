@@ -73,7 +73,7 @@ class SpeechRecognizer: ObservableObject {
         The resulting transcription is continuously written to the published `transcript` property.
      */
     func transcribe() {
-        DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async { [weak self] in
+        DispatchQueue(label: "Speech Recognizer Queue", qos: .default).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
                 self?.speakError(RecognizerError.recognizerIsUnavailable)
                 return
@@ -83,7 +83,8 @@ class SpeechRecognizer: ObservableObject {
                 let (audioEngine, request) = try Self.prepareEngine()
                 self.audioEngine = audioEngine
                 self.request = request
-                self.task = recognizer.recognitionTask(with: request, resultHandler: self.recognitionHandler(result:error:))
+                self.task = recognizer.recognitionTask(with: request,
+                                                       resultHandler: self.recognitionHandler(result:error:))
 //                                                       { (result, error) in
 //                        self.timer?.invalidate()
 //                        self.timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { _ in
