@@ -51,4 +51,3 @@ class Contact: Identifiable, Comparable {
     }
 }
 
-
