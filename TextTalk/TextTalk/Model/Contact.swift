@@ -6,30 +6,48 @@
 //
 
 import Foundation
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> ab999ff (Add local files)
 import SwiftUI
 
 struct Number: Hashable, Codable {
-    let type: String
-    let number: String
+    var type: String
+    var number: String
 }
 
-struct Contact: Hashable, Codable, Identifiable {
+class Contact: Identifiable, Comparable {
     var id: Int
     var firstName: String
     var lastName: String
     var numbers: [Number] = []
     
     private var imageName: String
-    var image: Image {
-        Image(imageName)
+    var image: Image
+    
+    init(id: Int, firstName: String, lastName: String, numbers: [Number], imageName: String) {
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.numbers = numbers
+        self.imageName = imageName
+        self.image = Image(imageName)
+    }
+
+    static func == (lhs: Contact, rhs: Contact) -> Bool {
+        return false
+    }
+    
+    static func < (lhs: Contact, rhs: Contact) -> Bool {
+        if (lhs.lastName < rhs.lastName) {
+            return true
+        }
+        else if (lhs.lastName > rhs.lastName) {
+            return false
+        }
+        else if (lhs.firstName < rhs.firstName) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 }
-<<<<<<< HEAD
-=======
->>>>>>> fbb5205 (Contacts display with sample contacts, messages display with sample messages, toggle STT TTS setting)
-=======
->>>>>>> ab999ff (Add local files)
+

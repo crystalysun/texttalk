@@ -10,6 +10,7 @@ import Foundation
 import CallKit
 import WAL
 import WebRTC
+import PushKit
 
 
 protocol CallManagerDelegate: AnyObject {
@@ -22,8 +23,11 @@ protocol CallManagerDelegate: AnyObject {
 }
 
 class CallManager: NSObject, CXProviderDelegate {
+    
     static let CallManagerCallStartedNotification = Notification.Name("CallManagerCallStartedNotification")
     static var shared = CallManager()
+    var isActiveCall = IsActiveCall()
+    let pushRegistry = PKPushRegistry(queue: .main)
 
     fileprivate let provider: CXProvider
     fileprivate let callController: CXCallController
@@ -44,7 +48,7 @@ class CallManager: NSObject, CXProviderDelegate {
         let providerConfiguration = CXProviderConfiguration()
         providerConfiguration.supportsVideo = true
         providerConfiguration.maximumCallsPerCallGroup = 1
-        providerConfiguration.supportedHandleTypes = [.generic]
+        providerConfiguration.supportedHandleTypes = [.phoneNumber]
 
         return providerConfiguration
     }()
@@ -55,11 +59,13 @@ class CallManager: NSObject, CXProviderDelegate {
         super.init()
         provider.setDelegate(self, queue: nil)
         setupWebRTCConnection()
+        pushRegistry.delegate = self
+        pushRegistry.desiredPushTypes = [.voIP]
     }
 
     func setupWebRTCConnection() {
         currentConnection = WebRTCConnection(with: Config.WebRTC.config, delegate: self)
-        currentConnection?.join(roomName: "Whale")
+        currentConnection?.join(roomName: "TextTalk")
     }
 
     fileprivate func reset() {
@@ -75,10 +81,10 @@ class CallManager: NSObject, CXProviderDelegate {
         currentCall = call
         let callUpdate = CXCallUpdate()
         callUpdate.remoteHandle = CXHandle(type: .generic, value: call.handle)
-        callUpdate.hasVideo = true
+        callUpdate.hasVideo = false
 
         provider.reportNewIncomingCall(
-            with: call.uuid,
+            with: call.id,
             update: callUpdate,
             completion: { _ in })
     }
@@ -99,6 +105,7 @@ class CallManager: NSObject, CXProviderDelegate {
 
         SoundManager.configureAudioSession()
         currentConnection?.connect(toUserId: call.partnerId)
+        isActiveCall.isActive = true
         action.fulfill()
     }
 
@@ -112,6 +119,7 @@ class CallManager: NSObject, CXProviderDelegate {
         postCallStartedNotification()
         SoundManager.configureAudioSession()
         currentConnection?.answerIncomingCall(userId: currentCall.partnerId)
+        isActiveCall.isActive = true
         action.fulfill()
     }
 
@@ -124,6 +132,7 @@ class CallManager: NSObject, CXProviderDelegate {
         }
         reset()
         self.delegate?.callDidEnd(self)
+        isActiveCall.isActive = false
         action.fulfill()
     }
 
@@ -163,9 +172,11 @@ extension CallManager {
             assertionFailure("There should be no active call for initiation")
             return
         }
+        isActiveCall.isActive = true
+        
         currentCall = call
-        let cxhandle = CXHandle(type: .generic, value: call.handle)
-        let startCallAction = CXStartCallAction(call: call.uuid, handle: cxhandle)
+        let cxhandle = CXHandle(type: .phoneNumber, value: call.handle)
+        let startCallAction = CXStartCallAction(call: call.id, handle: cxhandle)
         startCallAction.isVideo = true
         let transaction = CXTransaction(action: startCallAction)
         requestTransaction(transaction, completion: { error in
@@ -180,8 +191,10 @@ extension CallManager {
         guard let currentCall = currentCall else {
             return
         }
-
-        let endCallAction = CXEndCallAction(call: currentCall.uuid)
+        isActiveCall.isActive = false
+        print("is active call now")
+        print(isActiveCall)
+        let endCallAction = CXEndCallAction(call: currentCall.id)
         let transaction = CXTransaction(action: endCallAction)
         requestTransaction(transaction) { error in
             if let error = error {
@@ -251,6 +264,50 @@ extension CallManager: WebRTCConnectionDelegate {
     }
 
     func didReceiveIncomingCall(_ sender: WebRTCConnection, from userId: String) {
-       reportIncomingCall(Call(handle: "Incoming Whale call", partnerId: userId))
+        reportIncomingCall(Call(partnerID: userId, handle: "Incoming Texttalk call", callMembers: [], lengthInMinutes: 10, theme: .yellow))
     }
+}
+
+// MARK: - PKPushRegistryDelegate
+extension CallManager: PKPushRegistryDelegate {
+
+    func pushRegistry(_ registry: PKPushRegistry, didUpdate credentials: PKPushCredentials, for type: PKPushType) {
+        /*
+         Store push credentials on the server for the active user.
+         For sample app purposes, do nothing, because everything is done locally.
+         */
+    }
+
+    func pushRegistry(_ registry: PKPushRegistry,
+                      didReceiveIncomingPushWith payload: PKPushPayload,
+                      for type: PKPushType, completion: @escaping () -> Void) {
+        defer {
+            completion()
+        }
+
+        guard type == .voIP,
+            let uuidString = payload.dictionaryPayload["UUID"] as? String,
+            let handle = payload.dictionaryPayload["handle"] as? String,
+            let hasVideo = payload.dictionaryPayload["hasVideo"] as? Bool,
+            let uuid = UUID(uuidString: uuidString)
+            else {
+                return
+        }
+
+        displayIncomingCall(uuid: uuid, handle: handle, hasVideo: hasVideo)
+    }
+
+    // MARK: - PKPushRegistryDelegate Helper
+
+    /// Display the incoming call to the user.
+    func displayIncomingCall(uuid: UUID, handle: String, hasVideo: Bool = false, completion: ((Error?) -> Void)? = nil) {
+        reportIncomingCall(Call(
+            id: uuid,
+            partnerID: "",
+            handle: handle,
+            callMembers: [],
+            lengthInMinutes: 0,
+            theme: Theme.yellow))
+    }
+
 }

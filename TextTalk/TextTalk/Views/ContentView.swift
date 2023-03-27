@@ -6,21 +6,17 @@
 //
 
 import SwiftUI
-//
-//struct ContentView: View {
-//    var body: some View {
-//        Text("Hello, world!")
-//            .padding()
-//    }
-//}
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+
+var phraseGlobal = Phrases()
+var idNum = 7
+
 struct ContentView: View {
     @State private var selection: Tab = .phone
+    @State var unLocked = false
+    
+    public init() {
+        self.selection = selection
+    }
 
     enum Tab {
         case contacts
@@ -30,30 +26,37 @@ struct ContentView: View {
     }
 
     var body: some View {
-        TabView(selection: $selection) {
-            ContactsView()
-                .tabItem {
-                    Label("Contacts", systemImage: "person.circle.fill")
-                }
-                .tag(Tab.contacts)
-            
-            PhoneView()
-                .tabItem {
-                    Label("Phone", systemImage: "phone")
-                }
-                .tag(Tab.phone)
 
-            ActiveCallView()
-                .tabItem {
-                    Label("Active Call", systemImage: "teletype")
-                }
-                .tag(Tab.activeCall)
-            
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape.fill")
-                }
-                .tag(Tab.settings)
+        if !unLocked{
+            LockScreen(unLocked: $unLocked)
+        }
+        else{
+            TabView(selection: $selection) {
+                
+                ContactsView()
+                    .tabItem {
+                        Label("Contacts", systemImage: "person.circle.fill")
+                    }
+                    .tag(Tab.contacts)
+                
+                PhoneView()
+                    .tabItem {
+                        Label("Phone", systemImage: "phone")
+                    }
+                    .tag(Tab.phone)
+                
+                ActiveCallView()
+                    .tabItem {
+                        Label("Active Call", systemImage: "teletype")
+                    }
+                    .tag(Tab.activeCall)
+                
+                SettingsView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gearshape.fill")
+                    }
+                    .tag(Tab.settings)
+            }
         }
     }
 }

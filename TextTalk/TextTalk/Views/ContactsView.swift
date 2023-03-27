@@ -6,19 +6,11 @@
 //
 
 import SwiftUI
+import Contacts
 
 struct ContactsView: View {
     var body: some View {
-        NavigationView {
-            List(contacts) { contact in
-                NavigationLink {
-                    ContactDetails(contact: contact)
-                } label: {
-                    ContactRow(contact: contact)
-                }
-            }
-            .navigationTitle("Contacts")
-        }
+        FetchContacts()
     }
 }
 

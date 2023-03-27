@@ -99,6 +99,8 @@ public class WebRTCConnection: NSObject {
 
     public func connect(toUserId userId: String) {
         partnerId = userId
+        print("connecting to ")
+        print(userId)
         createDataChannel()
         peerConnection?.offer(
         for: mandatorySdpConstraints) { sessionDescription, error in
@@ -109,7 +111,6 @@ public class WebRTCConnection: NSObject {
             guard let sessionDescription = sessionDescription else {
                 fatalError("Session Description empty")
             }
-
             self.peerConnection?.setLocalDescription(
                 sessionDescription,
                 completionHandler: { (error) in
@@ -246,6 +247,7 @@ extension WebRTCConnection: SpreedClientDelegate {
                 fatalError("Unable to set remote description \(error)")
             }
         })
+        print("incoming call recieved")
         delegate?.didReceiveIncomingCall(self, from: userId)
 
     }
@@ -346,6 +348,10 @@ extension WebRTCConnection: RTCPeerConnectionDelegate {
             fatalError("Can't send candidate without partner")
         }
         spreedClient?.send(candidate, to: partnerId)
+        print("sent to ")
+        print(partnerId)
+        print("from")
+        print(candidate)
     }
 
     public func peerConnection(_ peerConnection: RTCPeerConnection, didRemove candidates: [RTCIceCandidate]) {
