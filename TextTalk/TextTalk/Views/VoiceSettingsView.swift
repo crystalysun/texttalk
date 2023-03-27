@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-var voiceName: String = ""
-
 let voicesUS: [Phrase] = [Phrase(id: 1, content: "Samantha")]
 let voicesAU: [Phrase] = [Phrase(id: 1, content: "Karen")]
 let voicesUK: [Phrase] = [Phrase(id: 1, content: "Daniel")]
@@ -18,6 +16,12 @@ let voicesZA: [Phrase] = [Phrase(id: 1, content: "Tessa")]
 
 struct VoiceSettingsView: View {
     var body: some View {
+        Text("Customize Voices")
+            .font(Font.system(size: 36).bold())
+        
+        Text("Current Voice: \(voiceName)")
+            .font(.subheadline)
+        
         ScrollView {
             VStack {
                 Text("English (US)")
@@ -47,36 +51,6 @@ struct VoiceSettingsView: View {
             }
             
         }
-        
-//        VStack{
-//            
-//            List(voicesUS) { voice in
-//                VoiceOption(voice:voice.content)
-//            }
-//            Text("English (Australia)")
-//            List(voicesAU) { voice in
-//                VoiceOption(voice:voice.content)
-//            }
-//            Text("English (India)")
-//            List(voicesIN) { voice in
-//                VoiceOption(voice:voice.content)
-//           
-//            }
-//            Text("English (Ireland)")
-//            List(voicesIE) { voice in
-//                VoiceOption(voice:voice.content)
-//            }
-//            Text("English (South Africa)")
-//            List(voicesZA) { voice in
-//                VoiceOption(voice:voice.content)
-//            }
-//            Text("English (UK)")
-//            List(voicesUK) { voice in
-//                VoiceOption(voice:voice.content)
-//            }
-//        
-//        }
-            
     }
 }
 
