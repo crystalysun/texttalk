@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3E5E7929D151E60027CC8A /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E5E7829D151E60027CC8A /* TextToSpeech.swift */; };
 		0CB2B70129BE925D0050E5A5 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB2B70029BE925D0050E5A5 /* AddItemViewController.swift */; };
 		0CB2B70329BE92BF0050E5A5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB2B70229BE92BF0050E5A5 /* ItemViewController.swift */; };
 		0CBE3BAF2999947B00AC4D9F /* docker-compose.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0CBE3BAE2999947B00AC4D9F /* docker-compose.yml */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C3E5E7829D151E60027CC8A /* TextToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		0CB2B70029BE925D0050E5A5 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		0CB2B70229BE92BF0050E5A5 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		0CBE3BAD29997C7300AC4D9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				96AEF5242998646C00596470 /* Tests */,
 				96AEF60829986C5400596470 /* Views */,
 				0CDEF3212996B39400649279 /* Config.swift */,
+				0C3E5E7829D151E60027CC8A /* TextToSpeech.swift */,
 				96ADA7522991BA0600648228 /* TextTalkApp.swift */,
 				96ADA7562991BA0A00648228 /* Assets.xcassets */,
 				96ADA7582991BA0A00648228 /* Preview Content */,
@@ -379,6 +382,7 @@
 				96AEF5BB2998647200596470 /* CallInput.swift in Sources */,
 				96AEF5BA2998647200596470 /* Call.swift in Sources */,
 				96ADA7552991BA0600648228 /* ContentView.swift in Sources */,
+				0C3E5E7929D151E60027CC8A /* TextToSpeech.swift in Sources */,
 				96AEF5FF2998647200596470 /* ContactDetails.swift in Sources */,
 				96ADA77829932C3E00648228 /* SettingsView.swift in Sources */,
 				96AEF5B42998647100596470 /* LoadSampleContacts.swift in Sources */,

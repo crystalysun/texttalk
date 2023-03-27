@@ -34,6 +34,5 @@ struct MessageBubble: View {
 //            MessageBubble(message: messages[1])
 //        }
 //        .previewLayout(.fixed(width: 300, height: 120))
-//        MessageBubble()
 //    }
 //}

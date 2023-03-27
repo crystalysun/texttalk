@@ -25,6 +25,7 @@ struct ContentView: View {
         case settings
     }
 
+
     var body: some View {
 
         if !unLocked{
