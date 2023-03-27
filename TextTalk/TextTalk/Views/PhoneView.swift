@@ -38,24 +38,15 @@ struct PhoneView_Previews: PreviewProvider {
 }
 
 struct Home : View {
-    @State var unLocked = false
        
        var body: some View{
            
            ZStack{
-               
-               // Lockscreen...
-               
-               if unLocked{
-                   VStack {
-                       Text("App Unlocked")
-                           .font(.title2)
-                           .fontWeight(.heavy)
-                       DialPad()
-                   }
-               }
-               else{
-                   LockScreen(unLocked: $unLocked)
+               VStack {
+                   Text("App Unlocked")
+                       .font(.title2)
+                       .fontWeight(.heavy)
+                   DialPad()
                }
            }
            //.preferredColorScheme(unLocked ? .light : .dark)
