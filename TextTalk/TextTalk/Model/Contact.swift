@@ -55,4 +55,3 @@ class Contact: Identifiable, Comparable {
     }
 }
 
-
