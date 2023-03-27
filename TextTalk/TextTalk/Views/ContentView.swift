@@ -9,6 +9,7 @@ import SwiftUI
 
 var phraseGlobal = Phrases()
 var idNum = 7
+var voiceName: String = "Samantha"
 
 struct ContentView: View {
     @State private var selection: Tab = .phone

@@ -14,7 +14,7 @@ struct SettingsDetails: View {
         if (pageName == "Saved Phrases") {
             SavedPhrasesView()
         }
-        else if(pageName == "Voices") {
+        else if(pageName == "Customize Voice") {
             VoiceSettingsView()
         }
         
