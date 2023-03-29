@@ -40,13 +40,13 @@ class Contact: Identifiable, Comparable {
     }
     
     static func < (lhs: Contact, rhs: Contact) -> Bool {
-        if (lhs.lastName < rhs.lastName) {
+        if (lhs.lastName.uppercased() < rhs.lastName.uppercased()) {
             return true
         }
-        else if (lhs.lastName > rhs.lastName) {
+        else if (lhs.lastName.uppercased() > rhs.lastName.uppercased()) {
             return false
         }
-        else if (lhs.firstName < rhs.firstName) {
+        else if (lhs.firstName.uppercased() < rhs.firstName.uppercased()) {
             return true
         }
         else {
