@@ -8,7 +8,7 @@
 import SwiftUI
 
 var phraseGlobal = Phrases()
-var idNum = 7
+var idNum = 19
 var voiceName: String = "Samantha"
 
 struct ContentView: View {
