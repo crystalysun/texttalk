@@ -152,6 +152,10 @@ struct CallInput: View {
                 }
                 .toggleStyle(.button)
                 
+                Spacer()
+                    .frame(width: 50)
+
+                
                 Toggle(isOn: not($isTts)) {
                     Label("STT", systemImage: "flag.fill")
                 }
