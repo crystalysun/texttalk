@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let settings: [Phrase] = [Phrase(id: 1, content: "Account"), Phrase(id: 2, content: "Saved Phrases"), Phrase(id: 3, content: "Notifications"), Phrase(id: 4, content: "Privacy"), Phrase(id: 5, content: "Help Center"), Phrase(id: 6, content: "General"), Phrase(id: 7, content: "About Us")]
+let settings: [Phrase] = [Phrase(id: 1, content: "Customize Voice"), Phrase(id: 2, content: "Saved Phrases"), Phrase(id: 3, content: "Account"), Phrase(id: 4, content: "Notifications"), Phrase(id: 5, content: "Privacy"), Phrase(id: 6, content: "Help Center"), Phrase(id: 7, content: "About Us")]
 
 struct SettingsView: View {
     var body: some View {
@@ -92,7 +92,6 @@ struct btnView : View {
                 
                 Spacer(minLength: 15)
                 
-//                Image(systemName: "chevron.right")
             }.padding()
                 .foregroundColor(Color.black.opacity(0.5))
         }
