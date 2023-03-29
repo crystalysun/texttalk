@@ -23,30 +23,32 @@ struct ContactDetails: View {
                 .font(.title)
             ForEach(contact.numbers, id:\.self) {
                 number in
-                HStack {
-                    Text("\(number.type): \(number.number)")
-                    Button("Tap for call") {
-                        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-                            print("initiating call")
-                            CallManager.shared.initiate(call: Call(partnerID: "\(contact.firstName)",
-                                handle: "\(number.number)", callMembers: [""],
-                                lengthInMinutes: 0,
-                                theme: Theme.bubblegum))
-                            
-                        })
-                    }
-                    Button("Recieve Call") {
-                        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-                            print("receiving call")
-                            CallManager.shared.reportIncomingCall(Call(
-                                partnerID: "\(contact.firstName)",
-                                handle: "\(contact.firstName)",
-                                callMembers: [""],
-                                lengthInMinutes: 0,
-                                theme: Theme.bubblegum))
-                        })
-                    }
-                }
+                PhoneNumber(contact: contact, number: number)
+//                HStack {
+//                    Text("\(number.type): \(number.number)")
+//
+//                    Button("Tap for call") {
+//                        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+//                            print("initiating call")
+//                            CallManager.shared.initiate(call: Call(partnerID: "\(contact.firstName)",
+//                                handle: "\(number.number)", callMembers: [""],
+//                                lengthInMinutes: 0,
+//                                theme: Theme.bubblegum))
+//
+//                        })
+//                    }
+//                    Button("Recieve Call") {
+//                        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+//                            print("receiving call")
+//                            CallManager.shared.reportIncomingCall(Call(
+//                                partnerID: "\(contact.firstName)",
+//                                handle: "\(contact.firstName)",
+//                                callMembers: [""],
+//                                lengthInMinutes: 0,
+//                                theme: Theme.bubblegum))
+//                        })
+//                    }
+//                }
             }
         }
     }
@@ -220,5 +222,23 @@ extension ViewController: SIPKeyboardManagerDelegate {
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+struct PhoneNumber: View {
+    var contact: Contact
+    var number: Number
+    var body: some View {
+        Button("\(number.type): \(number.number)") {
+            DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+                print("initiating call")
+                CallManager.shared.initiate(call: Call(partnerID: "\(contact.firstName)",
+                    handle: "\(number.number)", callMembers: [""],
+                    lengthInMinutes: 0,
+                    theme: Theme.bubblegum))
+            })
+        }
+        .padding()
+        .buttonStyle(.borderedProminent)
     }
 }
