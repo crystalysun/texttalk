@@ -43,10 +43,9 @@ struct Settings : View {
                         Button(action: {
                             
                         }) {
-                            Image(systemName: "chevron.left").font(.title)
                         }
                         Text("Settings").font(.title)
-                    }).foregroundColor(Color.black.opacity(0.5))
+                    })
                     
                     Spacer()
                     
@@ -67,7 +66,7 @@ struct Settings : View {
                     NavigationLink {
                         SettingsDetails(pageName: setting.content)
                     } label: {
-                        btnView(image: "circle", name: setting.content)
+                        btnView(image: "customphrase", name: setting.content)
                     }
                 }
             }
@@ -93,7 +92,6 @@ struct btnView : View {
                 Spacer(minLength: 15)
                 
             }.padding()
-                .foregroundColor(Color.black.opacity(0.5))
         }
     }
 }
