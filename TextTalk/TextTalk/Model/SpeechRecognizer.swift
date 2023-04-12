@@ -2,14 +2,13 @@
  https://developer.apple.com/tutorials/app-dev-training/transcribing-speech-to-text
  */
 
-//TODO - add different language support:
-//let locale = Locale(identifier: “nl_NL”)
-//SFSpeechRecognizer(locale: locale)
 
 import AVFoundation
 import Foundation
 import Speech
 import SwiftUI
+
+var customSpelling: [String : String] = ["Eileen":"Aileen"]
 
 /// A helper for transcribing speech to text using SFSpeechRecognizer and AVAudioEngine.
 class SpeechRecognizer: ObservableObject {
@@ -43,7 +42,9 @@ class SpeechRecognizer: ObservableObject {
      requests access to the speech recognizer and the microphone.
      */
     init() {
-        recognizer = SFSpeechRecognizer()
+        let locale = Locale(identifier: "en-US")
+//        SFSpeechRecognizer(locale: locale)
+        recognizer = SFSpeechRecognizer(locale: locale)
         
         Task(priority: .background) {
             do {
@@ -101,8 +102,15 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
+    func replace() {
+        for w in customSpelling.keys {
+            transcript = transcript.replacingOccurrences(of: w, with: customSpelling[w]!)
+        }
+    }
+    
     /// Stop transcribing audio.
     func stopTranscribing() {
+        replace()
         reset()
     }
     

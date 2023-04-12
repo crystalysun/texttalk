@@ -6,51 +6,147 @@
 //
 
 import SwiftUI
+import AVFoundation
 
-let voicesUS: [Phrase] = [Phrase(id: 1, content: "Samantha")]
-let voicesAU: [Phrase] = [Phrase(id: 1, content: "Karen")]
-let voicesUK: [Phrase] = [Phrase(id: 1, content: "Daniel")]
-let voicesIE: [Phrase] = [Phrase(id: 1, content: "Moira")]
-let voicesIN: [Phrase] = [Phrase(id: 1, content: "Rishi")]
-let voicesZA: [Phrase] = [Phrase(id: 1, content: "Tessa")]
 
+public enum OSSVoiceEnum: String, CaseIterable {
+    /// Australian
+    case Australian = "en-AU"
+    /// Brazilian
+    case Brazilian = "pt-BR"
+    /// Bulgarian
+    case Bulgarian = "bg-BG"
+    /// CanadianFrench
+    case CanadianFrench = "fr-CA"
+    /// Chinese Traditional
+    case Chinese = "zh-CH"
+    /// Chinese Simplified
+    case ChineseSimplified = "zh-CN"
+    /// ChineseHongKong
+    case ChineseHongKong = "zh-HK"
+    /// Croatian
+    case Croatian = "hr-HR"
+    /// Czech
+    case Czech = "cs-CZ"
+    /// Danish
+    case Danish = "da-DK"
+    /// DutchBelgium
+    case DutchBelgium = "nl-BE"
+    /// DutchNetherlands
+    case DutchNetherlands = "nl-NL"
+    /// English
+    case English = "en-GB"
+    /// Finnish
+    case Finnish = "fi-FI"
+    /// French
+    case French = "fr-FR"
+    /// German
+    case German = "de-DE"
+    /// Greek
+    case Greek = "el-GR"
+    /// Hebrew
+    case Hebrew = "he-IL"
+    /// Hindi
+    case Hindi = "hi-IN"
+    /// Hungarian
+    case Hungarian = "hu-HU"
+    /// Indian English
+    case IndianEnglish = "en-IN"
+    /// Indonesian
+    case Indonesian = "id-ID"
+    /// IrishEnglish
+    case IrishEnglish = "en-IE"
+    /// Italian
+    case Italian = "it-IT"
+    /// Japanese
+    case Japanese = "ja-JP"
+    /// Korean
+    case Korean = "ko-KR"
+    /// Malaysian
+    case Malay = "ms-MY"
+    /// Mexican
+    case Mexican = "es-MX"
+    /// Norwegian
+    case Norwegian = "no-NO"
+    /// Norwegian Bokmal
+    case NorwegianBokmal = "nb-NO"
+    /// Polish
+    case Polish = "pl-PL"
+    /// Portuguese
+    case Portuguese = "pt-PT"
+    /// Romanian
+    case Romanian = "ro-RO"
+    /// Russian
+    case Russian = "ru-RU"
+    /// SaudiArabian
+    case SaudiArabian = "ar-SA"
+    /// Slovakian
+    case Slovakian = "sk-SK"
+    /// South African English
+    case SouthAfricanEnglish = "en-ZA"
+    /// Spanish
+    case Spanish = "es-ES"
+    /// Catalan
+    case SpanishCatalan = "ca-ES"
+    /// Swedish
+    case Swedish = "sv-SE"
+    /// Taiwanese
+    case TaiwaneseChinese  = "zh-TW"
+    /// Thai
+    case Thai = "th-TH"
+    /// Turkish
+    case Turkish = "tr-TR"
+    /// Ukranian
+    case Ukranian = "uk-UA"
+    /// USA English
+    case UnitedStatesEnglish = "en-US"
+    /// Vietnamese
+    case Vietnamese = "vi-VN"
+    /// Arabic World
+    case ArabicWorld = "ar-001"
+}
+
+//let voicesUS: [Phrase] = [Phrase(id: 1, content: "Samantha")]
+//let voicesAU: [Phrase] = [Phrase(id: 1, content: "Karen")]
+//let voicesUK: [Phrase] = [Phrase(id: 1, content: "Daniel")]
+//let voicesIE: [Phrase] = [Phrase(id: 1, content: "Moira")]
+//let voicesIN: [Phrase] = [Phrase(id: 1, content: "Rishi")]
+//let voicesZA: [Phrase] = [Phrase(id: 1, content: "Tessa")]
+var currentVoices: [Phrase] = []
 struct VoiceSettingsView: View {
     var body: some View {
-        Text("Customize Voices")
-            .font(Font.system(size: 36).bold())
-        
-        Text("Current Voice: \(voiceName)")
-            .font(.subheadline)
-        
+
         ScrollView {
             VStack {
-                Text("English (US)")
-                ForEach(voicesUS) { voice in
-                    VoiceOption(voice:voice.content)
-                }
-                Text("English (Australia)")
-                ForEach(voicesAU) { voice in
-                    VoiceOption(voice:voice.content)
-                }
-                Text("English (UK)")
-                ForEach(voicesUK) { voice in
-                    VoiceOption(voice:voice.content)
-                }
-                Text("English (Ireland)")
-                ForEach(voicesIE) { voice in
-                    VoiceOption(voice:voice.content)
+                ForEach(Array(dict.keys.sorted(by: <)), id: \.self){ key in
+                    
+                        
+                
+                    Button(key) {
+//                        var count = 0
+//                        for name in dict[key]! {
+//                            currentVoices.append(Phrase(id: count, content: name as! String))
+//                            count = count + 1
+//
+//                        }
+//                        ForEach(currentVoices) { value in
+//                            VoiceOption(voice: value.content)
+//                        }
+//                        voiceName = key
+                        print(dict[key]!)
+                        
+                        
+                    }
+                    
                 }
             }
-            Text("English (India)")
-            ForEach(voicesIN) { voice in
-                VoiceOption(voice:voice.content)
-            }
-            Text("English (South Africa)")
-            ForEach(voicesZA) { voice in
-                VoiceOption(voice:voice.content)
-            }
-            
         }
+    }
+}
+
+struct Voices: View {
+    var body: some View {
+        Text("hi")
     }
 }
 
@@ -70,7 +166,7 @@ struct VoiceOption: View {
                 
                 Text(voice)
                 
-                Spacer(minLength: 15)
+                Spacer(minLength: 0)
 
             }.padding()
                 .foregroundColor(Color.black)

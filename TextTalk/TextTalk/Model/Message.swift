@@ -20,7 +20,7 @@ struct Message: Hashable, Codable, Identifiable {
         Image(imageName)
     }
     
-    init(id: Int, /*sender: String,*/ content: String , timeSent: String/*, imageName: String*/){
+    init(id: Int = -1, /*sender: String,*/ content: String = "", timeSent: String = ""/*, imageName: String*/){
         self.id = id
         self.sender = "Claudia"
         self.content = content
@@ -28,6 +28,7 @@ struct Message: Hashable, Codable, Identifiable {
         self.imageName = "user-f"
         
     }
+    
 }
 
 class Messages: ObservableObject  {

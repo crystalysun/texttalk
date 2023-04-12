@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+//import AVFoundation
 
-let settings: [Phrase] = [Phrase(id: 1, content: "Customize Voice"), Phrase(id: 2, content: "Saved Phrases"), Phrase(id: 3, content: "Account"), Phrase(id: 4, content: "Notifications"), Phrase(id: 5, content: "Privacy"), Phrase(id: 6, content: "Help Center"), Phrase(id: 7, content: "About Us")]
+
+
+let settings: [Phrase] = [Phrase(id: 1, content: "Language & Accent"), Phrase(id: 2, content: "Saved Phrases"), Phrase(id: 3, content: "Account"), Phrase(id: 4, content: "Notifications"), Phrase(id: 5, content: "Privacy"), Phrase(id: 6, content: "Help Center"), Phrase(id: 7, content: "About Us")]
 
 struct SettingsView: View {
     var body: some View {
@@ -40,10 +43,10 @@ struct Settings : View {
                     
                     VStack(alignment: .leading, spacing: 45, content: {
                         
-                        Button(action: {
-                            
-                        }) {
-                        }
+//                        Button(action: {
+//
+//                        }) {
+//                        }
                         Text("Settings").font(.title)
                     })
                     
