@@ -229,6 +229,7 @@ struct ScreenView: View {
                         .background(Color.black.opacity(0.4))
                         .cornerRadius(10)
                 })
+                .disabled(currentPage == 1)
                 
                 
                 Spacer()
