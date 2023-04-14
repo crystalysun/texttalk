@@ -114,33 +114,36 @@ public enum OSSVoiceEnum: String, CaseIterable {
 //let voicesZA: [Phrase] = [Phrase(id: 1, content: "Tessa")]
 var currentVoices: [Phrase] = []
 struct VoiceSettingsView: View {
+    @ObservedObject var languages : Languages
+    
     var body: some View {
-
-        ScrollView {
-            VStack {
-                ForEach(Array(dict.keys.sorted(by: <)), id: \.self){ key in
-                    
-                        
+        List {
+            OutlineGroup(languages.data, children: \.voices) { lang in
                 
-                    Button(key) {
-//                        var count = 0
-//                        for name in dict[key]! {
-//                            currentVoices.append(Phrase(id: count, content: name as! String))
-//                            count = count + 1
-//
-//                        }
-//                        ForEach(currentVoices) { value in
-//                            VoiceOption(voice: value.content)
-//                        }
-//                        voiceName = key
-                        print(dict[key]!)
-                        
-                        
+                if(lang.isVoice){
+                    Button("\(lang.language)"){
+                        voiceName = lang.language
                     }
-                    
+                } else{
+                    Text("\(lang.language)")
                 }
+                
+//                    .onAppear() {
+//                        print("\(lang.language) \(lang.voices![0].language)")
+//                    }
             }
         }
+//        ScrollView {
+//            VStack {
+//                ForEach(Array(dict.keys.sorted(by: <)), id: \.self){ key in
+//
+//                    Button(key) {
+//                        print(dict[key]!)
+//                    }
+//
+//                }
+//            }
+//        }
     }
 }
 
@@ -152,7 +155,7 @@ struct Voices: View {
 
 struct VoiceSettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        VoiceSettingsView()
+        VoiceSettingsView(languages: languages)
     }
 }
 

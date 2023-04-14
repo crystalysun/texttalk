@@ -49,6 +49,7 @@
 		96AEF6052998647200596470 /* FetchContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B02998647100596470 /* FetchContacts.swift */; };
 		96AEF6062998647200596470 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B12998647100596470 /* Response.swift */; };
 		96AEF6072998647200596470 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B22998647100596470 /* Contact.swift */; };
+		96CFB16E29E8DC3800BD4384 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CFB16D29E8DC3800BD4384 /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		96AEF5B02998647100596470 /* FetchContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContacts.swift; sourceTree = "<group>"; };
 		96AEF5B12998647100596470 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		96AEF5B22998647100596470 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		96CFB16D29E8DC3800BD4384 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				7C133888299993A700F9D060 /* History.swift */,
 				96AEF5B12998647100596470 /* Response.swift */,
 				96AEF5B22998647100596470 /* Contact.swift */,
+				96CFB16D29E8DC3800BD4384 /* Language.swift */,
 				7C133892299994C400F9D060 /* Theme.swift */,
 				9687D32D29C1741A00B55A52 /* Phrase.swift */,
 			);
@@ -399,6 +402,7 @@
 				96AEF5B92998647200596470 /* CallManager.swift in Sources */,
 				9687D33029CCF6B300B55A52 /* VoiceSettingsView.swift in Sources */,
 				96AEF5B72998647200596470 /* ContactRow.swift in Sources */,
+				96CFB16E29E8DC3800BD4384 /* Language.swift in Sources */,
 				96AEF5B82998647200596470 /* SoundManager.swift in Sources */,
 				96AEF6032998647200596470 /* Item.swift in Sources */,
 				9687D32C29C1707F00B55A52 /* SettingsDetails.swift in Sources */,

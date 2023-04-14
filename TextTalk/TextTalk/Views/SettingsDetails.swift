@@ -8,9 +8,11 @@
 import SwiftUI
 import AVFoundation
 
+// Update Languages
 var SV = AVSpeechSynthesisVoice.speechVoices()
 var codes = Set(SV.map { $0.language })
-var dict : Dictionary = Dictionary(uniqueKeysWithValues: codes.map {($0, [])})
+var dict : Dictionary<String,[String]> = Dictionary(uniqueKeysWithValues: codes.map {($0, [])})
+var languages = Languages(dict: dict)
 
 struct SettingsDetails: View {
     var pageName: String
@@ -32,19 +34,26 @@ struct SettingsDetails: View {
                     }
                 }
             }
+            .onAppear() {
+                dict = Dictionary(uniqueKeysWithValues: codes.map {($0, [])})
+                for entry in SV {
+                    dict[entry.language]?.append(entry.name)
+                }
+                print(dict)
+            }
             
             
         }
         
         if(pageName == "Text-to-Speech") {
-            VoiceSettingsView()
-                .onAppear() {
-                    dict = Dictionary(uniqueKeysWithValues: codes.map {($0, [])})
-                    for entry in SV {
-                        dict[entry.language]?.append(entry.name)
-                    }
-                    print(dict)
-                }
+            VoiceSettingsView(languages: languages)
+//                .onAppear() {
+//                    dict = Dictionary(uniqueKeysWithValues: codes.map {($0, [])})
+//                    for entry in SV {
+//                        dict[entry.language]?.append(entry.name)
+//                    }
+//                    print(dict)
+//                }
         }
         else if(pageName == "Speech-to-Text"){
             
