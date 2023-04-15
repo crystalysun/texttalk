@@ -146,12 +146,13 @@ struct LockScreen : View {
                     
                 }) {
                     
-                    Image("menu")
+                    Image(systemName: "questionmark.app")
                         .renderingMode(.template)
                         .resizable()
-                        .frame(width: 19, height: 19)
+                        .frame(width: 40, height: 40)
                         .foregroundColor(.black)
-                        .padding()
+                        .padding(.top, 20)
+                        .padding(.trailing, 20)
                 }
             }
             .padding(.leading)
@@ -162,7 +163,7 @@ struct LockScreen : View {
                 .padding(.top,20)
             
             Text("Enter Passcode")
-                .font(.title2)
+                .font(.title)
                 .fontWeight(.heavy)
                 .padding(.top,20)
             
