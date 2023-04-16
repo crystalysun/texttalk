@@ -35,6 +35,7 @@ class SpeechRecognizer: ObservableObject {
     private var task: SFSpeechRecognitionTask?
     private let recognizer: SFSpeechRecognizer?
     private var timer : Timer?
+    private var locales = SFSpeechRecognizer.supportedLocales()
     
     
     /**
@@ -42,9 +43,10 @@ class SpeechRecognizer: ObservableObject {
      requests access to the speech recognizer and the microphone.
      */
     init() {
-        let locale = Locale(identifier: "en-US")
+        let locale = Locale(identifier: "ro-RO")
 //        SFSpeechRecognizer(locale: locale)
         recognizer = SFSpeechRecognizer(locale: locale)
+        print(locales)
         
         Task(priority: .background) {
             do {
@@ -86,14 +88,7 @@ class SpeechRecognizer: ObservableObject {
                 self.request = request
                 self.task = recognizer.recognitionTask(with: request,
                                                        resultHandler: self.recognitionHandler(result:error:))
-//                                                       { (result, error) in
-//                        self.timer?.invalidate()
-//                        self.timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { _ in
-//                            self.timer = nil
-//                            print("hey")
-//                        }
-//
-//                })
+
                 
             } catch {
                 self.reset()
