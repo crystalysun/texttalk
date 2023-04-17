@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import WAL
+import UIKit
+import WebRTC
+import SIPKeyboardManager
 import AVFoundation
 import Speech
+import AgoraRtcKit
 
 struct TtsSttButton: View {
     @Binding var isTts: Bool
@@ -30,6 +35,7 @@ struct CallInput: View {
     @ObservedObject var messages = Messages()
     @ObservedObject var phrases = phraseGlobal
     @StateObject var recognizer = SpeechRecognizer()
+    
     @State private var isTts: Bool = false
     @State private var isRecording = false
     @State private var tempSTTid = -1
@@ -37,6 +43,7 @@ struct CallInput: View {
     @State var idCount = 0
     @State private var callActive: Bool = true
     let synth = AVSpeechSynthesizer()
+//    @State var utteranceOut: AVAudioFile?
     
     var body: some View {
         if !callActive {
@@ -106,6 +113,35 @@ struct CallInput: View {
                         utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle." + voiceName + "-compact")
 
                         synth.speak(utterance)
+                        
+                        
+                        // FOR AUDIO TRACK INPUT
+//                        synth.write(utterance) { (buffer: AVAudioBuffer) in
+//                           guard let pcmBuffer = buffer as? AVAudioPCMBuffer else {
+//                              fatalError("unknown buffer type: \(buffer)")
+//                           }
+//                            do {
+//                                if pcmBuffer.frameLength == 0 {
+//                                  // done
+//                                } else {
+//                                  // append buffer to file
+//                                  if utteranceOut == nil {
+//                                    utteranceOut = try AVAudioFile(
+//                                      forWriting: URL(fileURLWithPath: "utteranceOut.caf"),
+//                                      settings: pcmBuffer.format.settings,
+//                                      commonFormat: .pcmFormatInt16,
+//                                      interleaved: false)
+//                                  }
+//                                  try utteranceOut?.write(from: pcmBuffer)
+//                                }
+//                            }
+//                            catch let error {
+//                                print(error)
+//                            }
+//
+//                        }
+                        
+                        
                         // NEW:
                         input = ""
                     }

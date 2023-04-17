@@ -14,6 +14,17 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright 2023 agora.io. All rights reserved.
+</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>AgoraRtcEngine_iOS</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright (c) 2018 Hendrik von Prince &lt;hendrik.von.prince@kurzdigital.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

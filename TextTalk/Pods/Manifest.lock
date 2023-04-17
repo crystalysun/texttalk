@@ -1,4 +1,29 @@
 PODS:
+  - AgoraRtcEngine_iOS (4.1.1):
+    - AgoraRtcEngine_iOS/AIAEC (= 4.1.1)
+    - AgoraRtcEngine_iOS/AINS (= 4.1.1)
+    - AgoraRtcEngine_iOS/AudioBeauty (= 4.1.1)
+    - AgoraRtcEngine_iOS/ClearVision (= 4.1.1)
+    - AgoraRtcEngine_iOS/ContentInspect (= 4.1.1)
+    - AgoraRtcEngine_iOS/DRM (= 4.1.1)
+    - AgoraRtcEngine_iOS/FaceDetection (= 4.1.1)
+    - AgoraRtcEngine_iOS/ReplayKit (= 4.1.1)
+    - AgoraRtcEngine_iOS/RtcBasic (= 4.1.1)
+    - AgoraRtcEngine_iOS/SpatialAudio (= 4.1.1)
+    - AgoraRtcEngine_iOS/VirtualBackground (= 4.1.1)
+    - AgoraRtcEngine_iOS/VQA (= 4.1.1)
+  - AgoraRtcEngine_iOS/AIAEC (4.1.1)
+  - AgoraRtcEngine_iOS/AINS (4.1.1)
+  - AgoraRtcEngine_iOS/AudioBeauty (4.1.1)
+  - AgoraRtcEngine_iOS/ClearVision (4.1.1)
+  - AgoraRtcEngine_iOS/ContentInspect (4.1.1)
+  - AgoraRtcEngine_iOS/DRM (4.1.1)
+  - AgoraRtcEngine_iOS/FaceDetection (4.1.1)
+  - AgoraRtcEngine_iOS/ReplayKit (4.1.1)
+  - AgoraRtcEngine_iOS/RtcBasic (4.1.1)
+  - AgoraRtcEngine_iOS/SpatialAudio (4.1.1)
+  - AgoraRtcEngine_iOS/VirtualBackground (4.1.1)
+  - AgoraRtcEngine_iOS/VQA (4.1.1)
   - SIPKeyboardManager (0.1.2)
   - Starscream (4.0.4)
   - WAL (0.1.0):
@@ -7,23 +32,26 @@ PODS:
   - WebRTC (63.11.20455)
 
 DEPENDENCIES:
+  - AgoraRtcEngine_iOS (= 4.1.1)
   - SIPKeyboardManager
   - WAL
   - WebRTC
 
 SPEC REPOS:
   trunk:
+    - AgoraRtcEngine_iOS
     - SIPKeyboardManager
     - Starscream
     - WAL
     - WebRTC
 
 SPEC CHECKSUMS:
+  AgoraRtcEngine_iOS: df216a18a01c30fba926565d889c9542319252ac
   SIPKeyboardManager: 00b3899dd29983d199f18affe24995796b9549f4
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   WAL: fa22c1c4057e7319b21326861f59b768f28066c5
   WebRTC: f2a6203584745fe53532633397557876b5d71640
 
-PODFILE CHECKSUM: 8c155f7bce295060cb0918614fc882d3c09632f9
+PODFILE CHECKSUM: e2253e6952b53fc748764ddf2dd2d9e80c8e505f
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3

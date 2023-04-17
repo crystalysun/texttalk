@@ -295,6 +295,9 @@
 				Base,
 			);
 			mainGroup = 96ADA7462991BA0600648228;
+			packageReferences = (
+				0C08F10C29ECF20C002D8F6F /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */,
+			);
 			productRefGroup = 96ADA7502991BA0600648228 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -629,6 +632,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0C08F10C29ECF20C002D8F6F /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraAudio_iOS.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 96ADA7472991BA0600648228 /* Project object */;
 }
