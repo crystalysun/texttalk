@@ -11,16 +11,13 @@ import Contacts
 var contacts: [Contact] = []
 
 func setNoContact() {
-    var numbers1: Number = Number(type: "Mobile", number: "111-111-111")
-    numbers1.type = "Mobile"
-    numbers1.number = "111-111-1111"
-
-    let contact1 = Contact(id: 0, firstName: "No contacts to display", lastName: "", numbers: [numbers1])
+//    contacts = []
+    let contact1 = Contact(id: 0, firstName: "No contacts to display", lastName: "", numbers: [])
     contacts.append(contact1)
-    print(contacts[0].firstName)
 }
 
 func setContacts(tempContacts: [CNContact]) {
+//    contacts = []
     var idNum = 0
     for contact in tempContacts {
         var tempNum: Number

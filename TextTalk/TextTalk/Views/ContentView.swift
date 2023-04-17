@@ -15,6 +15,8 @@ var selectedLocale: String = "en-US"
 struct ContentView: View {
     @State private var selection: Tab = .phone
     @State var unLocked = false
+    @AppStorage("password_set") var passwordSet = false
+    @AppStorage("lock_Password") var key = ""
     
     public init() {
         self.selection = selection
@@ -36,7 +38,7 @@ struct ContentView: View {
         }
 
         else if !unLocked{
-            LockScreen(unLocked: $unLocked)
+            LockScreenView(unLocked: $unLocked, passwordSet: $passwordSet, key: $key)
         }
         else{
             TabView(selection: $selection) {
@@ -59,7 +61,7 @@ struct ContentView: View {
                     }
                     .tag(Tab.activeCall)
                 
-                SettingsView()
+                SettingsView(passwordSet: $passwordSet, key: $key)
                     .tabItem {
                         Label("Settings", systemImage: "gearshape.fill")
                     }
@@ -161,48 +163,6 @@ struct Walkthrough: View {
             }
             
         }
-//        .overlay(
-//
-//            // Button...
-//            Button(action: {
-//                // changing views...
-//                withAnimation(.easeInOut){
-//
-//                    // checking....
-//                    if currentPage <= totalPages{
-//                        currentPage += 1
-//                    }
-//                }
-//            }, label: {
-//
-//
-//                Image(systemName: "chevron.right")
-//                    .font(.system(size: 20, weight: .semibold))
-//                    .foregroundColor(.black)
-//                    .frame(width: 60, height: 60)
-//                    .background(Color.white)
-//                    .clipShape(Circle())
-                // Circlular Slider...
-//                    .overlay(
-//
-//                        ZStack{
-//
-//                            Circle()
-//                                .stroke(Color.black.opacity(0.04),lineWidth: 4)
-//
-//
-//                            Circle()
-//                                .trim(from: 0, to: CGFloat(currentPage) / CGFloat(totalPages))
-//                                .stroke(Color.white,lineWidth: 4)
-//                                .rotationEffect(.init(degrees: -90))
-//                        }
-//                        .padding(-15)
-//                    )
-//            })
-//            .padding(.bottom,20)
-//
-//            .alignment: .bottom
-//        )
     }
 }
 
@@ -230,6 +190,7 @@ struct ScreenView: View {
                         .background(Color.black.opacity(0.4))
                         .cornerRadius(10)
                 })
+                .disabled(currentPage == 1)
                 
                 
                 Spacer()
@@ -269,8 +230,6 @@ struct ScreenView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
 
-            
-            
             
             // Minimum Spacing When Phone is reducing...
             

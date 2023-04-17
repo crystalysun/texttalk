@@ -21,6 +21,11 @@ var ttslanguages = Languages(dict: ttsdict)
 
 struct SettingsDetails: View {
     var pageName: String
+    @Binding var passwordSet : Bool
+    @Binding var key : String
+    @State private var createPass: Bool = false
+    @State private var wrongPass = false
+    @State private var helpSheet = false
     
     let langSettings: [Phrase] = [Phrase(id: 1, content: "Text-to-Speech"), Phrase(id: 2, content: "Speech-to-Text")]
     
@@ -56,14 +61,36 @@ struct SettingsDetails: View {
         else if(pageName == "Speech-to-Text") {
             SpeechSettingsView()
         }
-        
+        else if (pageName == "Password Settings") {
+            VStack {
+                Text("Password Settings")
+                    .font(.title)
+                    .padding()
+                
+                Button("Reset Password") {
+                    createPass = true
+                }
+                    .sheet(isPresented: $createPass) {
+                        CreatePassSheet(passwordSet: $passwordSet, key: $key, createPass: $createPass, wrongPass: $wrongPass)
+                    }
+                    .padding()
+                    .buttonStyle(.borderedProminent)
+                
+                Button("Help") {
+                    helpSheet = true
+                }
+                    .sheet(isPresented: $helpSheet) {
+                        HelpSheet()
+                    }
+                    .padding()
+                    .buttonStyle(.borderedProminent)
+            }
+        }
         
     }
 }
 
-public func youwhore() {
-    print(sttlanguages)
-}
+
 
 struct SettingsDetails_Previews: PreviewProvider {
     static var previews: some View {

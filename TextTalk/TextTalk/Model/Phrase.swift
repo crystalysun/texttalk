@@ -8,14 +8,16 @@
 import Foundation
 
 class Phrase: Identifiable, Comparable {
-    var id: Int
+    public var id: Int
     var content: String
-    var frequency: Int
+    public var isHidden: Bool
+    public var isFav: Bool
     
     init(id: Int, content: String) {
         self.id = id
         self.content = content
-        self.frequency = 0
+        self.isHidden = false
+        self.isFav = false
     }
 
     static func == (lhs: Phrase, rhs: Phrase) -> Bool {
@@ -47,7 +49,34 @@ class Phrases: ObservableObject  {
                                       Phrase(id: 17, content: "Bye!"),
                                       Phrase(id: 18, content: "Thank you!") ]
     
+    public func sortedPhrases() -> [Phrase] {
+        return self.data.sorted(by: { $0 < $1 })
+    }
+    
+    public func updatePhrase(phrase: Phrase) {
+        if (phrase.isFav) {
+            if let index = self.data.firstIndex(where: { $0.id == phrase.id }) {
+                self.data.remove(at: index)
+                self.data.insert(phrase, at: 0)
+            }
+            else {
+                print("ERROR: could not find original phrase to update")
+            }
+        }
+        else {
+            self.data = self.data.map { $0.id == phrase.id ? phrase : $0 }
+        }
+    }
+    
+    public func removePhrase(phrase: Phrase) {
+        self.data = self.data.filter { $0 != phrase }
+    }
+    
     public func append(id: Int, content: String) {
         self.data.append(Phrase(id: id, content: content))
+    }
+    
+    public func remove(indexSet: IndexSet) {
+        self.data.remove(atOffsets: indexSet);
     }
 }
