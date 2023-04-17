@@ -173,6 +173,12 @@ struct ScreenView: View {
     @AppStorage("currentPage") var currentPage = 1
     
     var body: some View {
+        GeometryReader { geo in
+                   Image(image)
+                       .resizable()
+                       .aspectRatio(contentMode: .fill)
+                       .frame(width: geo.size.width, height: geo.size.height)
+               }
         VStack(spacing: 20){
             HStack{
                 
@@ -226,10 +232,10 @@ struct ScreenView: View {
             
             Spacer(minLength: 0)
             
-            Image(image)
+            /*Image(image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-
+*/
             
             // Minimum Spacing When Phone is reducing...
             

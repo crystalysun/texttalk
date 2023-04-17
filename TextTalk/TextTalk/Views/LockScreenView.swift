@@ -362,10 +362,12 @@ struct CreatePassSheet: View {
                     CreatePasswordButton(value: "\(value)",password: $password, setPass: $passwordSet, key: $key, createPass: $createPass, wrongPass: $wrongPass)
                 }
                 
+                CreatePasswordButton(value: "0", password: $password, setPass: $passwordSet, key: $key, createPass: $createPass, wrongPass: $wrongPass)
+                
                 CreatePasswordButton(value: "delete.fill",password: $password, setPass: $passwordSet, key: $key, createPass: $createPass, wrongPass: $wrongPass)
                 
-                CreatePasswordButton(value: "0", password: $password, setPass: $passwordSet, key: $key, createPass: $createPass, wrongPass: $wrongPass)
             }
+            .padding(.top, 30)
             .padding(.bottom)
 
         }

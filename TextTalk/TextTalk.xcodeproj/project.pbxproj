@@ -50,6 +50,7 @@
 		96AEF6052998647200596470 /* FetchContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B02998647100596470 /* FetchContacts.swift */; };
 		96AEF6062998647200596470 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B12998647100596470 /* Response.swift */; };
 		96AEF6072998647200596470 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B22998647100596470 /* Contact.swift */; };
+		A08BF6EC29ED6A9D00C0092C /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BF6EB29ED6A9D00C0092C /* LockScreenView.swift */; };
 		96CFB16E29E8DC3800BD4384 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CFB16D29E8DC3800BD4384 /* Language.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		96AEF5B02998647100596470 /* FetchContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContacts.swift; sourceTree = "<group>"; };
 		96AEF5B12998647100596470 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		96AEF5B22998647100596470 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		A08BF6EB29ED6A9D00C0092C /* LockScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
 		96CFB16D29E8DC3800BD4384 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,6 +219,7 @@
 				7C3E241329ECC624002907B7 /* SpeechSettingsView.swift */,
 				96ADA76F299329A800648228 /* ContactsView.swift */,
 				96AEF5A92998646F00596470 /* ContactDetails.swift */,
+				A08BF6EB29ED6A9D00C0092C /* LockScreenView.swift */,
 				96AEF5282998646D00596470 /* ContactRow.swift */,
 				96ADA7542991BA0600648228 /* ContentView.swift */,
 				96ADA77529932C2100648228 /* PhoneView.swift */,
@@ -392,6 +395,7 @@
 				96ADA774299329E500648228 /* ActiveCallView.swift in Sources */,
 				9687D32E29C1741A00B55A52 /* Phrase.swift in Sources */,
 				7C133893299994C400F9D060 /* Theme.swift in Sources */,
+				A08BF6EC29ED6A9D00C0092C /* LockScreenView.swift in Sources */,
 				7C13388F2999947000F9D060 /* MeetingView.swift in Sources */,
 				7C13388D2999945E00F9D060 /* MeetingTimerView.swift in Sources */,
 				96AEF6072998647200596470 /* Contact.swift in Sources */,

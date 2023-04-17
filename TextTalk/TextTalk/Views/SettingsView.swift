@@ -17,40 +17,14 @@ struct SettingsView : View {
     @Binding var key : String
     
     var body : some View {
-        VStack(spacing:15) {
+        VStack {
             ZStack {
-                HStack {
-                    /*
-                    Image("circle").resizable().frame(width: 250, height:150)
-                    */
-                    Spacer()
+                VStack(spacing: 20) {
+                    Text("Settings")
+                        .font(.system(size: 34, weight: .bold))
                 }
+            }
 
-                HStack {
-                    
-                    VStack(alignment: .leading, spacing: 45, content: {
-                        
-//                        Button(action: {
-//
-//                        }) {
-//                        }
-                        Text("Settings").font(.title)
-                    })
-                    
-                    Spacer()
-                    
-                }.padding()
-                    .padding(.top,10)
-                
-                VStack {
-                    Image("name").overlay(Text("K").foregroundColor(.black).font(.title))
-                
-                    Spacer()
-                    
-                }.padding(.top,30)
-                
-            }.frame(height: 175)
-            
             NavigationView {
                 List(settings) { setting in
                     NavigationLink {

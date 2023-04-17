@@ -117,6 +117,55 @@ struct VoiceSettingsView: View {
     @ObservedObject var languages : Languages
     
     var body: some View {
+//        NavigationView {
+//            VStack(spacing: 30) {
+//                Text("Customize Voices")
+//                    .font(.title)
+//                    .fontWeight(.bold)
+//                VStack(spacing: 10) {
+//                    Text("Current Voice:")
+//                        .font(.title)
+//                        .fontWeight(.bold)
+//                    Text("\(voiceName)")
+//                        .font(.headline)
+//                }
+//                List {
+//                    Section(header: Text("English (US)")) {
+//                        ForEach(voicesUS) { voice in
+//                            VoiceOption(voice:voice.content)
+//                        }
+//                    }
+//                    Section(header: Text("English (Australia)")) {
+//                        ForEach(voicesAU) { voice in
+//                            VoiceOption(voice:voice.content)
+//                        }
+//                    }
+//                    Section(header: Text("English (UK)")) {
+//                        ForEach(voicesUK) { voice in
+//                            VoiceOption(voice:voice.content)
+//                        }
+//                    }
+//                    Section(header: Text("English (Ireland)")) {
+//                        ForEach(voicesIE) { voice in
+//                            VoiceOption(voice:voice.content)
+//                        }
+//                    }
+//                    Section(header: Text("English (India)")) {
+//                        ForEach(voicesIN) { voice in
+//                            VoiceOption(voice:voice.content)
+//                        }
+//                    }
+//                    Section(header: Text("English (South Africa)")) {
+//                        ForEach(voicesZA) { voice in
+//                            VoiceOption(voice:voice.content)
+//                        }
+//                    }
+//                }
+//                .listStyle(GroupedListStyle())
+//            }
+//            .padding()
+//            .navigationBarTitle("Voices", displayMode: .large)
+
         List {
             OutlineGroup(languages.data, children: \.voices) { lang in
                 
@@ -154,10 +203,15 @@ struct VoiceOption: View {
                 
                 Text(voice)
                 
-                Spacer(minLength: 0)
+                Spacer()
+                if voiceName == voice {
+                    Image(systemName: "checkmark")
+                    .foregroundColor(.blue)
+                }
 
-            }.padding()
-                .foregroundColor(Color.black)
+            }
+            .padding(.vertical, 10)
+            .foregroundColor(Color.black)
         }
     }
 }
