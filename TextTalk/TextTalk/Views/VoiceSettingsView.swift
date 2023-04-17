@@ -16,40 +16,54 @@ let voicesZA: [Phrase] = [Phrase(id: 1, content: "Tessa")]
 
 struct VoiceSettingsView: View {
     var body: some View {
-        Text("Customize Voices")
-            .font(Font.system(size: 36).bold())
-        
-        Text("Current Voice: \(voiceName)")
-            .font(.subheadline)
-        
-        ScrollView {
-            VStack {
-                Text("English (US)")
-                ForEach(voicesUS) { voice in
-                    VoiceOption(voice:voice.content)
+        NavigationView {
+            VStack(spacing: 30) {
+                Text("Customize Voices")
+                    .font(.title)
+                    .fontWeight(.bold)
+                VStack(spacing: 10) {
+                    Text("Current Voice:")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Text("\(voiceName)")
+                        .font(.headline)
                 }
-                Text("English (Australia)")
-                ForEach(voicesAU) { voice in
-                    VoiceOption(voice:voice.content)
+                List {
+                    Section(header: Text("English (US)")) {
+                        ForEach(voicesUS) { voice in
+                            VoiceOption(voice:voice.content)
+                        }
+                    }
+                    Section(header: Text("English (Australia)")) {
+                        ForEach(voicesAU) { voice in
+                            VoiceOption(voice:voice.content)
+                        }
+                    }
+                    Section(header: Text("English (UK)")) {
+                        ForEach(voicesUK) { voice in
+                            VoiceOption(voice:voice.content)
+                        }
+                    }
+                    Section(header: Text("English (Ireland)")) {
+                        ForEach(voicesIE) { voice in
+                            VoiceOption(voice:voice.content)
+                        }
+                    }
+                    Section(header: Text("English (India)")) {
+                        ForEach(voicesIN) { voice in
+                            VoiceOption(voice:voice.content)
+                        }
+                    }
+                    Section(header: Text("English (South Africa)")) {
+                        ForEach(voicesZA) { voice in
+                            VoiceOption(voice:voice.content)
+                        }
+                    }
                 }
-                Text("English (UK)")
-                ForEach(voicesUK) { voice in
-                    VoiceOption(voice:voice.content)
-                }
-                Text("English (Ireland)")
-                ForEach(voicesIE) { voice in
-                    VoiceOption(voice:voice.content)
-                }
+                .listStyle(GroupedListStyle())
             }
-            Text("English (India)")
-            ForEach(voicesIN) { voice in
-                VoiceOption(voice:voice.content)
-            }
-            Text("English (South Africa)")
-            ForEach(voicesZA) { voice in
-                VoiceOption(voice:voice.content)
-            }
-            
+            .padding()
+            //.navigationBarTitle("Voices", displayMode: .large)
         }
     }
 }
@@ -70,10 +84,15 @@ struct VoiceOption: View {
                 
                 Text(voice)
                 
-                Spacer(minLength: 15)
+                Spacer()
+                if voiceName == voice {
+                    Image(systemName: "checkmark")
+                    .foregroundColor(.blue)
+                }
 
-            }.padding()
-                .foregroundColor(Color.black)
+            }
+            .padding(.vertical, 10)
+            .foregroundColor(Color.black)
         }
     }
 }
