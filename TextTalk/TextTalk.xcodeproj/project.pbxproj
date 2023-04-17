@@ -19,6 +19,7 @@
 		7C13388F2999947000F9D060 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13388E2999947000F9D060 /* MeetingView.swift */; };
 		7C1338912999948C00F9D060 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1338902999948C00F9D060 /* SpeechRecognizer.swift */; };
 		7C133893299994C400F9D060 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C133892299994C400F9D060 /* Theme.swift */; };
+		7C3E241429ECC624002907B7 /* SpeechSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E241329ECC624002907B7 /* SpeechSettingsView.swift */; };
 		7CF0BF082999C3A2003A8969 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0BF072999C3A2003A8969 /* TextToSpeech.swift */; };
 		9687D32C29C1707F00B55A52 /* SettingsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687D32B29C1707F00B55A52 /* SettingsDetails.swift */; };
 		9687D32E29C1741A00B55A52 /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687D32D29C1741A00B55A52 /* Phrase.swift */; };
@@ -49,6 +50,7 @@
 		96AEF6052998647200596470 /* FetchContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B02998647100596470 /* FetchContacts.swift */; };
 		96AEF6062998647200596470 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B12998647100596470 /* Response.swift */; };
 		96AEF6072998647200596470 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B22998647100596470 /* Contact.swift */; };
+		96CFB16E29E8DC3800BD4384 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CFB16D29E8DC3800BD4384 /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,7 @@
 		7C13388E2999947000F9D060 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		7C1338902999948C00F9D060 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		7C133892299994C400F9D060 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		7C3E241329ECC624002907B7 /* SpeechSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSettingsView.swift; sourceTree = "<group>"; };
 		7CF0BF072999C3A2003A8969 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		9687D32B29C1707F00B55A52 /* SettingsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetails.swift; sourceTree = "<group>"; };
 		9687D32D29C1741A00B55A52 /* Phrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrase.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		96AEF5B02998647100596470 /* FetchContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContacts.swift; sourceTree = "<group>"; };
 		96AEF5B12998647100596470 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		96AEF5B22998647100596470 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		96CFB16D29E8DC3800BD4384 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 				7C133888299993A700F9D060 /* History.swift */,
 				96AEF5B12998647100596470 /* Response.swift */,
 				96AEF5B22998647100596470 /* Contact.swift */,
+				96CFB16D29E8DC3800BD4384 /* Language.swift */,
 				7C133892299994C400F9D060 /* Theme.swift */,
 				9687D32D29C1741A00B55A52 /* Phrase.swift */,
 			);
@@ -209,6 +214,7 @@
 		96AEF60829986C5400596470 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C3E241329ECC624002907B7 /* SpeechSettingsView.swift */,
 				96ADA76F299329A800648228 /* ContactsView.swift */,
 				96AEF5A92998646F00596470 /* ContactDetails.swift */,
 				96AEF5282998646D00596470 /* ContactRow.swift */,
@@ -375,6 +381,7 @@
 				7CF0BF082999C3A2003A8969 /* TextToSpeech.swift in Sources */,
 				96ADA77629932C2200648228 /* PhoneView.swift in Sources */,
 				0CB2B70129BE925D0050E5A5 /* AddItemViewController.swift in Sources */,
+				7C3E241429ECC624002907B7 /* SpeechSettingsView.swift in Sources */,
 				7C1338912999948C00F9D060 /* SpeechRecognizer.swift in Sources */,
 				96AEF5BB2998647200596470 /* CallInput.swift in Sources */,
 				96AEF5BA2998647200596470 /* Call.swift in Sources */,
@@ -399,6 +406,7 @@
 				96AEF5B92998647200596470 /* CallManager.swift in Sources */,
 				9687D33029CCF6B300B55A52 /* VoiceSettingsView.swift in Sources */,
 				96AEF5B72998647200596470 /* ContactRow.swift in Sources */,
+				96CFB16E29E8DC3800BD4384 /* Language.swift in Sources */,
 				96AEF5B82998647200596470 /* SoundManager.swift in Sources */,
 				96AEF6032998647200596470 /* Item.swift in Sources */,
 				9687D32C29C1707F00B55A52 /* SettingsDetails.swift in Sources */,
