@@ -2,14 +2,13 @@
  https://developer.apple.com/tutorials/app-dev-training/transcribing-speech-to-text
  */
 
-//TODO - add different language support:
-//let locale = Locale(identifier: “nl_NL”)
-//SFSpeechRecognizer(locale: locale)
 
 import AVFoundation
 import Foundation
 import Speech
 import SwiftUI
+
+var customSpelling: [String : String] = ["Eileen":"Aileen"]
 
 /// A helper for transcribing speech to text using SFSpeechRecognizer and AVAudioEngine.
 class SpeechRecognizer: ObservableObject {
@@ -34,8 +33,9 @@ class SpeechRecognizer: ObservableObject {
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
-    private let recognizer: SFSpeechRecognizer?
+    private var recognizer: SFSpeechRecognizer?
     private var timer : Timer?
+    private var locales = SFSpeechRecognizer.supportedLocales()
     
     
     /**
@@ -43,7 +43,10 @@ class SpeechRecognizer: ObservableObject {
      requests access to the speech recognizer and the microphone.
      */
     init() {
-        recognizer = SFSpeechRecognizer()
+        let locale = Locale(identifier: selectedLocale)
+//        SFSpeechRecognizer(locale: locale)
+        recognizer = SFSpeechRecognizer(locale: locale)
+//        print(locales)
         
         Task(priority: .background) {
             do {
@@ -73,6 +76,7 @@ class SpeechRecognizer: ObservableObject {
         The resulting transcription is continuously written to the published `transcript` property.
      */
     func transcribe() {
+        self.recognizer = SFSpeechRecognizer(locale: Locale(identifier: selectedLocale))
         DispatchQueue(label: "Speech Recognizer Queue", qos: .default).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
                 self?.speakError(RecognizerError.recognizerIsUnavailable)
@@ -85,14 +89,7 @@ class SpeechRecognizer: ObservableObject {
                 self.request = request
                 self.task = recognizer.recognitionTask(with: request,
                                                        resultHandler: self.recognitionHandler(result:error:))
-//                                                       { (result, error) in
-//                        self.timer?.invalidate()
-//                        self.timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { _ in
-//                            self.timer = nil
-//                            print("hey")
-//                        }
-//
-//                })
+
                 
             } catch {
                 self.reset()
@@ -101,8 +98,15 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
+    func replace() {
+        for w in customSpelling.keys {
+            transcript = transcript.replacingOccurrences(of: w, with: customSpelling[w]!)
+        }
+    }
+    
     /// Stop transcribing audio.
     func stopTranscribing() {
+        replace()
         reset()
     }
     
