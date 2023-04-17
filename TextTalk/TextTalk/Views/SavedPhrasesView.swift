@@ -51,7 +51,10 @@ struct SavedPhrasesView: View {
     var body: some View {
         List {
             ForEach(self.phrases.data) { phrase in
-                if (phrase.isFav) {
+                if (phrase.isHidden) {
+                    HiddenPhraseButtonView(phrase: phrase, editPhrase: editPhrase)
+                }
+                else if (phrase.isFav) {
                     FavPhraseButtonView(phrase: phrase, editPhrase: editPhrase)
                 }
                 else {
@@ -196,6 +199,27 @@ struct FavPhraseButtonView: View {
             }.padding()
         }
         .foregroundColor(.black)
+        .sheet(isPresented: $editPhrase) {
+            EditPhraseSheet(input: phrase.content, phrase: phrase, isHidden: phrase.isHidden, isFav: phrase.isFav)
+        }
+    }
+}
+
+struct HiddenPhraseButtonView: View {
+    var phrase: Phrase
+    @State var editPhrase: Bool
+    
+    var body : some View {
+        
+        Button(action: {
+            editPhrase = true
+        })  {
+            HStack(spacing:15){
+                Text(phrase.content)
+                
+            }.padding()
+        }
+        .foregroundColor(Color.gray)
         .sheet(isPresented: $editPhrase) {
             EditPhraseSheet(input: phrase.content, phrase: phrase, isHidden: phrase.isHidden, isFav: phrase.isFav)
         }

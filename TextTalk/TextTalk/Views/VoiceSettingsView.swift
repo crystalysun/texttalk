@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 
-public enum OSSVoiceEnum: String, CaseIterable {
+public enum OSSVoiceEnum: String/*, CaseIterable*/ {
     /// Australian
     case Australian = "en-AU"
     /// Brazilian
@@ -170,10 +170,11 @@ struct VoiceSettingsView: View {
             OutlineGroup(languages.data, children: \.voices) { lang in
                 
                 if(lang.isVoice){
+//                    let langString = OSSVoiceEnum(rawValue: "\(lang.language)")
                     Button("\(lang.language)"){
                         voiceName = lang.language
                     }
-                } else{
+                } else {
                     Text("\(lang.language)")
                 }
             }
