@@ -33,7 +33,7 @@ class SpeechRecognizer: ObservableObject {
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
-    private let recognizer: SFSpeechRecognizer?
+    private var recognizer: SFSpeechRecognizer?
     private var timer : Timer?
     private var locales = SFSpeechRecognizer.supportedLocales()
     
@@ -43,10 +43,10 @@ class SpeechRecognizer: ObservableObject {
      requests access to the speech recognizer and the microphone.
      */
     init() {
-        let locale = Locale(identifier: "ro-RO")
+        let locale = Locale(identifier: selectedLocale)
 //        SFSpeechRecognizer(locale: locale)
         recognizer = SFSpeechRecognizer(locale: locale)
-        print(locales)
+//        print(locales)
         
         Task(priority: .background) {
             do {
@@ -76,6 +76,7 @@ class SpeechRecognizer: ObservableObject {
         The resulting transcription is continuously written to the published `transcript` property.
      */
     func transcribe() {
+        self.recognizer = SFSpeechRecognizer(locale: Locale(identifier: selectedLocale))
         DispatchQueue(label: "Speech Recognizer Queue", qos: .default).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
                 self?.speakError(RecognizerError.recognizerIsUnavailable)

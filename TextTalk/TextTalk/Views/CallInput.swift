@@ -33,6 +33,7 @@ struct CallInput: View {
     @State private var isTts: Bool = false
     @State private var isRecording = false
     @State private var tempSTTid = -1
+    @State private var buttonDisabled = false
     @State var editMode : EditMode = .inactive
     @State var input: String = ""
     @State var idCount = 0
@@ -131,6 +132,7 @@ struct CallInput: View {
                             }
                         }
                     }
+                    
                 }
             
                     HStack {
@@ -159,31 +161,40 @@ struct CallInput: View {
                             Button("Start") {
                                 print("Starting")
                                 //CLAUDIA:
-                                tempSTTid = idCount
-                                messages.append(id: idCount, content: "...")
-                                recognizer.reset()
-                                recognizer.transcribe()
-                                isRecording = true
-                                
+                                let seconds = 0.5
+                                buttonDisabled = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                    isRecording = true
+                                    tempSTTid = idCount
+                                    messages.append(id: idCount, content: "...")
+                                    recognizer.reset()
+                                    recognizer.transcribe()
+                                    buttonDisabled = false
+                                }
                             }
+                            .disabled(buttonDisabled)
                         }
                         else {
                             Button("Stop") {
                                 print("Stopping")
                                 //CLAUDIA:
                                 let seconds = 0.5
+                                buttonDisabled = true
                                 DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                                    // Put your code which should be executed with a delay here
-                                
+                                    isRecording = false
                                     recognizer.stopTranscribing()
                                     print(recognizer.transcript)
-                                    messages.data[tempSTTid].content = recognizer.transcript
-        //                            messages.append(id: idCount, content: recognizer.transcript)
-                                    idCount = idCount + 1
-                                    isRecording = false
+                                    if tempSTTid < messages.data.count {
+                                        messages.data[tempSTTid].content = recognizer.transcript
+                                            idCount = idCount + 1
+                                    }
+                                    else {
+                                        tempSTTid = idCount
+                                    }
+                                    buttonDisabled = false
                                 }
-                                
                             }
+                            .disabled(buttonDisabled)
                         }
                     }
                 }

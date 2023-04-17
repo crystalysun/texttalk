@@ -127,23 +127,8 @@ struct VoiceSettingsView: View {
                 } else{
                     Text("\(lang.language)")
                 }
-                
-//                    .onAppear() {
-//                        print("\(lang.language) \(lang.voices![0].language)")
-//                    }
             }
         }
-//        ScrollView {
-//            VStack {
-//                ForEach(Array(dict.keys.sorted(by: <)), id: \.self){ key in
-//
-//                    Button(key) {
-//                        print(dict[key]!)
-//                    }
-//
-//                }
-//            }
-//        }
     }
 }
 
@@ -155,7 +140,7 @@ struct Voices: View {
 
 struct VoiceSettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        VoiceSettingsView(languages: languages)
+        VoiceSettingsView(languages: ttslanguages)
     }
 }
 

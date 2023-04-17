@@ -7,12 +7,17 @@
 
 import SwiftUI
 import AVFoundation
+import Speech
 
 // Update Languages
 var SV = AVSpeechSynthesisVoice.speechVoices()
-var codes = Set(SV.map { $0.language })
-var dict : Dictionary<String,[String]> = Dictionary(uniqueKeysWithValues: codes.map {($0, [])})
-var languages = Languages(dict: dict)
+var ttscodes = Set(SV.map { $0.language })
+var ttsdict : Dictionary<String,[String]> = Dictionary(uniqueKeysWithValues: ttscodes.map {($0, [])})
+var ttslanguages = Languages(dict: ttsdict)
+
+
+//var sttlanguages : [String] = supportedstt.map { $0.languageCode!.replacingOccurrences(of: " (fixed)", with: "") }
+
 
 struct SettingsDetails: View {
     var pageName: String
@@ -35,32 +40,29 @@ struct SettingsDetails: View {
                 }
             }
             .onAppear() {
-                dict = Dictionary(uniqueKeysWithValues: codes.map {($0, [])})
+                ttsdict = Dictionary(uniqueKeysWithValues: ttscodes.map {($0, [])})
                 for entry in SV {
-                    dict[entry.language]?.append(entry.name)
+                    ttsdict[entry.language]?.append(entry.name)
                 }
-                print(dict)
+                print(ttsdict)
             }
             
             
         }
         
         if(pageName == "Text-to-Speech") {
-            VoiceSettingsView(languages: languages)
-//                .onAppear() {
-//                    dict = Dictionary(uniqueKeysWithValues: codes.map {($0, [])})
-//                    for entry in SV {
-//                        dict[entry.language]?.append(entry.name)
-//                    }
-//                    print(dict)
-//                }
+            VoiceSettingsView(languages: ttslanguages)
         }
-        else if(pageName == "Speech-to-Text"){
-            
+        else if(pageName == "Speech-to-Text") {
+            SpeechSettingsView()
         }
         
         
     }
+}
+
+public func youwhore() {
+    print(sttlanguages)
 }
 
 struct SettingsDetails_Previews: PreviewProvider {
