@@ -9,4 +9,7 @@ target 'TextTalk' do
   pod 'WebRTC'
   pod 'SIPKeyboardManager'
 
+  # Pods for Firebase Auth
+  pod 'Firebase/Auth'
+
 end
