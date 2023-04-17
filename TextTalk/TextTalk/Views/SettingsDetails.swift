@@ -38,7 +38,7 @@ struct SettingsDetails: View {
             NavigationView {
                 List(langSettings) { langSetting in
                     NavigationLink {
-                        SettingsDetails(pageName: langSetting.content)
+                        SettingsDetails(pageName: langSetting.content, passwordSet: $passwordSet, key: $key)
                     } label: {
                         btnView(image: "customphrase", name: langSetting.content)
                     }
@@ -92,8 +92,8 @@ struct SettingsDetails: View {
 
 
 
-struct SettingsDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsDetails(pageName: "Saved Phrases")
-    }
-}
+//struct SettingsDetails_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsDetails(pageName: "Saved Phrases")
+//    }
+//}

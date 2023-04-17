@@ -50,8 +50,10 @@
 		96AEF6052998647200596470 /* FetchContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B02998647100596470 /* FetchContacts.swift */; };
 		96AEF6062998647200596470 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B12998647100596470 /* Response.swift */; };
 		96AEF6072998647200596470 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AEF5B22998647100596470 /* Contact.swift */; };
-		A08BF6EC29ED6A9D00C0092C /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BF6EB29ED6A9D00C0092C /* LockScreenView.swift */; };
 		96CFB16E29E8DC3800BD4384 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CFB16D29E8DC3800BD4384 /* Language.swift */; };
+		96EDC6A129ED90A6000E165B /* EditPhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EDC69F29ED90A6000E165B /* EditPhrasesView.swift */; };
+		96EDC6A229ED90A6000E165B /* KeyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EDC6A029ED90A6000E165B /* KeyCell.swift */; };
+		A08BF6EC29ED6A9D00C0092C /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BF6EB29ED6A9D00C0092C /* LockScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,8 +105,10 @@
 		96AEF5B02998647100596470 /* FetchContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchContacts.swift; sourceTree = "<group>"; };
 		96AEF5B12998647100596470 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		96AEF5B22998647100596470 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		A08BF6EB29ED6A9D00C0092C /* LockScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
 		96CFB16D29E8DC3800BD4384 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		96EDC69F29ED90A6000E165B /* EditPhrasesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhrasesView.swift; sourceTree = "<group>"; };
+		96EDC6A029ED90A6000E165B /* KeyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCell.swift; sourceTree = "<group>"; };
+		A08BF6EB29ED6A9D00C0092C /* LockScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,8 @@
 				96ADA76F299329A800648228 /* ContactsView.swift */,
 				96AEF5A92998646F00596470 /* ContactDetails.swift */,
 				A08BF6EB29ED6A9D00C0092C /* LockScreenView.swift */,
+				96EDC69F29ED90A6000E165B /* EditPhrasesView.swift */,
+				96EDC6A029ED90A6000E165B /* KeyCell.swift */,
 				96AEF5282998646D00596470 /* ContactRow.swift */,
 				96ADA7542991BA0600648228 /* ContentView.swift */,
 				96ADA77529932C2100648228 /* PhoneView.swift */,
@@ -412,6 +418,8 @@
 				96AEF5B72998647200596470 /* ContactRow.swift in Sources */,
 				96CFB16E29E8DC3800BD4384 /* Language.swift in Sources */,
 				96AEF5B82998647200596470 /* SoundManager.swift in Sources */,
+				96EDC6A129ED90A6000E165B /* EditPhrasesView.swift in Sources */,
+				96EDC6A229ED90A6000E165B /* KeyCell.swift in Sources */,
 				96AEF6032998647200596470 /* Item.swift in Sources */,
 				9687D32C29C1707F00B55A52 /* SettingsDetails.swift in Sources */,
 			);

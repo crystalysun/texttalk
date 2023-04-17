@@ -45,7 +45,7 @@ struct Home : View {
            ZStack{
                VStack {
                    if presentUnlockedNotif {
-                       Text("App Unlocked!")
+                       Text("Phone")
                            .font(.title2)
                            .fontWeight(.heavy)
                            .onAppear() {

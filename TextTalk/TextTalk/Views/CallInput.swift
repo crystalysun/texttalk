@@ -111,24 +111,16 @@ struct CallInput: View {
                     
                     ScrollView(.horizontal) {
                         HStack(spacing: 5) {
-                            ForEach(phrases.data.sorted(by: { $0 < $1 })) { phrase in
-                                Button(phrase.content){
-                                    /*messages.append(id: idCount, content: phrase.content)
-                                    idCount = idCount + 1
-                                    print(messages.data)
-                                    
-                                    let utterance = AVSpeechUtterance(string: phrase.content)
-                                    utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle." + voiceName + "-compact")
-                                    print(AVSpeechSynthesisVoice.speechVoices())
-
-                                    synth.speak(utterance)*/
-                                    input = phrase.content
+                            ForEach(phrases.data) { phrase in
+                                if !phrase.isHidden {
+                                    Button(phrase.content){
+                                        input = phrase.content
+                                    }
+                                    .foregroundColor(.white)
+                                    .controlSize(.large)
+                                    .padding(10)
+                                    .background(.blue)
                                 }
-                                .foregroundColor(.white)
-                                .controlSize(.large)
-                                .padding(10)
-                                .background(.blue)
-
                             }
                         }
                     }
