@@ -35,170 +35,190 @@ struct CallInput: View {
     @ObservedObject var messages = Messages()
     @ObservedObject var phrases = phraseGlobal
     @StateObject var recognizer = SpeechRecognizer()
-    
     @State private var isTts: Bool = false
     @State private var isRecording = false
     @State private var tempSTTid = -1
+    @State private var buttonDisabled = false
+    @State var editMode : EditMode = .inactive
     @State var input: String = ""
     @State var idCount = 0
+    @State var isEditing: Bool = false
+    @State var editedMessage: Message = Message()
     @State private var callActive: Bool = true
     let synth = AVSpeechSynthesizer()
-//    @State var utteranceOut: AVAudioFile?
     
     var body: some View {
         if !callActive {
             Text("Call not active. No messages to display.")
         }
         
-        List(self.messages.data) { message in
-            MessageBubble(message: message)
-        }
-        
-        if messages.data.count != 0 {
-            Button("Replay last message") {
-                print("Sent!")
-                print(messages.data)
-                
-                let tempMsg = messages.data.last
-                let utterance = AVSpeechUtterance(string: tempMsg!.content)
-                utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle." + voiceName + "-compact")
-                print(AVSpeechSynthesisVoice.speechVoices())
-
-                synth.speak(utterance)
-                input = ""
+        NavigationView {
+            List(self.messages.data) { message in
+                MessageBubble(message: message)
+                .onTapGesture {
+                    print(message.content)
+//                    isEditing = true
+                    editedMessage = message
+                    print(editedMessage.id)
+                    input = editedMessage.content
+//                    TextField("message", text: $input)
+//                    editText = message.content
+//                    TextField("editMessage", text: $editText)
+//                    editText = message.content
+                }
             }
+            .toolbar {
+                EditButton().simultaneousGesture(TapGesture().onEnded {
+                    isEditing.toggle()
+                    input = ""
+                })
+            }
+            .disabled(isRecording)
+            .environment(\.editMode, $editMode)
+
         }
         
         VStack {
-            Text(isTts ? "Text to Speech" : "Speech to Text")
-            
-            if isTts {
-                ScrollView(.horizontal) {
-                    HStack(spacing: 5) {
-                        ForEach(phrases.data.sorted(by: { $0 < $1 })) { phrase in
-                            Button(phrase.content){
-                                print("Sent!")
-                                messages.append(id: idCount, content: phrase.content)
-                                idCount = idCount + 1
-                                print(messages.data)
-                                
-                                let utterance = AVSpeechUtterance(string: phrase.content)
-                                utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle." + voiceName + "-compact")
-                                print(AVSpeechSynthesisVoice.speechVoices())
-
-                                synth.speak(utterance)
-                                input = ""
-                            }
-                            .foregroundColor(.white)
-                            .controlSize(.large)
-                            .padding(10)
-                            .background(.blue)
-
-                        }
+            if isEditing {
+                TextField("message", text: $input)
+                Button("Send") {
+                    editedMessage.content = input
+                    if editedMessage.id != -1 {
+                        messages.data[editedMessage.id].content = editedMessage.content
                     }
+                    print(editedMessage.content)
+                    editMode = .inactive
+                    isEditing = false
+                    input = ""
                 }
+                .disabled(input == "")
+//                input = $editedMessage
+//                print($input)
             }
-            
-            HStack {
-                if isTts {
-                    TextField("message", text: $input)
-                    
-                    Button("Send"){
-                        print("Sent!")
-                        messages.append(id: idCount, content: input)
-                        idCount = idCount + 1
-                        print(messages.data)
-                        
-                        let utterance = AVSpeechUtterance(string: input)
-                        utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle." + voiceName + "-compact")
-
-                        synth.speak(utterance)
-                        
-                        
-                        // FOR AUDIO TRACK INPUT
-//                        synth.write(utterance) { (buffer: AVAudioBuffer) in
-//                           guard let pcmBuffer = buffer as? AVAudioPCMBuffer else {
-//                              fatalError("unknown buffer type: \(buffer)")
-//                           }
-//                            do {
-//                                if pcmBuffer.frameLength == 0 {
-//                                  // done
-//                                } else {
-//                                  // append buffer to file
-//                                  if utteranceOut == nil {
-//                                    utteranceOut = try AVAudioFile(
-//                                      forWriting: URL(fileURLWithPath: "utteranceOut.caf"),
-//                                      settings: pcmBuffer.format.settings,
-//                                      commonFormat: .pcmFormatInt16,
-//                                      interleaved: false)
-//                                  }
-//                                  try utteranceOut?.write(from: pcmBuffer)
-//                                }
-//                            }
-//                            catch let error {
-//                                print(error)
-//                            }
-//
-//                        }
-                        
-                        
-                        // NEW:
-                        input = ""
-                    }
-                }
-                else {
-                    if isRecording == false {
-                        Button("Start") {
-                            print("Starting")
-                            //CLAUDIA:
-                            tempSTTid = idCount
-                            messages.append(id: idCount, content: "...")
-                            recognizer.reset()
-                            recognizer.transcribe()
-                            isRecording = true
+            else {
+                Text(isTts ? "Text to Speech" : "Speech to Text")
+                
+                if isTts{
+                    if messages.data.count != 0 {
+                        Button("Replay last message") {
+                            print("Sent!")
+                            print(messages.data)
                             
+                            let tempMsg = messages.data.last
+                            let utterance = AVSpeechUtterance(string: tempMsg!.content)
+                            utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle." + voiceName + "-compact")
+                            
+
+                            synth.speak(utterance)
+                            input = ""
                         }
+                    }
+                    
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 5) {
+                            ForEach(phrases.data) { phrase in
+                                if !phrase.isHidden {
+                                    Button(phrase.content){
+                                        input = phrase.content
+                                    }
+                                    .foregroundColor(.white)
+                                    .controlSize(.large)
+                                    .padding(10)
+                                    .background(.blue)
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            
+                    HStack {
+                    if isTts {
+                        TextField("message", text: $input)
+                        
+                        
+                        Button("Send") {
+                            print("Sent!")
+                            messages.append(id: idCount, content: input)
+                            idCount = idCount + 1
+                            print(messages.data)
+                            
+                            let utterance = AVSpeechUtterance(string: input)
+                            utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle." + voiceName + "-compact")
+
+                            synth.speak(utterance)
+                            // NEW:
+                            input = ""
+                            print(AVSpeechSynthesisVoice.speechVoices())
+                        }
+                        .disabled(input == "")
                     }
                     else {
-                        Button("Stop") {
-                            print("Stopping")
-                            //CLAUDIA:
-                            let seconds = 0.5
-                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                                // Put your code which should be executed with a delay here
-                            
-                                recognizer.stopTranscribing()
-                                print(recognizer.transcript)
-                                messages.data[tempSTTid].content = recognizer.transcript
-    //                            messages.append(id: idCount, content: recognizer.transcript)
-                                idCount = idCount + 1
-                                isRecording = false
+                        if isRecording == false {
+                            Button("Start") {
+                                print("Starting")
+                                //CLAUDIA:
+                                let seconds = 0.5
+                                buttonDisabled = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                    isRecording = true
+                                    tempSTTid = idCount
+                                    messages.append(id: idCount, content: "...")
+                                    recognizer.reset()
+                                    recognizer.transcribe()
+                                    buttonDisabled = false
+                                }
                             }
+                            .disabled(buttonDisabled)
+                        }
+                        else {
+                            Button("Stop") {
+                                print("Stopping")
+                                //CLAUDIA:
+                                let seconds = 0.5
+                                buttonDisabled = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                    isRecording = false
+                                    recognizer.stopTranscribing()
+                                    print(recognizer.transcript)
+                                    if tempSTTid < messages.data.count {
+                                        messages.data[tempSTTid].content = recognizer.transcript
+                                            idCount = idCount + 1
+                                    }
+                                    else {
+                                        tempSTTid = idCount
+                                    }
+                                    buttonDisabled = false
+                                }
+                            }
+                            .disabled(buttonDisabled)
+                        }
+                    }
+                }
+                VStack {
+                    HStack {
+                        Toggle(isOn: $isTts) {
+                            Label("TTS", systemImage: "flag.fill")
                             
                         }
+                        .toggleStyle(.button)
+                        
+                        Spacer()
+                            .frame(width: 50)
+
+                        
+                        Toggle(isOn: not($isTts)) {
+                            Label("STT", systemImage: "flag.fill")
+                        }
+                        .toggleStyle(.button)
                     }
                 }
             }
         }
-        VStack {
-            HStack {
-                Toggle(isOn: $isTts) {
-                    Label("TTS", systemImage: "flag.fill")
-                    
-                }
-                .toggleStyle(.button)
-                
-                Spacer()
-                    .frame(width: 50)
-
-                
-                Toggle(isOn: not($isTts)) {
-                    Label("STT", systemImage: "flag.fill")
-                }
-                .toggleStyle(.button)
-            }
-        }
         
+    }
+    func edit(at message: Message) {
+        print(message.id, message.content)
     }
 }
 

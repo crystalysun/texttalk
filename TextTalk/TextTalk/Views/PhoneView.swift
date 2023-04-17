@@ -52,7 +52,7 @@ struct Home : View {
            ZStack{
                VStack {
                    if presentUnlockedNotif {
-                       Text("App Unlocked!")
+                       Text("Phone")
                            .font(.title2)
                            .fontWeight(.heavy)
                            .onAppear() {
@@ -75,6 +75,12 @@ struct Home : View {
 struct DialPad : View {
     @StateObject private var isActiveCall = CallManager.shared.isActiveCall
     @State private var inputNumber = ""
+    let rows = [
+        ["1", "2", "3"],
+        ["4", "5", "6"],
+        ["7", "8", "9"],
+        ["*", "0", "#"]
+    ]
     
     var body: some View {
         VStack {
@@ -86,26 +92,56 @@ struct DialPad : View {
                 }
             }
             else {
-                let numInputTF = TextField(
-                 "Enter number...",
-                 text: $inputNumber,
-                 onCommit: {
-                     print(inputNumber)
-                 })
-                    .keyboardType(.phonePad)
-                    .textFieldStyle(OvalTextFieldStyle())
-                
-                VStack(alignment: .leading) {
-                    Text("Enter number...").font(.title2)
+                VStack {
+                    Spacer()
+                    Text(inputNumber)
+                        .font(.largeTitle)
+                        .padding()
+                    Spacer()
+                    VStack(spacing: 0) {
+                        ForEach(rows, id: \.self) { row in
+                            HStack(spacing: 0) {
+                                ForEach(row, id: \.self) { digit in
+                                    Button(action: {
+                                        inputNumber += digit
+                                    }, label: {
+                                        Text(digit)
+                                            .font(.title2)
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                            .background(Color.white)
+                                            .foregroundColor(.black)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 4)
+                                                    .stroke(Color.gray, lineWidth: 0.5)
+                                            )
+                                    })
+                                }
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        }
+                    }
+                    .frame(maxHeight: 200)
                     HStack {
-                        numInputTF
+                        Button(action: {
+                            if inputNumber.count > 0 {
+                                inputNumber.removeLast()
+                            }
+                        }, label: {
+                            Image(systemName: "delete.left")
+                                .foregroundColor(.red)
+                        })
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 4)
+                                .stroke(Color.gray, lineWidth: 0.5)
+                        )
+                        
                         Button(action: {
                             CallManager.shared.initiate(call: Call(
-                                partnerID: "Unknown",
-                                handle: inputNumber,
-                                callMembers: [""],
-                             lengthInMinutes: 0,
-                             theme: Theme.bubblegum))
+                            partnerID: "Unknown",
+                            handle: inputNumber,
+                            callMembers: [""],
+                            lengthInMinutes: 0,
+                            theme: Theme.bubblegum))
                         }) {
                             Image(systemName: "phone.arrow.up.right")
                         }
@@ -211,110 +247,6 @@ struct LockScreen : View {
         }
         .navigationTitle("")
         .navigationBarHidden(true)
-    }
-}
-
-struct PasswordButton : View {
-    
-    var value : String
-    @Binding var password : String
-    @Binding var key : String
-    @Binding var unlocked : Bool
-    @Binding var wrongPass : Bool
-    
-    var body: some View{
-        
-        Button(action: setPassword, label: {
-            
-            VStack{
-                
-                if value.count > 1{
-                    
-                    // Image...
-                    
-                    Image(systemName: "delete.left")
-                        .font(.system(size: 24))
-                        .foregroundColor(.black)
-                }
-                else{
-                    
-                    Text(value)
-                        .font(.title)
-                        .foregroundColor(.black)
-                }
-            }
-            .padding()
-
-        })
-        .buttonStyle(PasswordButtonStyle())
-    }
-    
-    func setPassword(){
-        
-        // checking if backspace pressed...
-        
-        withAnimation{
-            
-            if value.count > 1{
-                
-                if password.count != 0{
-                    
-                    password.removeLast()
-                }
-            }
-            else{
-                
-                if password.count != 4{
-                    
-                    password.append(value)
-                    
-                    // Delay Animation...
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        
-                        withAnimation{
-                            
-                            if password.count == 4{
-                                
-                                if password == key{
-                                    
-                                    unlocked = true
-                                }
-                                else{
-                                    
-                                    wrongPass = true
-                                    password.removeAll()
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct PasswordButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding(15)
-            .background(
-                RoundedRectangle(
-                    cornerRadius: 20,
-                    style: .continuous
-                )
-                .fill(
-                    configuration.isPressed ? Color.gray : Color.white
-                )
-            )
-            .overlay {
-
-                RoundedRectangle(
-                    cornerRadius: 20,
-                    style: .continuous
-                )
-                .stroke(.gray, lineWidth: 2)
-            }
     }
 }
 
@@ -490,7 +422,7 @@ class ViewController: UIViewController {
 
     func initViews() {
         joinButton = UIButton(type: .system)
-        joinButton.frame = CGRect(x: 140, y: 300, width: 100, height: 50)
+        joinButton.frame = CGRect(x: 140, y: 150, width: 100, height: 50)
         joinButton.setTitle("Join", for: .normal)
 
         joinButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)

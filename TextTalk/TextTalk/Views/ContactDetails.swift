@@ -19,36 +19,12 @@ struct ContactDetails: View {
             contact.image
                 .resizable()
                 .frame(width: 100, height: 100)
+                .clipShape(Circle())
             Text("\(contact.firstName) \(contact.lastName)")
                 .font(.title)
             ForEach(contact.numbers, id:\.self) {
                 number in
                 PhoneNumber(contact: contact, number: number)
-//                HStack {
-//                    Text("\(number.type): \(number.number)")
-//
-//                    Button("Tap for call") {
-//                        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-//                            print("initiating call")
-//                            CallManager.shared.initiate(call: Call(partnerID: "\(contact.firstName)",
-//                                handle: "\(number.number)", callMembers: [""],
-//                                lengthInMinutes: 0,
-//                                theme: Theme.bubblegum))
-//
-//                        })
-//                    }
-//                    Button("Recieve Call") {
-//                        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-//                            print("receiving call")
-//                            CallManager.shared.reportIncomingCall(Call(
-//                                partnerID: "\(contact.firstName)",
-//                                handle: "\(contact.firstName)",
-//                                callMembers: [""],
-//                                lengthInMinutes: 0,
-//                                theme: Theme.bubblegum))
-//                        })
-//                    }
-//                }
             }
         }
     }
