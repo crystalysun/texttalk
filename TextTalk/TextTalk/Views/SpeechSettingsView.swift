@@ -20,13 +20,13 @@ struct STTLang: Identifiable {
 }
 
 let supportedstt = SFSpeechRecognizer.supportedLocales()
-let sttlanguages: [STTLang] = Array(supportedstt.map { STTLang(code: $0.identifier.replacingOccurrences(of: " (fixed)", with: "")) }).sorted { $0.code < $1.code }
+let sttlanguages: [STTLang] = Array(supportedstt.map { STTLang(code: $0.identifier.replacingOccurrences(of: " (fixed)", with: "")) }).sorted { codeToStr(code: $0.code) < codeToStr(code: $1.code) }
 
 
 struct SpeechSettingsView: View {
     var body: some View {
         List(sttlanguages) { sttlanguage in
-            Button(sttlanguage.code){
+            Button(codeToStr(code: sttlanguage.code)){
                     selectedLocale = sttlanguage.code
                     print(selectedLocale)
                 }
