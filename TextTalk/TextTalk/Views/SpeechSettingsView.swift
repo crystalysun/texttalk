@@ -19,8 +19,8 @@ struct STTLang: Identifiable {
     }
 }
 
-var supportedstt = SFSpeechRecognizer.supportedLocales()
-var sttlanguages = supportedstt.map { STTLang(code: $0.identifier.replacingOccurrences(of: " (fixed)", with: "")) }
+let supportedstt = SFSpeechRecognizer.supportedLocales()
+let sttlanguages: [STTLang] = Array(supportedstt.map { STTLang(code: $0.identifier.replacingOccurrences(of: " (fixed)", with: "")) }).sorted { $0.code < $1.code }
 
 
 struct SpeechSettingsView: View {

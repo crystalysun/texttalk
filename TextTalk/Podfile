@@ -8,5 +8,6 @@ target 'TextTalk' do
   pod 'WAL'
   pod 'WebRTC'
   pod 'SIPKeyboardManager'
+  pod 'AgoraRtcEngine_iOS', '4.1.1'
 
 end

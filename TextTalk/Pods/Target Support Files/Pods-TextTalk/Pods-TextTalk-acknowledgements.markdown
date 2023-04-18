@@ -1,6 +1,11 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## AgoraRtcEngine_iOS
+
+Copyright 2023 agora.io. All rights reserved.
+
+
 ## SIPKeyboardManager
 
 Copyright (c) 2018 Hendrik von Prince <hendrik.von.prince@kurzdigital.com>
