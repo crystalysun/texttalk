@@ -110,12 +110,153 @@ public enum OSSVoiceEnum: String, CaseIterable {
         }
 }
 
-//let voicesUS: [Phrase] = [Phrase(id: 1, content: "Samantha")]
-//let voicesAU: [Phrase] = [Phrase(id: 1, content: "Karen")]
-//let voicesUK: [Phrase] = [Phrase(id: 1, content: "Daniel")]
-//let voicesIE: [Phrase] = [Phrase(id: 1, content: "Moira")]
-//let voicesIN: [Phrase] = [Phrase(id: 1, content: "Rishi")]
-//let voicesZA: [Phrase] = [Phrase(id: 1, content: "Tessa")]
+func codeToStr(code: String) -> String {
+    if code == "en-AU" {
+        return "Australian"
+    }
+    else if code == "pt-BR" {
+        return "Brazilian"
+    }
+    else if code == "bg-BG" {
+        return "Bulgarian"
+    }
+    else if code == "fr-CA" {
+        return "French (Canadian)"
+    }
+    else if code == "zh-CH" {
+        return "Chinese (Traditional)"
+    }
+    else if code == "zh-CN" {
+        return "Chinese (Simplified)"
+    }
+    else if code == "zh-HK" {
+        return "Chinese (Hong Kong)"
+    }
+    else if code == "hr-HR" {
+        return "Croatian"
+    }
+    else if code == "cs-CZ" {
+        return "Czech"
+    }
+    else if code == "da-DK" {
+        return "Danish"
+    }
+    else if code == "nl-BE" {
+        return "Dutch (Belgium)"
+    }
+    else if code == "nl-NL" {
+        return "Dutch (Netherlands)"
+    }
+    else if code == "en-GB" {
+        return "English (UK)"
+    }
+    else if code == "fi-FI" {
+        return "Finnish"
+    }
+    else if code == "fr-FR" {
+        return "French"
+    }
+    else if code == "de-DE" {
+        return "German"
+    }
+    else if code == "el-GR" {
+        return "Greek"
+    }
+    else if code == "he-IL" {
+        return "Hebrew"
+    }
+    else if code == "hi-IN" {
+        return "Hindi"
+    }
+    else if code == "hu-HU" {
+        return "Hungarian"
+    }
+    else if code == "en-IN" {
+        return "English (Indian)"
+    }
+    else if code == "id-ID" {
+        return "Indonesian"
+    }
+    else if code == "en-IE" {
+        return "English (Irish)"
+    }
+    else if code == "it-IT" {
+        return "Italian"
+    }
+    else if code == "ja-JP" {
+        return "Japanese"
+    }
+    else if code == "ko-KR" {
+        return "Korean"
+    }
+    else if code == "ms-MY" {
+        return "Malaysian"
+    }
+    else if code == "es-MX" {
+        return "Spanish (Mexican)"
+    }
+    else if code == "no-NO" {
+        return "Norwegian"
+    }
+    else if code == "nb-NO" {
+        return "Norwegian (Bokmal)"
+    }
+    else if code == "pl-PL" {
+        return "Polish"
+    }
+    else if code == "pt-PT" {
+        return "Portuguese"
+    }
+    else if code == "ro-RO" {
+        return "Romanian"
+    }
+    else if code == "ru-RU" {
+        return "Russian"
+    }
+    else if code == "ar-SA" {
+        return "Saudi Arabian"
+    }
+    else if code == "sk-SK" {
+        return "Slovakian"
+    }
+    else if code == "en-ZA" {
+        return "English (South African)"
+    }
+    else if code == "es-ES" {
+        return "Spanish (Spain)"
+    }
+    else if code == "ca-ES" {
+        return "Catalan"
+    }
+    else if code == "sv-SE" {
+        return "Swedish"
+    }
+    else if code == "zh-TW" {
+        return "Chinese (Taiwanese)"
+    }
+    else if code == "th-TH" {
+        return "Thai"
+    }
+    else if code == "tr-TR" {
+        return "Turkish"
+    }
+    else if code == "uk-UA" {
+        return "Ukranian"
+    }
+    else if code == "en-US" {
+        return "English (United States)"
+    }
+    else if code == "vi-VN" {
+        return "Vietnamese"
+    }
+    else if code == "ar-001" {
+        return "Arabic World"
+    }
+    else {
+        return code
+    }
+}
+
 var currentVoices: [Phrase] = []
 struct VoiceSettingsView: View {
     @ObservedObject var languages : Languages
@@ -178,11 +319,8 @@ struct VoiceSettingsView: View {
                         voiceName = lang.language
                     }
                 } else {
-//                    let langString = OSSVoiceEnum.withLabel("Spanish")
-                    Text("\(lang.language)")
-//                        .onAppear() {
-//                            print("\(langString?.rawValue)")
-//                        }
+                    let langString = codeToStr(code: lang.language)
+                    Text("\(langString)")
                 }
             }
         }
