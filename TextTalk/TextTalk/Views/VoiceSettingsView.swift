@@ -9,101 +9,105 @@ import SwiftUI
 import AVFoundation
 
 
-public enum OSSVoiceEnum: String/*, CaseIterable*/ {
-    /// Australian
+public enum OSSVoiceEnum: String, CaseIterable {
+    // Australian
     case Australian = "en-AU"
-    /// Brazilian
+    // Brazilian
     case Brazilian = "pt-BR"
-    /// Bulgarian
+    // Bulgarian
     case Bulgarian = "bg-BG"
-    /// CanadianFrench
+    // CanadianFrench
     case CanadianFrench = "fr-CA"
-    /// Chinese Traditional
+    // Chinese Traditional
     case Chinese = "zh-CH"
-    /// Chinese Simplified
+    // Chinese Simplified
     case ChineseSimplified = "zh-CN"
-    /// ChineseHongKong
+    // ChineseHongKong
     case ChineseHongKong = "zh-HK"
-    /// Croatian
+    // Croatian
     case Croatian = "hr-HR"
-    /// Czech
+    // Czech
     case Czech = "cs-CZ"
-    /// Danish
+    // Danish
     case Danish = "da-DK"
-    /// DutchBelgium
+    // DutchBelgium
     case DutchBelgium = "nl-BE"
-    /// DutchNetherlands
+    // DutchNetherlands
     case DutchNetherlands = "nl-NL"
-    /// English
+    // English
     case English = "en-GB"
-    /// Finnish
+    // Finnish
     case Finnish = "fi-FI"
-    /// French
+    // French
     case French = "fr-FR"
-    /// German
+    // German
     case German = "de-DE"
-    /// Greek
+    // Greek
     case Greek = "el-GR"
-    /// Hebrew
+    // Hebrew
     case Hebrew = "he-IL"
-    /// Hindi
+    // Hindi
     case Hindi = "hi-IN"
-    /// Hungarian
+    // Hungarian
     case Hungarian = "hu-HU"
-    /// Indian English
+    // Indian English
     case IndianEnglish = "en-IN"
-    /// Indonesian
+    // Indonesian
     case Indonesian = "id-ID"
-    /// IrishEnglish
+    // IrishEnglish
     case IrishEnglish = "en-IE"
-    /// Italian
+    // Italian
     case Italian = "it-IT"
-    /// Japanese
+    // Japanese
     case Japanese = "ja-JP"
-    /// Korean
+    // Korean
     case Korean = "ko-KR"
-    /// Malaysian
+    // Malaysian
     case Malay = "ms-MY"
-    /// Mexican
+    // Mexican
     case Mexican = "es-MX"
-    /// Norwegian
+    // Norwegian
     case Norwegian = "no-NO"
-    /// Norwegian Bokmal
+    // Norwegian Bokmal
     case NorwegianBokmal = "nb-NO"
-    /// Polish
+    // Polish
     case Polish = "pl-PL"
-    /// Portuguese
+    // Portuguese
     case Portuguese = "pt-PT"
-    /// Romanian
+    // Romanian
     case Romanian = "ro-RO"
-    /// Russian
+    // Russian
     case Russian = "ru-RU"
-    /// SaudiArabian
+    // SaudiArabian
     case SaudiArabian = "ar-SA"
-    /// Slovakian
+    // Slovakian
     case Slovakian = "sk-SK"
-    /// South African English
+    // South African English
     case SouthAfricanEnglish = "en-ZA"
-    /// Spanish
+    // Spanish
     case Spanish = "es-ES"
-    /// Catalan
+    // Catalan
     case SpanishCatalan = "ca-ES"
-    /// Swedish
+    // Swedish
     case Swedish = "sv-SE"
-    /// Taiwanese
+    // Taiwanese
     case TaiwaneseChinese  = "zh-TW"
-    /// Thai
+    // Thai
     case Thai = "th-TH"
-    /// Turkish
+    // Turkish
     case Turkish = "tr-TR"
-    /// Ukranian
+    // Ukranian
     case Ukranian = "uk-UA"
-    /// USA English
+    // USA English
     case UnitedStatesEnglish = "en-US"
-    /// Vietnamese
+    // Vietnamese
     case Vietnamese = "vi-VN"
-    /// Arabic World
+    // Arabic World
     case ArabicWorld = "ar-001"
+    
+    static func withLabel(_ label: String) -> OSSVoiceEnum? {
+        return self.allCases.first{ "\($0)" == label }
+        }
 }
 
 //let voicesUS: [Phrase] = [Phrase(id: 1, content: "Samantha")]
@@ -169,13 +173,16 @@ struct VoiceSettingsView: View {
         List {
             OutlineGroup(languages.data, children: \.voices) { lang in
                 
-                if(lang.isVoice){
-//                    let langString = OSSVoiceEnum(rawValue: "\(lang.language)")
+                if(lang.isVoice) {
                     Button("\(lang.language)"){
                         voiceName = lang.language
                     }
                 } else {
+//                    let langString = OSSVoiceEnum.withLabel("Spanish")
                     Text("\(lang.language)")
+//                        .onAppear() {
+//                            print("\(langString?.rawValue)")
+//                        }
                 }
             }
         }
